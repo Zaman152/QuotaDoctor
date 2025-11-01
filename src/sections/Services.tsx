@@ -22,58 +22,34 @@ type Service = {
 
 const services: Service[] = [
   {
-    icon: <Smartphone className="w-7 h-7" aria-hidden="true" />,
-    title: 'Mobile App Development',
+    icon: <Cpu className="w-7 h-7" aria-hidden="true" />,
+    title: 'Sales Analyzer',
     description:
-      'We build high-performance mobile applications that offer smooth user experiences, robust security, and scalable architectures, designed to meet both user needs and business growth.',
-  },
-  {
-    icon: <Globe className="w-7 h-7" aria-hidden="true" />,
-    title: 'Web Development',
-    description:
-      'We create responsive, high-performance websites with secure, scalable back-end solutions, designed to enhance user engagement and support business efficiency.',
-  },
-  {
-    icon: <Cloud className="w-7 h-7" aria-hidden="true" />,
-    title: 'Cloud Consultancy',
-    description:
-      'We provide cloud consulting services to optimize your cloud strategy, strengthen security, and deliver scalable, cost-effective infrastructure tailored for your organization\'s growth.',
-  },
-  {
-    icon: <Palette className="w-7 h-7" aria-hidden="true" />,
-    title: 'Graphic Design',
-    description:
-      'Our design team delivers expert graphic design services that elevate organizations to new levels of creativity and visual impact. We help you capture your target audience\'s attention with compelling and innovative designs.',
+      'Eliminate guesswork with AI-powered diagnostics. We analyze calls, pipeline, messaging, and CRM data to identify revenue leaks and system weaknesses.',
   },
   {
     icon: <BookOpen className="w-7 h-7" aria-hidden="true" />,
-    title: 'Ebook Development',
+    title: 'Analyzer + Coach',
     description:
-      'We craft interactive, device-optimized eBooks for a seamless reading experience and enhanced user engagement.',
-  },
-  {
-    icon: <Cpu className="w-7 h-7" aria-hidden="true" />,
-    title: 'Advanced Technologies',
-    description:
-      'We design custom software solutions that improve business processes with advanced integrations, robust security, and scalable designs to drive your growth.',
-  },
-  {
-    icon: <Mic className="w-7 h-7" aria-hidden="true" />,
-    title: 'AI Voice Agents',
-    description:
-      'We develop intelligent voice agent solutions that automate customer interactions, provide 24/7 support, and enhance user engagement through natural language processing and conversational AI.',
+      'Diagnostics plus continuous team performance coaching. Personalized, data-driven coaching loops that level up your reps and compound win rates.',
   },
   {
     icon: <Brain className="w-7 h-7" aria-hidden="true" />,
-    title: 'RAG (Retrieval-Augmented Generation) Systems',
+    title: 'Full AI Sales System',
     description:
-      'We implement advanced RAG systems that combine the power of large language models with your proprietary data, enabling accurate, context-aware responses and intelligent information retrieval.',
+      'Complete revenue engine with diagnostics, coaching, and AI-powered lead generation. Your end-to-end sales operating system.',
+  },
+  {
+    icon: <Globe className="w-7 h-7" aria-hidden="true" />,
+    title: 'Fractional VP Sales',
+    description:
+      'Executive-level strategic leadership and hands-on guidance. Get VP-level expertise without the $200K+ salary and overhead.',
   },
   {
     icon: <MessageSquare className="w-7 h-7" aria-hidden="true" />,
-    title: 'AI Chatbots',
+    title: 'AI Custom Personal Assistant',
     description:
-      'We create sophisticated AI-powered chatbots that provide instant customer support, streamline operations, and deliver personalized user experiences across multiple platforms.',
+      'Reclaim your time with intelligent automation. Manage communications, automate executive tasks, and get instant insights to maximize founder productivity.',
   },
 ];
 
@@ -82,24 +58,24 @@ export default function Services() {
   const isInView = useInView(sectionRef, { margin: '-100px', once: true });
 
   return (
-    <section id="services" className="relative overflow-hidden py-24 md:py-32">
+    <section id="services" className="relative overflow-hidden py-24 md:py-32 bg-[#0A0A0F]">
       {/* decorative gradients */}
-      <div className="pointer-events-none absolute -top-32 -left-24 w-80 h-80 rounded-full" style={{background:"radial-gradient(closest-side, rgba(139,92,246,0.25), transparent)"}} aria-hidden="true" />
-      <div className="pointer-events-none absolute -bottom-40 -right-24 w-96 h-96 rounded-full" style={{background:"radial-gradient(closest-side, rgba(59,130,246,0.20), transparent)"}} aria-hidden="true" />
+      <div className="pointer-events-none absolute -top-32 -left-24 w-80 h-80 rounded-full" style={{background:"radial-gradient(closest-side, rgba(50,130,184,0.25), transparent)"}} aria-hidden="true" />
+      <div className="pointer-events-none absolute -bottom-40 -right-24 w-96 h-96 rounded-full" style={{background:"radial-gradient(closest-side, rgba(15,76,117,0.20), transparent)"}} aria-hidden="true" />
 
       <div className="container relative">
         <div className="text-center mb-12 md:mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-white/5 text-purple-200 text-sm font-medium backdrop-blur-xl">
-            <span className="h-2 w-2 rounded-full bg-purple-400" aria-hidden="true" />
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#0F4C75] bg-[#16213E] text-[#3282B8] text-sm font-medium backdrop-blur-xl">
+            <span className="h-2 w-2 rounded-full bg-[#3282B8]" aria-hidden="true" />
             Our Expertise
           </div>
           <h2 className="mt-4 text-4xl md:text-5xl font-extrabold tracking-tight section-title">Our Core Services</h2>
-          <p className="text-lg md:text-xl text-gray-300 mt-4 max-w-2xl mx-auto">
-            Eclipse Technologies — Illuminating Innovation, Eclipsing Expectations
+          <p className="text-lg md:text-xl text-[#BBE1FA] mt-4 max-w-2xl mx-auto">
+            QuotaDoctor — Fix the system, elevate the reps, scale the revenue
           </p>
         </div>
 
-        <div ref={sectionRef} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        <div ref={sectionRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {services.map((service, index) => (
             <motion.div
               key={service.title}
@@ -109,29 +85,29 @@ export default function Services() {
               className="group h-full"
             >
               {/* gradient border wrapper */}
-              <div className="h-full p-[1px] rounded-2xl" style={{background:"linear-gradient(135deg, rgba(139,92,246,0.35), rgba(59,130,246,0.35))"}}>
-                <div className="h-full rounded-2xl bg-white/5 backdrop-blur-2xl border border-white/10 p-6 md:p-7 shadow-[0_10px_30px_rgba(2,6,23,0.30)] transition-all duration-300 group-hover:shadow-[0_20px_50px_rgba(139,92,246,0.35)] group-hover:-translate-y-1 focus-within:shadow-[0_20px_50px_rgba(139,92,246,0.40)] flex flex-col">
+              <div className="h-full p-[1px] rounded-2xl" style={{background:"linear-gradient(135deg, rgba(50,130,184,0.35), rgba(15,76,117,0.35))"}}>
+                <div className="h-full rounded-2xl bg-[#16213E] backdrop-blur-2xl border border-[#0F4C75]/30 p-6 md:p-7 shadow-[0_10px_30px_rgba(2,6,23,0.30)] transition-all duration-300 group-hover:bg-[#1A1A2E] group-hover:shadow-[0_0_30px_rgba(50,130,184,0.3)] group-hover:border-[#3282B8] group-hover:-translate-y-1 focus-within:shadow-[0_0_30px_rgba(50,130,184,0.4)] flex flex-col">
                   <div className="flex items-center justify-between">
-                    <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500/15 to-blue-500/15 text-purple-300 group-hover:from-purple-500/25 group-hover:to-blue-500/25 transition-colors">
+                    <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br from-[#3282B8]/15 to-[#0F4C75]/15 text-[#3282B8] group-hover:from-[#3282B8]/25 group-hover:to-[#0F4C75]/25 transition-colors">
                       <span className="transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
                         {service.icon}
                       </span>
                     </div>
-                    <div className="h-2 w-2 rounded-full bg-purple-300 group-hover:bg-purple-400 transition-colors" aria-hidden="true" />
+                    <div className="h-2 w-2 rounded-full bg-[#3282B8] group-hover:bg-[#3282B8] transition-colors" aria-hidden="true" />
                   </div>
                   <h3 className="mt-5 text-xl font-bold text-white tracking-tight">{service.title}</h3>
-                  <p className="mt-3 text-gray-300 leading-relaxed flex-1">{service.description}</p>
+                  <p className="mt-3 text-[#BBE1FA] leading-relaxed flex-1">{service.description}</p>
                   <div className="mt-6">
                     <a
                       href="#contact"
-                      className="inline-flex items-center gap-2 text-purple-300 hover:text-white font-semibold focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#8B5CF6] rounded-md"
+                      className="inline-flex items-center gap-2 text-[#3282B8] hover:text-[#BBE1FA] font-semibold focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#3282B8] rounded-md"
                       aria-label={`Discover more about ${service.title}`}
                     >
                       Discover More
                       <span className="inline-block transform transition-transform group-hover:translate-x-0.5">→</span>
                     </a>
                   </div>
-                  <div className="mt-4 h-px bg-gradient-to-r from-transparent via-indigo-200 to-transparent" aria-hidden="true" />
+                  <div className="mt-4 h-px bg-gradient-to-r from-transparent via-[#0F4C75] to-transparent" aria-hidden="true" />
                 </div>
               </div>
             </motion.div>

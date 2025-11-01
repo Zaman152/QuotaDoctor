@@ -98,7 +98,7 @@ const TestimonialsColumn = (props: {
         <React.Fragment key={index}>
           {props.testimonials.map(({ text, imageSrc, name, username }) => (
             <div className="card" key={text}>
-              <div className="text-black">{text}</div>
+              <div className="text-white">{text}</div>
               <div className="flex items-center gap-2 mt-5">
                 <Image
                   src={imageSrc}
@@ -108,12 +108,12 @@ const TestimonialsColumn = (props: {
                   className="h-10 w-10 rounded-full"
                 />
                 <div className="flex flex-col">
-                                      <div className="flex flex-col">
-                  <div className="font-medium tracking-tight leading-5 text-black">
-                    {name}
+                  <div className="flex flex-col">
+                    <div className="font-medium tracking-tight leading-5 text-white">
+                      {name}
+                    </div>
+                    <div className="leading-5 tracking-tight text-[#BBE1FA]">{username}</div>
                   </div>
-                  <div className="leading-5 tracking-tight text-gray-600">{username}</div>
-                </div>
                 </div>
               </div>
             </div>
@@ -126,14 +126,14 @@ const TestimonialsColumn = (props: {
 
 export const Testimonials = () => {
   return (
-    <section className="bg-white">
+    <section className="bg-[#0A0A0F]">
       <div className="container">
         <div className="section-heading">
           <div className="flex justify-center">
             <div className="tag">Testimonials</div>
           </div>
-          <h2 className="section-title mt-5">What our users say</h2>
-          <p className="section-description text-black">
+          <h2 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-[#3282B8] to-[#0F4C75] bg-clip-text text-transparent mt-5 text-center">What our users say</h2>
+          <p className="section-description text-[#BBE1FA] mt-5">
             From intutive design to powerful features, our app has become an
             essential tool for users around the world.
           </p>

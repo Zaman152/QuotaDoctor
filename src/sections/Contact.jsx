@@ -1,70 +1,69 @@
+"use client";
+
 import React from 'react';
 
 export default function CommentForm() {
     return (
-        <div id="contact" className="px-4 py-24">
+        <div id="contact" className="px-4 py-24 bg-[#0A0A0F]">
             <div className="max-w-3xl mx-auto">
                 <div className="text-center mb-8">
-                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-white/5 text-purple-200 text-sm font-medium backdrop-blur-xl">
-                        <span className="h-2 w-2 rounded-full bg-purple-400" aria-hidden="true" />
+                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#0F4C75] bg-[#16213E] text-[#3282B8] text-sm font-medium backdrop-blur-xl">
+                        <span className="h-2 w-2 rounded-full bg-[#3282B8]" aria-hidden="true" />
                         Contact
                     </div>
-                    <h2 className="section-title mt-4">Get in Touch</h2>
-                    <p className="section-description mt-4">We'd love to hear from you. Tell us a bit about your needs.</p>
+                    <h2 className="section-title mt-4">Partner with QuotaDoctor</h2>
+                    <p className="section-description mt-4">We'd love to hear from you. Tell us a bit about your sales challenges.</p>
                 </div>
 
-                <div className="p-[1px] rounded-2xl" style={{background:"linear-gradient(135deg, rgba(139,92,246,0.35), rgba(59,130,246,0.35))"}}>
-                    <div className="rounded-2xl bg-white/5 backdrop-blur-2xl border border-white/10 p-8 shadow-[0_10px_30px_rgba(2,6,23,0.30)]">
-                        <form className="space-y-5">
-                            {/* Comment Box */}
-                            <textarea
-                                className="w-full rounded-xl bg-white/5 border border-white/10 text-gray-200 placeholder-gray-400 p-4 focus:outline-none focus:ring-2 focus:ring-[#8B5CF6] min-h-[150px]"
-                                placeholder="Write your comment here..."
-                                required
-                            />
-
-                            {/* Name Input */}
-                            <input
-                                type="text"
-                                className="w-full rounded-xl bg-white/5 border border-white/10 text-gray-200 placeholder-gray-400 p-4 focus:outline-none focus:ring-2 focus:ring-[#8B5CF6]"
-                                placeholder="Name *"
-                                required
-                            />
-
-                            {/* Email Input */}
-                            <input
-                                type="email"
-                                className="w-full rounded-xl bg-white/5 border border-white/10 text-gray-200 placeholder-gray-400 p-4 focus:outline-none focus:ring-2 focus:ring-[#8B5CF6]"
-                                placeholder="Email *"
-                                required
-                            />
-
-                            {/* Website Input (Optional) */}
-                            <input
-                                type="url"
-                                className="w-full rounded-xl bg-white/5 border border-white/10 text-gray-200 placeholder-gray-400 p-4 focus:outline-none focus:ring-2 focus:ring-[#8B5CF6]"
-                                placeholder="Website"
-                            />
-
-                            {/* Save Info Checkbox */}
-                            <div className="flex items-center space-x-2">
+                <div className="p-[1px] rounded-2xl" style={{background:"linear-gradient(135deg, rgba(50,130,184,0.35), rgba(15,76,117,0.35))"}}>
+                    <div className="rounded-2xl bg-[#16213E] backdrop-blur-2xl border border-[#0F4C75]/30 p-8 shadow-[0_10px_30px_rgba(2,6,23,0.30)]">
+                        <form className="space-y-5" onSubmit={(e) => { e.preventDefault(); alert('Thanks — we\'ll follow up to schedule a strategy call.'); }}>
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                 <input
-                                    id="saveInfo"
-                                    type="checkbox"
-                                    className="h-4 w-4 text-purple-400 bg-white/5 border-white/20 rounded focus:ring-[#8B5CF6]"
+                                    type="text"
+                                    name="name"
+                                    required
+                                    className="w-full rounded-xl bg-[#1A1A2E] border border-[#0F4C75]/30 text-white placeholder-[#BBE1FA]/50 p-4 focus:outline-none focus:ring-2 focus:ring-[#3282B8]"
+                                    placeholder="Name *"
+                                    aria-label="Name"
                                 />
-                                <label htmlFor="saveInfo" className="text-sm text-gray-300">
-                                    Save my name, email, and website in this browser for the next time I comment.
-                                </label>
+                                <input
+                                    type="email"
+                                    name="email"
+                                    required
+                                    className="w-full rounded-xl bg-[#1A1A2E] border border-[#0F4C75]/30 text-white placeholder-[#BBE1FA]/50 p-4 focus:outline-none focus:ring-2 focus:ring-[#3282B8]"
+                                    placeholder="Email *"
+                                    aria-label="Email"
+                                />
                             </div>
 
-                            {/* Submit Button */}
-                            <button
-                                type="submit"
-                                className="btn btn-primary w-full py-3 rounded-xl font-semibold"
-                            >
-                                Post Comment
-                            </button>
+                            <input
+                                type="text"
+                                name="company"
+                                className="w-full rounded-xl bg-[#1A1A2E] border border-[#0F4C75]/30 text-white placeholder-[#BBE1FA]/50 p-4 focus:outline-none focus:ring-2 focus:ring-[#3282B8]"
+                                placeholder="Company"
+                                aria-label="Company"
+                            />
+
+                            <select name="arr" className="w-full rounded-xl bg-[#1A1A2E] border border-[#0F4C75]/30 text-white p-4 focus:outline-none focus:ring-2 focus:ring-[#3282B8]">
+                                <option value="<500k">ARR &lt; $500K</option>
+                                <option value="500k-1m">$500K - $1M</option>
+                                <option value="1m-5m">$1M - $5M</option>
+                                <option value="5m-10m">$5M - $10M</option>
+                                <option value=">10m">$10M+</option>
+                            </select>
+
+                            <textarea
+                                className="w-full rounded-xl bg-[#1A1A2E] border border-[#0F4C75]/30 text-white placeholder-[#BBE1FA]/50 p-4 focus:outline-none focus:ring-2 focus:ring-[#3282B8] min-h-[150px]"
+                                placeholder="Message (Describe your sales challenges)"
+                                name="message"
+                                required
+                            />
+
+                            <div className="flex gap-3">
+                                <button type="submit" className="btn btn-primary w-full py-3 rounded-xl font-semibold">Book Strategy Call</button>
+                                <a href="https://calendly.com/placeholder" target="_blank" rel="noopener noreferrer" className="btn btn-text w-full py-3 rounded-xl text-center">Book on Calendly</a>
+                            </div>
                         </form>
                     </div>
                 </div>

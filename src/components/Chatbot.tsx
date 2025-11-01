@@ -33,7 +33,7 @@ export default function Chatbot() {
         setIsLoading(true);
 
         try {
-            const response = await fetch('https://higllc.app.n8n.cloud/webhook/05eea566-1b6b-4dbe-bd92-037e9b62c438', {
+            const response = await fetch('https://leadlockerai.app.n8n.cloud/webhook/05eea566-1b6b-4dbe-bd92-037e9b62c438', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

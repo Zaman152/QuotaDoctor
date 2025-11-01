@@ -117,9 +117,9 @@ export default function Nomisscalls() {
     }
     
     return (
-        <div id="get-started" className="min-h-screen bg-gray-50">
+        <div id="get-started" className="min-h-screen bg-[#0A0A0F]">
             {/* Dark Header Bar */}
-            <div className="bg-gray-800 h-2 w-full"></div>
+            <div className="bg-[#16213E] h-2 w-full"></div>
 
             {/* Main Content */}
             <div className="max-w-6xl mx-auto px-4 py-12">
@@ -127,18 +127,17 @@ export default function Nomisscalls() {
                 {/* Header Section */}
                 <div className="mb-12">
                     <div className="flex items-center justify-center mb-6">
-                        <div className="bg-blue-500 rounded-lg p-2 mr-3">
+                        <div className="bg-[#3282B8] rounded-lg p-2 mr-3">
                             <span className="text-white text-2xl">⚡</span>
                         </div>
-                        <h1 className="text-3xl md:text-4xl font-bold text-gray-900">
-                            Eclipse Technologies Alternative: Eclipse Technologies vs MissNoCalls in Epic Bot Battle
+                        <h1 className="text-3xl md:text-4xl font-bold text-white">
+                            QuotaDoctor Case Study: Modern Sales Automation vs Traditional Approaches
                         </h1>
                     </div>
 
-                    <p className="text-center text-lg text-gray-700">
-                        Examine other best options in the market and see how{' '}
-                        <span className="font-bold">Eclipse Technologies</span> compares with{' '}
-                        <a href="#" className="text-blue-600 hover:underline font-semibold">MissNoCalls</a>:
+                    <p className="text-center text-lg text-[#BBE1FA]">
+                        Explore a case study comparing QuotaDoctor's sales operating system with other market approaches like MissNoCalls.
+                        <a href="#" className="text-[#3282B8] hover:text-[#BBE1FA] hover:underline font-semibold">Read the comparison</a>.
                     </p>
                 </div>
 
@@ -167,37 +166,37 @@ export default function Nomisscalls() {
                 </div>
 
                 {/* CTA Section */}
-                <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12 mb-12">
+                <div className="bg-[#16213E] border border-[#0F4C75]/30 rounded-2xl shadow-xl p-8 md:p-12 mb-12">
                     <div className="text-center max-w-4xl mx-auto">
-                        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 flex items-center justify-center">
-                            <Star className="w-8 h-8 text-yellow-500 mr-3" fill="currentColor" />
+                        <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 flex items-center justify-center">
+                            <Star className="w-8 h-8 text-[#3282B8] mr-3" fill="currentColor" />
                             Try MissNoCalls Today
                         </h2>
 
-                        <p className="text-lg text-gray-700 leading-relaxed mb-8">
-                            MissNoCalls wins this battle hands down. It&apos;s more flexible, budget-friendly, and global than Eclipse Technologies.
+                        <p className="text-lg text-[#BBE1FA] leading-relaxed mb-8">
+                            MissNoCalls wins this battle hands down. It&apos;s more flexible, budget-friendly, and global than many legacy solutions — QuotaDoctor focuses on measurable revenue outcomes and fractional leadership.
                             Whether you&apos;re a small company or a big enterprise, MissNoCalls is ready to help you grow. Plus, its
                             commitment to customer satisfaction ensures you&apos;ll always have the support you need.
                         </p>
 
-                        <div className="bg-gray-50 rounded-xl p-6 mb-8">
-                            <p className="text-xl font-semibold text-gray-900">
+                        <div className="bg-[#1A1A2E] border border-[#0F4C75]/30 rounded-xl p-6 mb-8">
+                            <p className="text-xl font-semibold text-white">
                                 Try MissNoCalls today.{' '}
-                                <button onClick={takeDemoCall} disabled={isCallActive} className={`${isCallActive ? 'text-gray-400 cursor-not-allowed' : 'text-blue-600 hover:underline cursor-pointer'}`}>Book a demo</button>{' '}
+                                <button onClick={takeDemoCall} disabled={isCallActive} className={`${isCallActive ? 'text-[#BBE1FA]/40 cursor-not-allowed' : 'text-[#3282B8] hover:text-[#BBE1FA] hover:underline cursor-pointer'}`}>Book a demo</button>{' '}
                                 to see how it can change the way you do business.
                             </p>
                             
                             {/* Call Status Display */}
                             {callStatus && (
-                                <div className={`mt-4 p-4 rounded-lg ${isCallActive ? 'bg-green-100 border-2 border-green-500' : 'bg-blue-100'}`}>
-                                    <p className="text-lg font-semibold text-gray-900 flex items-center justify-center">
-                                        {isCallActive && <Phone className="w-5 h-5 mr-2 animate-pulse text-green-600" />}
+                                <div className={`mt-4 p-4 rounded-lg ${isCallActive ? 'bg-[#3282B8]/20 border-2 border-[#3282B8]' : 'bg-[#1A1A2E] border border-[#0F4C75]/30'}`}>
+                                    <p className="text-lg font-semibold text-white flex items-center justify-center">
+                                        {isCallActive && <Phone className="w-5 h-5 mr-2 animate-pulse text-[#3282B8]" />}
                                         {callStatus}
                                     </p>
                                     {isCallActive && (
                                         <button 
                                             onClick={endCall}
-                                            className="mt-3 bg-red-600 hover:bg-red-700 text-white font-bold px-6 py-2 rounded-lg transition-all duration-300 inline-flex items-center mx-auto"
+                                            className="mt-3 bg-[#3282B8] hover:bg-[#0F4C75] text-white font-bold px-6 py-2 rounded-lg transition-all duration-300 inline-flex items-center mx-auto"
                                         >
                                             <PhoneOff className="w-5 h-5 mr-2" />
                                             End Call
@@ -207,7 +206,7 @@ export default function Nomisscalls() {
                             )}
                         </div>
 
-                        <button className="bg-purple-700 hover:bg-purple-800 text-white font-bold px-10 py-4 rounded-lg text-lg transition-all duration-300 hover:scale-105 shadow-lg inline-flex items-center">
+                        <button className="bg-[#3282B8] hover:bg-[#0F4C75] text-white font-bold px-10 py-4 rounded-lg text-lg transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-[0_0_25px_rgba(50,130,184,0.5)] inline-flex items-center">
                             <span className="mr-2">➕</span>
                             Get Started
                         </button>
@@ -215,18 +214,18 @@ export default function Nomisscalls() {
                 </div>
 
                 {/* Footer Navigation */}
-                <div className="bg-white rounded-xl shadow-md p-6">
+                <div className="bg-[#16213E] border border-[#0F4C75]/30 rounded-xl shadow-md p-6">
                     <div className="flex items-center mb-4">
-                        <Folder className="w-5 h-5 text-gray-600 mr-2" />
-                        <span className="text-sm font-semibold text-gray-700">Epic Bot Battles</span>
+                        <Folder className="w-5 h-5 text-[#3282B8] mr-2" />
+                        <span className="text-sm font-semibold text-white">Epic Bot Battles</span>
                     </div>
 
                     <div className="space-y-3">
-                        <div className="flex items-center text-gray-700 hover:text-blue-600 transition-colors">
+                        <div className="flex items-center text-[#BBE1FA] hover:text-[#3282B8] transition-colors">
                             <span className="mr-2">‹</span>
                             <a href="#" className="hover:underline">Convin Review, Pricing and Alternative</a>
                         </div>
-                        <div className="flex items-center text-gray-700 hover:text-blue-600 transition-colors">
+                        <div className="flex items-center text-[#BBE1FA] hover:text-[#3282B8] transition-colors">
                             <span className="mr-2">›</span>
                             <a href="#" className="hover:underline">Pixel Calls Review, Pricing and Alternative</a>
                         </div>

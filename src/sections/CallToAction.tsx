@@ -1,9 +1,6 @@
 "use client";
 
-import ArrowRight from "@/assets/arrow-right.svg";
-import starImage from "@/assets/star.png";
-import springImage from "@/assets/spring.png";
-import Image from "next/image";
+import { ArrowRight, Star, Sparkles } from "lucide-react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 
@@ -18,35 +15,33 @@ const sectionRef = useRef(null);
   const translateY = useTransform(scrollYProgress, [0,1],[150,-150]);
 
   return (
-    <section ref={sectionRef} className="bg-gradient-to-b from-white to-[#D2DCFF] py-24 overflow-x-clip">
+    <section ref={sectionRef} className="bg-gradient-to-br from-[#16213E] to-[#0A0A0F] py-24 overflow-x-clip">
       <div className="container">
         <div className="section-heading relative">
           <h2 className="section-title">Ready to Transform Your Business?</h2>
-          <p className="section-description mt-5 text-black">
-            Partner with Eclipse Technologies — Illuminating Innovation, Eclipsing Expectations.
+          <p className="section-description mt-5 text-[#BBE1FA]">
+            Partner with QuotaDoctor — Fix the system, elevate the reps, scale the revenue.
           </p>
-          <motion.img
-            src={starImage.src}
-            alt="Star Image"
-            width={360}
+          <motion.div
             className="absolute -left-[350px] -top-[137px]"
             style={{
               translateY,
             }}
-          />
-          <motion.img
-            src={springImage.src}
-            alt="Spring Image"
-            width={360}
+          >
+            <Star className="h-8 w-8" />
+          </motion.div>
+          <motion.div
             className="absolute -right-[331px] -top-[19px]"
             style={{
               translateY,
             }}
-          />
+          >
+            <Sparkles className="h-8 w-8" />
+          </motion.div>
         </div>
         <div className="flex gap-2 mt-10 justify-center">
-          <button className="btn btn-primary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black" aria-label="Contact Eclipse Technologies" onClick={() => document.getElementById('contact')?.scrollIntoView({behavior:'smooth'})}>Contact Us</button>
-          <button className="btn btn-text gap-1 text-blue-500 hover:text-blue-400 border-blue-500/50">
+          <button className="btn btn-primary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black" aria-label="Contact QuotaDoctor" onClick={() => document.getElementById('contact')?.scrollIntoView({behavior:'smooth'})}>Contact Us</button>
+          <button className="btn btn-text gap-1">
             <span>Learn more</span>
             <ArrowRight className="h-5 w-5" />
           </button>

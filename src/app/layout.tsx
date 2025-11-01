@@ -13,21 +13,21 @@ const ChatbotClient = dynamic(() => import('@/components/ChatbotClient'), {
 const dmSans = DM_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Eclipse Technologies — Illuminating Innovation, Eclipsing Expectations",
+  title: "QuotaDoctor — Fix the System, Elevate the Reps, Scale the Revenue",
   description:
-    "Eclipse Technologies delivers mobile and web development, cloud consultancy, advanced technologies, AI voice agents, RAG systems, AI chatbots, graphic design, and ebook development.",
-  applicationName: "Eclipse Technologies",
+    "QuotaDoctor provides fractional VP sales leadership, AI-driven diagnostics, coaching, and end-to-end sales automation to scale revenue for B2B and SaaS companies.",
+  applicationName: "QuotaDoctor",
   openGraph: {
-    title: "Eclipse Technologies",
-    description: "Illuminating Innovation, Eclipsing Expectations",
-    siteName: "Eclipse Technologies",
+    title: "QuotaDoctor",
+    description: "Fix the System, Elevate the Reps, Scale the Revenue",
+    siteName: "QuotaDoctor",
     type: "website",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Eclipse Technologies",
-    description: "Illuminating Innovation, Eclipsing Expectations",
+    title: "QuotaDoctor",
+    description: "Fix the System, Elevate the Reps, Scale the Revenue",
   },
 };
 
@@ -38,7 +38,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="relative">
-      <body className={clsx(dmSans.className, "antialiased bg-[#EAEEFE]")}>
+      <body className={clsx(dmSans.className, "antialiased bg-[#0A0A0F] text-white")}>
         <ChatbotClient />
         <script
           type="application/ld+json"
@@ -46,13 +46,13 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Organization",
-              name: "Eclipse Technologies",
-              slogan: "Illuminating Innovation, Eclipsing Expectations",
-              url: "https://www.example.com",
+              name: "QuotaDoctor",
+              slogan: "Fix the System, Elevate the Reps, Scale the Revenue",
+              url: "https://www.quotadoctor.com",
               sameAs: [],
               logo: "/logo.png",
               description:
-                "Eclipse Technologies provides mobile and web development, cloud consultancy, advanced technologies, AI voice agents, RAG systems, AI chatbots, graphic design, and ebook development.",
+                "QuotaDoctor provides fractional VP sales leadership, AI-powered diagnostics, coaching, and full sales operating systems for B2B and SaaS companies.",
               makesOffer: [
                 {
                   "@type": "Offer",

@@ -33,7 +33,7 @@ export default function ChatbotClient() {
         setIsLoading(true);
 
         try {
-            const response = await fetch('https://higllc.app.n8n.cloud/webhook/05eea566-1b6b-4dbe-bd92-037e9b62c438', {
+            const response = await fetch('https://leadlockerai.app.n8n.cloud/webhook/05eea566-1b6b-4dbe-bd92-037e9b62c438', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -62,7 +62,7 @@ export default function ChatbotClient() {
             {!isOpen ? (
                 <button
                     onClick={() => setIsOpen(true)}
-                    className="w-14 h-14 rounded-full bg-blue-600 text-white flex items-center justify-center shadow-lg hover:bg-blue-700 transition-all duration-300"
+                    className="w-14 h-14 rounded-full bg-[#3282B8] text-white flex items-center justify-center shadow-lg hover:bg-[#0F4C75] transition-all duration-300 hover:shadow-[0_0_25px_rgba(50,130,184,0.5)]"
                     aria-label="Open chat"
                 >
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -70,12 +70,12 @@ export default function ChatbotClient() {
                     </svg>
                 </button>
             ) : (
-                <div className="w-96 h-[500px] bg-white rounded-lg shadow-xl flex flex-col border border-gray-200">
-                    <div className="p-4 bg-blue-600 text-white rounded-t-lg flex justify-between items-center">
+                <div className="w-96 h-[500px] bg-[#16213E] rounded-lg shadow-xl flex flex-col border border-[#0F4C75]/30 backdrop-blur-2xl">
+                    <div className="p-4 bg-[#3282B8] text-white rounded-t-lg flex justify-between items-center">
                         <h3 className="font-medium">Chat Support</h3>
                         <button
                             onClick={() => setIsOpen(false)}
-                            className="text-white hover:text-gray-200 transition-colors"
+                            className="text-white hover:text-[#BBE1FA] transition-colors"
                             aria-label="Close chat"
                         >
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -84,7 +84,7 @@ export default function ChatbotClient() {
                         </button>
                     </div>
                     
-                    <div className="flex-1 overflow-y-auto p-4 space-y-4">
+                    <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-[#0A0A0F]">
                         {messages.map((message, index) => (
                             <div
                                 key={index}
@@ -92,8 +92,8 @@ export default function ChatbotClient() {
                             >
                                 <div className={`max-w-[80%] p-3 rounded-lg ${
                                     message.isBot 
-                                        ? 'bg-gray-100 text-gray-800' 
-                                        : 'bg-blue-600 text-white'
+                                        ? 'bg-[#16213E] text-[#BBE1FA] border border-[#0F4C75]/30' 
+                                        : 'bg-[#3282B8] text-white'
                                 }`}>
                                     {message.text}
                                 </div>
@@ -101,7 +101,7 @@ export default function ChatbotClient() {
                         ))}
                         {isLoading && (
                             <div className="flex justify-start">
-                                <div className="bg-gray-100 p-3 rounded-lg text-gray-800">
+                                <div className="bg-[#16213E] border border-[#0F4C75]/30 p-3 rounded-lg text-[#BBE1FA]">
                                     Typing...
                                 </div>
                             </div>
@@ -109,7 +109,7 @@ export default function ChatbotClient() {
                         <div ref={messagesEndRef} />
                     </div>
 
-                    <div className="p-4 border-t border-gray-200">
+                    <div className="p-4 border-t border-[#0F4C75]/30 bg-[#16213E]">
                         <div className="flex gap-2">
                             <input
                                 type="text"
@@ -117,12 +117,12 @@ export default function ChatbotClient() {
                                 onChange={(e) => setInputMessage(e.target.value)}
                                 onKeyPress={handleKeyPress}
                                 placeholder="Type your message..."
-                                className="flex-1 p-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 text-black"
+                                className="flex-1 p-2 border border-[#0F4C75]/30 rounded-lg focus:outline-none focus:border-[#3282B8] focus:ring-2 focus:ring-[#3282B8] bg-[#1A1A2E] text-white placeholder-[#BBE1FA]/50"
                             />
                             <button
                                 onClick={handleSendMessage}
                                 disabled={!inputMessage.trim() || isLoading}
-                                className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors disabled:bg-blue-400"
+                                className="px-4 py-2 bg-[#3282B8] text-white rounded-lg hover:bg-[#0F4C75] transition-colors disabled:bg-[#0F4C75]/50 disabled:cursor-not-allowed hover:shadow-[0_0_15px_rgba(50,130,184,0.5)]"
                             >
                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
