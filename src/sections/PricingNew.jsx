@@ -177,7 +177,7 @@ export default function LeadLockerPricingPage() {
                         Choose the plan that fits your business stage — or book a free strategy call to diagnose your sales system.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                        <a href="https://calendly.com/placeholder" target="_blank" rel="noopener noreferrer" className="bg-[#3282B8] text-white font-bold px-8 py-4 rounded-xl hover:bg-[#0F4C75] hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-[0_0_25px_rgba(50,130,184,0.5)]">Book Strategy Call</a>
+                        <a href="https://calendly.com/quotadoctor/30min" target="_blank" rel="noopener noreferrer" className="bg-[#3282B8] text-white font-bold px-8 py-4 rounded-xl hover:bg-[#0F4C75] hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-[0_0_25px_rgba(50,130,184,0.5)]">Book Strategy Call</a>
                         <button className="bg-transparent text-[#3282B8] font-bold px-8 py-4 rounded-xl border-2 border-[#3282B8] hover:bg-[#3282B8] hover:text-white hover:scale-105 transition-all duration-300">
                             Contact Sales
                         </button>

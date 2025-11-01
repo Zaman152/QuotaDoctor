@@ -27,7 +27,7 @@ export const Header = () => {
               <a href="#features" className="hover:text-[#3282B8] transition-colors">Features</a>
               <a href="#pricing" className="hover:text-[#3282B8] transition-colors">Pricing</a>
               <a href="#contact" className="hover:text-[#3282B8] transition-colors">Contact</a>
-              <a href="https://calendly.com/placeholder" target="_blank" rel="noopener noreferrer" className="btn btn-primary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#3282B8]">
+              <a href="https://calendly.com/quotadoctor/30min" target="_blank" rel="noopener noreferrer" className="btn btn-primary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#3282B8]">
                 Book a Strategy Call
               </a>
             </nav>

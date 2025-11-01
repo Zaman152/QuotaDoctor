@@ -48,7 +48,7 @@ export const Hero = () => {
               We provide Fractional VP Sales expertise and AI automation to scale your sales without the $200K+ executive overhead.
             </p>
             <div className="flex gap-3 items-center mt-8">
-              <a href="https://calendly.com/placeholder" target="_blank" rel="noopener noreferrer" className="btn btn-primary px-6 py-3 rounded-xl font-semibold" aria-label="Book a Strategy Call">Book a Strategy Call</a>
+              <a href="https://calendly.com/quotadoctor/30min" target="_blank" rel="noopener noreferrer" className="btn btn-primary px-6 py-3 rounded-xl font-semibold" aria-label="Book a Strategy Call">Book a Strategy Call</a>
               <button onClick={() => document.getElementById('services')?.scrollIntoView({behavior:'smooth'})} className="btn btn-text" aria-label="See our solutions">See Our Solutions</button>
             </div>
             {/* <div className="flex gap-1 items-center mt-[30px]">

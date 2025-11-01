@@ -62,7 +62,7 @@ export default function CommentForm() {
 
                             <div className="flex gap-3">
                                 <button type="submit" className="btn btn-primary w-full py-3 rounded-xl font-semibold">Book Strategy Call</button>
-                                <a href="https://calendly.com/placeholder" target="_blank" rel="noopener noreferrer" className="btn btn-text w-full py-3 rounded-xl text-center">Book on Calendly</a>
+                                <a href="https://calendly.com/quotadoctor/30min" target="_blank" rel="noopener noreferrer" className="btn btn-text w-full py-3 rounded-xl text-center">Book on Calendly</a>
                             </div>
                         </form>
                     </div>
