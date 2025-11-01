@@ -179,19 +179,16 @@ export const Hero = () => {
               <Zap className="h-10 w-10 text-[#3282B8]/50" fill="#3282B8" />
             </motion.div>
 
-            {/* Additional Floating Cylinder - Bottom Right */}
+         {/* Additional Floating Cylinder - Bottom Right */}
             <motion.div
               className="hidden lg:block absolute bottom-32 right-12"
-              animate={{
+              style={{
                 translateY: translateY,
+              }}
+              animate={{
                 rotate: [0, 180],
               }}
               transition={{
-                translateY: {
-                  duration: 10,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                },
                 rotate: {
                   duration: 15,
                   repeat: Infinity,
