@@ -18,10 +18,14 @@ const sectionRef = useRef(null);
     <section ref={sectionRef} className="bg-gradient-to-br from-[#16213E] to-[#0A0A0F] py-24 overflow-x-clip">
       <div className="container">
         <div className="section-heading relative">
-          <h2 className="section-title">Ready to Transform Your Business?</h2>
-          <p className="section-description mt-5 text-[#BBE1FA]">
-            Partner with QuotaDoctor — Fix the system, elevate the reps, scale the revenue.
-          </p>
+          <h2 className="section-title">What Happens in 15 Minutes</h2>
+          <div className="mt-8 max-w-2xl mx-auto">
+            <ul className="text-lg text-[#BBE1FA] space-y-4 list-disc list-inside text-left">
+              <li>We map your current sales flow and pinpoint inconsistency</li>
+              <li>We show how film-room coaching tightens fundamentals fast</li>
+              <li>We outline next steps (Analyzer now; Coach/SDR when ready)</li>
+            </ul>
+          </div>
           <motion.div
             className="absolute -left-[350px] -top-[137px]"
             style={{
@@ -40,11 +44,7 @@ const sectionRef = useRef(null);
           </motion.div>
         </div>
         <div className="flex gap-2 mt-10 justify-center">
-          <button className="btn btn-primary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black" aria-label="Contact QuotaDoctor" onClick={() => document.getElementById('contact')?.scrollIntoView({behavior:'smooth'})}>Contact Us</button>
-          <button className="btn btn-text gap-1">
-            <span>Learn more</span>
-            <ArrowRight className="h-5 w-5" />
-          </button>
+          <a href="https://calendly.com/quotadoctor/15min" target="_blank" rel="noopener noreferrer" className="btn btn-primary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black" aria-label="Book Your 15-Minute Film-Room Diagnostic">Book Your 15-Minute Film-Room Diagnostic</a>
         </div>
       </div>
     </section>

@@ -8,7 +8,7 @@ export const Header = () => {
           Fix the System, Elevate the Reps, Scale the Revenue
         </p>
         <div className="inline-flex gap-1 items-center">
-          <p>Start with a free strategy call</p>
+          <p>Start with a 15-minute film-room diagnostic</p>
           <ArrowRight className="h-4 w-4 inline-flex justify-center items-center" />
         </div>
       </div>
@@ -22,13 +22,14 @@ export const Header = () => {
             <Menu className="h-6 w-6 md:hidden text-white" />
 
             <nav className="hidden md:flex gap-6 text-[#BBE1FA] items-center">
-              <a href="#about" className="hover:text-[#3282B8] transition-colors">About</a>
-              <a href="#services" className="hover:text-[#3282B8] transition-colors">Services</a>
-              <a href="#features" className="hover:text-[#3282B8] transition-colors">Features</a>
+              <a href="#home" className="hover:text-[#3282B8] transition-colors">Home</a>
+              <a href="#services" className="hover:text-[#3282B8] transition-colors">Analyzer</a>
+              <a href="#services" className="hover:text-[#3282B8] transition-colors">SDR Services</a>
+              <a href="#services" className="hover:text-[#3282B8] transition-colors">Fractional VP</a>
               <a href="#pricing" className="hover:text-[#3282B8] transition-colors">Pricing</a>
               <a href="#contact" className="hover:text-[#3282B8] transition-colors">Contact</a>
-              <a href="https://calendly.com/quotadoctor/30min" target="_blank" rel="noopener noreferrer" className="btn btn-primary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#3282B8]">
-                Book a Strategy Call
+              <a href="https://calendly.com/quotadoctor/15min" target="_blank" rel="noopener noreferrer" className="btn btn-primary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#3282B8]">
+                Book Your 15-Minute Film-Room Diagnostic
               </a>
             </nav>
           </div>

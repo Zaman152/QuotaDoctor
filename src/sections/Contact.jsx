@@ -17,7 +17,7 @@ export default function CommentForm() {
 
                 <div className="p-[1px] rounded-2xl" style={{background:"linear-gradient(135deg, rgba(50,130,184,0.35), rgba(15,76,117,0.35))"}}>
                     <div className="rounded-2xl bg-[#16213E] backdrop-blur-2xl border border-[#0F4C75]/30 p-8 shadow-[0_10px_30px_rgba(2,6,23,0.30)]">
-                        <form className="space-y-5" onSubmit={(e) => { e.preventDefault(); alert('Thanks — we\'ll follow up to schedule a strategy call.'); }}>
+                        <form className="space-y-5" onSubmit={(e) => { e.preventDefault(); alert('Thanks — we\'ll follow up to schedule your 15-minute film-room diagnostic.'); }}>
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                 <input
                                     type="text"
@@ -61,8 +61,8 @@ export default function CommentForm() {
                             />
 
                             <div className="flex gap-3">
-                                <button type="submit" className="btn btn-primary w-full py-3 rounded-xl font-semibold">Book Strategy Call</button>
-                                <a href="https://calendly.com/quotadoctor/30min" target="_blank" rel="noopener noreferrer" className="btn btn-text w-full py-3 rounded-xl text-center">Book on Calendly</a>
+                                <button type="submit" className="btn btn-primary w-full py-3 rounded-xl font-semibold">Book Your 15-Minute Film-Room Diagnostic</button>
+                                <a href="https://calendly.com/quotadoctor/15min" target="_blank" rel="noopener noreferrer" className="btn btn-text w-full py-3 rounded-xl text-center">Book on Calendly</a>
                             </div>
                         </form>
                     </div>

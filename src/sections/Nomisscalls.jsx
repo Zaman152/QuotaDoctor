@@ -1,5 +1,5 @@
 "use client";
-import { Play, Star, Folder, Phone, PhoneOff } from 'lucide-react';
+import { Star, Phone, PhoneOff } from 'lucide-react';
 import { useEffect, useState, useRef } from 'react';
 import { RetellWebClient } from "retell-client-js-sdk";
 
@@ -117,56 +117,15 @@ export default function Nomisscalls() {
     }
     
     return (
-        <div id="get-started" className="min-h-screen bg-[#0A0A0F]">
+        <div id="get-started" className="bg-[#0A0A0F]">
             {/* Dark Header Bar */}
             <div className="bg-[#16213E] h-2 w-full"></div>
 
             {/* Main Content */}
-            <div className="max-w-6xl mx-auto px-4 py-12">
-
-                {/* Header Section */}
-                <div className="mb-12">
-                    <div className="flex items-center justify-center mb-6">
-                        <div className="bg-[#3282B8] rounded-lg p-2 mr-3">
-                            <span className="text-white text-2xl">⚡</span>
-                        </div>
-                        <h1 className="text-3xl md:text-4xl font-bold text-white">
-                            QuotaDoctor Case Study: Modern Sales Automation vs Traditional Approaches
-                        </h1>
-                    </div>
-
-                    <p className="text-center text-lg text-[#BBE1FA]">
-                        Explore a case study comparing QuotaDoctor's sales operating system with other market approaches like MissNoCalls.
-                        <a href="#" className="text-[#3282B8] hover:text-[#BBE1FA] hover:underline font-semibold">Read the comparison</a>.
-                    </p>
-                </div>
-
-                {/* Video Section */}
-                <div className="mb-16">
-                    <div className="bg-gray-900 rounded-2xl overflow-hidden shadow-2xl aspect-video relative">
-                        {/* Video Thumbnail/Placeholder */}
-                        <div className="absolute inset-0 bg-gradient-to-br from-purple-900 via-pink-900 to-blue-900 flex items-center justify-center">
-                            <div className="text-center">
-                                <div className="inline-flex items-center justify-center w-20 h-20 bg-red-600 rounded-full mb-4 hover:bg-red-700 transition-colors cursor-pointer">
-                                    <Play className="w-10 h-10 text-white ml-1" fill="white" />
-                                </div>
-                                <h3 className="text-white text-2xl font-bold mb-2">
-                                    🔥 Voiceflow vs MissNoCalls Upfront - Epic Bot Battles 🔥
-                                </h3>
-                                <div className="text-white/80 text-sm">Watch on YouTube</div>
-                            </div>
-                        </div>
-
-                        {/* Overlay decoration */}
-                        <div className="absolute inset-0 pointer-events-none">
-                            <div className="absolute top-4 left-4 text-white/20 text-6xl">🤖</div>
-                            <div className="absolute bottom-4 right-4 text-white/20 text-6xl">⚡</div>
-                        </div>
-                    </div>
-                </div>
+            <div className="max-w-6xl mx-auto px-4 py-16">
 
                 {/* CTA Section */}
-                <div className="bg-[#16213E] border border-[#0F4C75]/30 rounded-2xl shadow-xl p-8 md:p-12 mb-12">
+                <div className="bg-[#16213E] border border-[#0F4C75]/30 rounded-2xl shadow-xl p-8 md:p-12">
                     <div className="text-center max-w-4xl mx-auto">
                         <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 flex items-center justify-center">
                             <Star className="w-8 h-8 text-[#3282B8] mr-3" fill="currentColor" />
@@ -210,25 +169,6 @@ export default function Nomisscalls() {
                             <span className="mr-2">➕</span>
                             Get Started
                         </button>
-                    </div>
-                </div>
-
-                {/* Footer Navigation */}
-                <div className="bg-[#16213E] border border-[#0F4C75]/30 rounded-xl shadow-md p-6">
-                    <div className="flex items-center mb-4">
-                        <Folder className="w-5 h-5 text-[#3282B8] mr-2" />
-                        <span className="text-sm font-semibold text-white">Epic Bot Battles</span>
-                    </div>
-
-                    <div className="space-y-3">
-                        <div className="flex items-center text-[#BBE1FA] hover:text-[#3282B8] transition-colors">
-                            <span className="mr-2">‹</span>
-                            <a href="#" className="hover:underline">Convin Review, Pricing and Alternative</a>
-                        </div>
-                        <div className="flex items-center text-[#BBE1FA] hover:text-[#3282B8] transition-colors">
-                            <span className="mr-2">›</span>
-                            <a href="#" className="hover:underline">Pixel Calls Review, Pricing and Alternative</a>
-                        </div>
                     </div>
                 </div>
 

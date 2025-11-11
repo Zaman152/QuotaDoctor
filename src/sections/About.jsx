@@ -23,20 +23,20 @@ export default function About() {
         {
             icon: <Mail className="w-5 h-5 text-[#3282B8]" />,
             label: 'Sales',
-            value: 'sales@leadlocker.io',
-            link: 'mailto:sales@leadlocker.io'
+            value: 'dave@quotadoctor.com',
+            link: 'mailto:dave@quotadoctor.com'
         },
         {
             icon: <Mail className="w-5 h-5 text-[#3282B8]" />,
             label: 'Support',
-            value: 'support@leadlocker.io',
-            link: 'mailto:support@leadlocker.io'
+            value: 'dave@quotadoctor.com',
+            link: 'mailto:dave@quotadoctor.com'
         },
         {
             icon: <Phone className="w-5 h-5 text-[#3282B8]" />,
             label: 'Phone',
-            value: '(213) 205-0656',
-            link: 'tel:+12132050656'
+            value: '(coming soon)',
+            link: '#'
         },
         {
             icon: <Linkedin className="w-5 h-5 text-[#3282B8]" />,
@@ -47,8 +47,8 @@ export default function About() {
         {
             icon: <Instagram className="w-5 h-5 text-[#3282B8]" />,
             label: 'Instagram',
-            value: '@leadlocker.io',
-            link: 'https://instagram.com/leadlocker.io'
+            value: '@quotadoctor',
+            link: 'https://instagram.com/quotadoctor'
         }
     ];
 

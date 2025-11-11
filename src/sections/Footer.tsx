@@ -24,14 +24,9 @@ export const Footer = () => {
           <Youtube className="h-5 w-5 text-[#BBE1FA] hover:text-[#3282B8] transition-colors cursor-pointer" />
         </div>
         <p className="mt-6 text-[#BBE1FA]/60">
-          &copy; 2024 QuotaDoctor. All rights reserved.
+          QuotaDoctor™ — Elite Sales Systems & Film-Room Performance Coaching
           <br />
-          <Link
-            className="hover:text-[#3282B8] transition-all"
-            href="https:zama.framer.ai"
-          >
-            Built with care
-          </Link>
+          &copy; 2024 QuotaDoctor. All rights reserved.
         </p>
       </div>
     </footer>

@@ -53,7 +53,7 @@ export default function Features() {
                         The QuotaDoctor Advantage
                     </h1>
                     <p className="text-xl text-[#BBE1FA] max-w-3xl mx-auto">
-                        Sales optimization, fractional leadership, and AI-powered systems to compound win rates and scale predictable revenue.
+                        Film-room coaching for sales teams. Fix the mechanics that close deals with AI-powered systems to compound win rates and scale predictable revenue.
                     </p>
                 </div>
 
@@ -132,7 +132,7 @@ export default function Features() {
                     <p className="text-xl text-[#BBE1FA] mb-8">
                         Experience modern sales engineering with QuotaDoctor — fractional leadership, AI systems, and measurable revenue outcomes.
                     </p>
-                    <button className="btn btn-primary px-8 py-4 rounded-xl font-bold" onClick={() => document.getElementById('contact')?.scrollIntoView({behavior:'smooth'})}>Contact Us</button>
+                    <a href="https://calendly.com/quotadoctor/15min" target="_blank" rel="noopener noreferrer" className="btn btn-primary px-8 py-4 rounded-xl font-bold">Book Your 15-Minute Film-Room Diagnostic</a>
                 </div>
 
             </div>

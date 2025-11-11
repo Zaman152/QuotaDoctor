@@ -23,33 +23,27 @@ type Service = {
 const services: Service[] = [
   {
     icon: <Cpu className="w-7 h-7" aria-hidden="true" />,
-    title: 'Sales Analyzer',
+    title: 'Sales Call Analyzer',
     description:
-      'Eliminate guesswork with AI-powered diagnostics. We analyze calls, pipeline, messaging, and CRM data to identify revenue leaks and system weaknesses.',
+      'Score 100% of calls automatically with AI-powered film-room analysis. Diagnose every call, identify revenue leaks, and pinpoint system weaknesses in your pipeline, messaging, and CRM data.',
   },
   {
     icon: <BookOpen className="w-7 h-7" aria-hidden="true" />,
-    title: 'Analyzer + Coach',
+    title: 'Analyzer + AI Sales Coach',
     description:
-      'Diagnostics plus continuous team performance coaching. Personalized, data-driven coaching loops that level up your reps and compound win rates.',
+      'Turn feedback into weekly coaching. Film-room diagnostics plus continuous team performance coaching. Personalized, data-driven coaching loops that level up your reps and compound win rates.',
   },
   {
     icon: <Brain className="w-7 h-7" aria-hidden="true" />,
-    title: 'Full AI Sales System',
+    title: 'Analyzer + Coach + SDR Engine',
     description:
-      'Complete revenue engine with diagnostics, coaching, and AI-powered lead generation. Your end-to-end sales operating system.',
+      'Complete revenue engine with film-room diagnostics, coaching, and AI-powered SDR automation. Your end-to-end sales operating system that creates consistent, predictable performance.',
   },
   {
     icon: <Globe className="w-7 h-7" aria-hidden="true" />,
     title: 'Fractional VP Sales',
     description:
-      'Executive-level strategic leadership and hands-on guidance. Get VP-level expertise without the $200K+ salary and overhead.',
-  },
-  {
-    icon: <MessageSquare className="w-7 h-7" aria-hidden="true" />,
-    title: 'AI Custom Personal Assistant',
-    description:
-      'Reclaim your time with intelligent automation. Manage communications, automate executive tasks, and get instant insights to maximize founder productivity.',
+      'Executive-level strategic leadership and hands-on guidance. Get VP-level expertise without the $200K+ salary and overhead. Film-room coaching at the executive level.',
   },
 ];
 
@@ -69,9 +63,9 @@ export default function Services() {
             <span className="h-2 w-2 rounded-full bg-[#3282B8]" aria-hidden="true" />
             Our Expertise
           </div>
-          <h2 className="mt-4 text-4xl md:text-5xl font-extrabold tracking-tight section-title">Our Core Services</h2>
+          <h2 className="mt-4 text-4xl md:text-5xl font-extrabold tracking-tight section-title">Film-Room Performance Coaching</h2>
           <p className="text-lg md:text-xl text-[#BBE1FA] mt-4 max-w-2xl mx-auto">
-            QuotaDoctor — Fix the system, elevate the reps, scale the revenue
+            QuotaDoctor — Fix the mechanics that close deals. Film-room coaching for sales teams.
           </p>
         </div>
 

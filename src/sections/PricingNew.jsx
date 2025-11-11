@@ -3,13 +3,14 @@ import { Check, AlertCircle } from 'lucide-react';
 export default function LeadLockerPricingPage() {
     const pricingPlans = [
         {
-            name: 'Sales Analyzer',
-            setup: '$1,999',
-            priceRange: '$599 - $799/mo',
+            name: 'Sales Call Analyzer',
+            setup: '$2,999',
+            priceRange: '$999/mo',
             popular: false,
             features: [
-                'AI-powered sales diagnostics',
-                'Call analysis & pipeline review',
+                'Score 100% of calls automatically',
+                'AI-powered call analysis',
+                'Pipeline review & diagnostics',
                 'Revenue leak identification',
                 'CRM data analysis',
                 'Monthly performance reports'
@@ -17,12 +18,13 @@ export default function LeadLockerPricingPage() {
             cta: 'Get Started'
         },
         {
-            name: 'Analyzer + Coach',
-            setup: '$3,499',
-            priceRange: '$1,199 - $1,399/mo',
+            name: 'Analyzer + AI Sales Coach',
+            setup: '$4,999',
+            priceRange: '$1,499/mo',
             popular: true,
             features: [
-                'Everything in Tier 1',
+                'Everything in Analyzer',
+                'Turn feedback into weekly coaching',
                 'Continuous rep coaching',
                 'Weekly coaching sessions',
                 'Performance dashboards',
@@ -32,19 +34,35 @@ export default function LeadLockerPricingPage() {
             cta: 'Get Started'
         },
         {
-            name: 'Full AI Sales System',
-            setup: '$7,999',
-            priceRange: '$1,499 - $1,699/mo',
+            name: 'Analyzer + Coach + SDR Engine',
+            setup: '$6,999',
+            priceRange: '$1,999/mo',
             popular: false,
             features: [
-                'Everything in Tier 2',
+                'Everything in Analyzer + Coach',
                 'AI-powered lead generation',
                 'Automated outreach campaigns',
+                'SDR automation',
                 'Full sales automation',
                 'Custom playbook development',
                 'Bi-weekly strategy calls'
             ],
             cta: 'Get Started'
+        },
+        {
+            name: 'Fractional VP Sales',
+            setup: 'Custom',
+            priceRange: 'Custom pricing',
+            popular: false,
+            features: [
+                'Executive-level strategic leadership',
+                'Hands-on sales team guidance',
+                'VP-level expertise',
+                'Custom implementation',
+                'Strategic planning',
+                'Team building & hiring support'
+            ],
+            cta: 'Contact Us'
         }
     ];
 
@@ -65,7 +83,7 @@ export default function LeadLockerPricingPage() {
                         Choose the plan that fits your business stage and start scaling today
                     </h1>
                     <p className="text-xl text-[#BBE1FA] max-w-3xl mx-auto">
-                        Review QuotaDoctor pricing tiers and select the right level of coverage for your sales system. Free strategy call included to diagnose your sales system before committing.
+                        Review QuotaDoctor pricing tiers and select the right level of coverage for your sales system. 15-minute film-room diagnostic included to diagnose your sales system before committing.
                     </p>
                 </div>
 
@@ -76,7 +94,7 @@ export default function LeadLockerPricingPage() {
                         <h2 className="text-3xl font-bold text-white">Pricing Options:</h2>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                         {pricingPlans.map((plan, index) => (
                             <div
                                 key={index}
@@ -103,6 +121,7 @@ export default function LeadLockerPricingPage() {
                                             {plan.priceRange}
                                         </span>
                                     </div>
+                                    <div className="text-xs text-[#BBE1FA]/60 mt-2">Month-to-month after setup. Upgrades anytime.</div>
                                 </div>
 
                                 <button className={`w-full py-3 rounded-xl font-semibold mb-6 transition-all duration-300 ${plan.popular
@@ -157,13 +176,13 @@ export default function LeadLockerPricingPage() {
                     {/* Additional Info Card */}
                     <div className="bg-[#16213E] border-2 border-[#0F4C75] rounded-2xl p-6 max-w-3xl mx-auto mt-6">
                         <h3 className="text-lg font-bold text-white mb-3">
-                            ✨ Free Strategy Call
+                            ✨ 15-Minute Film-Room Diagnostic
                         </h3>
                         <p className="text-[#BBE1FA]">
-                            Free strategy call included to diagnose your sales system before committing to any plan.
+                            15-minute film-room diagnostic included to diagnose your sales system before committing to any plan.
                         </p>
                         <p className="mt-3 text-sm text-[#BBE1FA]/80">
-                            Custom Fractional VP Plan: $5K-$15K+ onboarding + $6K-$15K+ monthly for strategic leadership - Apply for Custom Strategy
+                            Month-to-month after setup. Upgrades anytime.
                         </p>
                     </div>
                 </div>
@@ -174,10 +193,10 @@ export default function LeadLockerPricingPage() {
                         Ready to Start Scaling Revenue?
                     </h3>
                     <p className="text-xl text-[#BBE1FA] mb-8">
-                        Choose the plan that fits your business stage — or book a free strategy call to diagnose your sales system.
+                        Choose the plan that fits your business stage — or book a 15-minute film-room diagnostic to diagnose your sales system.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                        <a href="https://calendly.com/quotadoctor/30min" target="_blank" rel="noopener noreferrer" className="bg-[#3282B8] text-white font-bold px-8 py-4 rounded-xl hover:bg-[#0F4C75] hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-[0_0_25px_rgba(50,130,184,0.5)]">Book Strategy Call</a>
+                        <a href="https://calendly.com/quotadoctor/15min" target="_blank" rel="noopener noreferrer" className="bg-[#3282B8] text-white font-bold px-8 py-4 rounded-xl hover:bg-[#0F4C75] hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-[0_0_25px_rgba(50,130,184,0.5)]">Book Your 15-Minute Film-Room Diagnostic</a>
                         <button className="bg-transparent text-[#3282B8] font-bold px-8 py-4 rounded-xl border-2 border-[#3282B8] hover:bg-[#3282B8] hover:text-white hover:scale-105 transition-all duration-300">
                             Contact Sales
                         </button>
