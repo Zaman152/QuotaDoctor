@@ -15,7 +15,7 @@ export default function About() {
         {
             icon: <MapPin className="w-8 h-8 text-[#3282B8]" />,
             label: 'Location',
-            value: '[Your City, State, Country]'
+            value: 'Denver, CO, USA'
         }
     ];
 
@@ -35,8 +35,8 @@ export default function About() {
         {
             icon: <Phone className="w-5 h-5 text-[#3282B8]" />,
             label: 'Phone',
-            value: '(coming soon)',
-            link: '#'
+            value: '17207307899',
+            link: 'tel:+17207307899'
         },
         {
             icon: <Linkedin className="w-5 h-5 text-[#3282B8]" />,
