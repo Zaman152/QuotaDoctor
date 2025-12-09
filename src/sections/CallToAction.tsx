@@ -44,7 +44,7 @@ const sectionRef = useRef(null);
           </motion.div>
         </div>
         <div className="flex gap-2 mt-10 justify-center">
-          <a href="https://calendly.com/quotadoctor/15min" target="_blank" rel="noopener noreferrer" className="btn btn-primary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black" aria-label="Book Your 15-Minute Film-Room Diagnostic">Book Your 15-Minute Film-Room Diagnostic</a>
+          <a href="https://calendly.com/quotadoctor/15min" target="_blank" rel="noopener noreferrer" className="btn btn-primary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black" aria-label="Book Your AI Strategy Session">Book Your AI Strategy Session</a>
         </div>
       </div>
     </section>

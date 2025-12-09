@@ -17,33 +17,66 @@ import {
 type Service = {
   icon: JSX.Element;
   title: string;
-  description: string;
+  description: React.ReactNode;
 };
 
 const services: Service[] = [
   {
     icon: <Cpu className="w-7 h-7" aria-hidden="true" />,
-    title: 'Sales Call Analyzer',
-    description:
-      'Score 100% of calls automatically with AI-powered film-room analysis. Diagnose every call, identify revenue leaks, and pinpoint system weaknesses in your pipeline, messaging, and CRM data.',
-  },
-  {
-    icon: <BookOpen className="w-7 h-7" aria-hidden="true" />,
-    title: 'Analyzer + AI Sales Coach',
-    description:
-      'Turn feedback into weekly coaching. Film-room diagnostics plus continuous team performance coaching. Personalized, data-driven coaching loops that level up your reps and compound win rates.',
+    title: 'AI Sales & Lead Generation Tools',
+    description: (
+      <>
+        <strong>Focus:</strong> Deliver a consistent flow of qualified leads using AI systems that handle the entire top-of-funnel process.
+        <br />
+        <strong>Key Value:</strong> Eliminate manual prospecting, ensure consistent outreach volume, and only engage with qualified, interested prospects.
+        {/* Internal Reference (do not display): AI Cold Email Campaign Agent, AI SDR. */}
+      </>
+    ),
   },
   {
     icon: <Brain className="w-7 h-7" aria-hidden="true" />,
-    title: 'Analyzer + Coach + SDR Engine',
-    description:
-      'Complete revenue engine with film-room diagnostics, coaching, and AI-powered SDR automation. Your end-to-end sales operating system that creates consistent, predictable performance.',
+    title: 'AI Sales Performance & Coaching',
+    description: (
+      <>
+        <strong>Focus:</strong> Turn sales data into actionable coaching and performance improvements.
+        <br />
+        <strong>Key Value:</strong> Personalized, continuous coaching for every sales rep; objective analysis of sales calls; automated performance tracking.
+        {/* Internal Reference (do not display): AI Sales Call Analyzer, AI Sales Coach. */}
+      </>
+    ),
   },
   {
     icon: <Globe className="w-7 h-7" aria-hidden="true" />,
-    title: 'Fractional VP Sales',
-    description:
-      'Executive-level strategic leadership and hands-on guidance. Get VP-level expertise without the $200K+ salary and overhead. Film-room coaching at the executive level.',
+    title: 'AI Receptionist & Omnichannel Automation',
+    description: (
+      <>
+        <strong>Focus:</strong> Automate inbound communications across calls, social media, and reviews to ensure no lead is missed.
+        <br />
+        <strong>Key Value:</strong> 24/7 availability, instant qualification, direct scheduling, automated social responses, review monitoring.
+      </>
+    ),
+  },
+  {
+    icon: <Cloud className="w-7 h-7" aria-hidden="true" />,
+    title: 'Custom AI Workflows & Automation',
+    description: (
+      <>
+        <strong>Focus:</strong> Build bespoke AI systems to optimize internal operations and processes.
+        <br />
+        <strong>Key Value:</strong> Solve bottlenecks, streamline data flow, automate reporting, integrate disparate systems.
+      </>
+    ),
+  },
+  {
+    icon: <BookOpen className="w-7 h-7" aria-hidden="true" />,
+    title: 'Fractional AI & Sales Leadership',
+    description: (
+      <>
+        <strong>Focus:</strong> Provide strategic oversight to ensure AI investments drive maximum revenue growth.
+        <br />
+        <strong>Key Value:</strong> Executive-level CSO/CAIO guidance without full-time hires; strategy, playbook design, and hands-on implementation.
+      </>
+    ),
   },
 ];
 
@@ -63,9 +96,9 @@ export default function Services() {
             <span className="h-2 w-2 rounded-full bg-[#3282B8]" aria-hidden="true" />
             Our Expertise
           </div>
-          <h2 className="mt-4 text-4xl md:text-5xl font-extrabold tracking-tight section-title">Film-Room Performance Coaching</h2>
+          <h2 className="mt-4 text-4xl md:text-5xl font-extrabold tracking-tight section-title">AI Consulting & Agent Implementation</h2>
           <p className="text-lg md:text-xl text-[#BBE1FA] mt-4 max-w-2xl mx-auto">
-            QuotaDoctor — Fix the mechanics that close deals. Film-room coaching for sales teams.
+            Strategic AI consulting and bespoke agent development to drive revenue growth and operational efficiency.
           </p>
         </div>
 
@@ -90,14 +123,14 @@ export default function Services() {
                     <div className="h-2 w-2 rounded-full bg-[#3282B8] group-hover:bg-[#3282B8] transition-colors" aria-hidden="true" />
                   </div>
                   <h3 className="mt-5 text-xl font-bold text-white tracking-tight">{service.title}</h3>
-                  <p className="mt-3 text-[#BBE1FA] leading-relaxed flex-1">{service.description}</p>
+                  <div className="mt-3 text-[#BBE1FA] leading-relaxed flex-1">{service.description}</div>
                   <div className="mt-6">
                     <a
                       href="#contact"
                       className="inline-flex items-center gap-2 text-[#3282B8] hover:text-[#BBE1FA] font-semibold focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#3282B8] rounded-md"
-                      aria-label={`Discover more about ${service.title}`}
+                      aria-label={`Build Your Custom AI Growth Plan for ${service.title}`}
                     >
-                      Discover More
+                      Build Your Custom AI Growth Plan
                       <span className="inline-block transform transition-transform group-hover:translate-x-0.5">→</span>
                     </a>
                   </div>

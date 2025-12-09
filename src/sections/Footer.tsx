@@ -9,10 +9,9 @@ export const Footer = () => {
           <span className="text-2xl font-bold relative text-white">QuotaDoctor</span>
         </div>
         <nav className="flex flex-col md:flex-row md:justify-center gap-6 mt-6">
-          <Link href="#about" className="hover:text-[#3282B8] transition-colors">About</Link>
-          <Link href="#services" className="hover:text-[#3282B8] transition-colors">Services</Link>
-          <Link href="#pricing" className="hover:text-[#3282B8] transition-colors">Pricing</Link>
-          <Link href="#features" className="hover:text-[#3282B8] transition-colors">Features</Link>
+          <Link href="#home" className="hover:text-[#3282B8] transition-colors">Home</Link>
+          <Link href="#services" className="hover:text-[#3282B8] transition-colors">AI Agent Strategies</Link>
+          <Link href="#about" className="hover:text-[#3282B8] transition-colors">Fractional Leadership</Link>
           <Link href="#contact" className="hover:text-[#3282B8] transition-colors">Contact</Link>
           <Link href="/privacy" className="hover:text-[#3282B8] transition-colors">Privacy Policy</Link>
         </nav>

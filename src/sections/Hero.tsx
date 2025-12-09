@@ -45,7 +45,7 @@ export const Hero = () => {
               <li>Create consistent, predictable performance</li>
             </ul>
             <div className="flex gap-3 items-center mt-8 relative z-20">
-              <a href="https://calendly.com/quotadoctor/15min" target="_blank" rel="noopener noreferrer" className="btn btn-primary px-6 py-3 rounded-xl font-semibold" aria-label="Book Your 15-Minute Film-Room Diagnostic">Book Your 15-Minute Film-Room Diagnostic</a>
+              <a href="https://calendly.com/quotadoctor/15min" target="_blank" rel="noopener noreferrer" className="btn btn-primary px-6 py-3 rounded-xl font-semibold" aria-label="Book Your AI Strategy Session">Book Your AI Strategy Session</a>
               <button onClick={() => document.getElementById('services')?.scrollIntoView({behavior:'smooth'})} className="btn btn-text" aria-label="See our solutions">See Our Solutions</button>
             </div>
             {/* <div className="flex gap-1 items-center mt-[30px]">
