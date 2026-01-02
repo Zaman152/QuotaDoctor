@@ -13,6 +13,7 @@
     "framer-motion": "^11.18.2",
     "lucide-react": "^0.544.0",
     "next": "^14.2.33",
+    "ogl": "^1.0.11",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "retell-client-js-sdk": "^2.0.7"
