@@ -2,6 +2,8 @@
 
 import { Twitter, Instagram, Linkedin, Youtube, Mail, ArrowUpRight } from "lucide-react";
 import Link from 'next/link';
+import Image from "next/image";
+import Logo from "@/assets/cropped_logo.png";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 
@@ -60,7 +62,16 @@ export const Footer = () => {
 
           {/* Brand / Copyright */}
           <div className="flex flex-col gap-2">
-            <span className="text-2xl font-bold text-white tracking-tight">QuotaDoctor.</span>
+            <div className="flex items-center gap-3">
+              <Image
+                src={Logo}
+                alt="QuotaDoctor Logo"
+                width={48}
+                height={48}
+                className="w-12 h-12 rounded-full object-contain"
+              />
+              <span className="text-2xl font-bold text-white tracking-tight">QuotaDoctor.</span>
+            </div>
             <p className="text-white/40 text-sm">
               © {new Date().getFullYear()} QuotaDoctor Inc.<br />
               Elite Sales Systems & Performance Coaching.

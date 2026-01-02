@@ -4,6 +4,8 @@ import { ArrowRight, Menu } from "lucide-react";
 import Link from "next/link";
 import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 import { useState } from "react";
+import Image from "next/image";
+import Logo from "@/assets/cropped_logo.png";
 
 export const Header = () => {
   const [hidden, setHidden] = useState(false);
@@ -45,8 +47,15 @@ export const Header = () => {
         <nav className="flex items-center gap-2 p-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-xl shadow-2xl shadow-black/20">
 
           {/* Logo */}
-          <Link href="/" className="px-4 py-2 flex items-center gap-2">
-            <span className="font-bold text-white tracking-tight">QuotaDoctor.</span>
+          <Link href="/" className="px-4 py-2 flex items-center gap-3">
+            <Image
+              src={Logo}
+              alt="QuotaDoctor Logo"
+              width={48}
+              height={48}
+              className="w-12 h-12 rounded-full object-contain"
+            />
+            <span className="font-bold text-white tracking-tight text-lg">QuotaDoctor.</span>
           </Link>
 
           {/* Nav Items */}
