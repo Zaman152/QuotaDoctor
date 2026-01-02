@@ -1,98 +1,109 @@
 'use client';
 
 import Prism from "../components/Prism";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Play, CheckCircle2 } from "lucide-react";
 import { motion } from 'framer-motion';
 
 export const Hero = () => {
   return (
     <section
       id="home"
-      className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-[#0A0A0F]"
+      className="relative min-h-[92vh] flex items-center justify-center overflow-hidden bg-transparent"
     >
-      {/* Background Prism */}
-      <div className="absolute inset-0 z-0">
+      {/* Background Prism - Optimized for Dark Theme */}
+      <div className="absolute inset-x-0 -top-20 h-[100vh] z-0 opacity-60">
         <Prism
-          scale={2.5}
+          scale={2.2}
           baseWidth={6}
           animationType="rotate"
-          hueShift={0.6} // Matches the blue/cyan theme
-          noise={0} // Removed grain as requested
+          hueShift={0.65} // tailored blue/cyan
+          noise={0.02} // subtle texture
         />
       </div>
 
-      {/* Radial Gradient Overlay for better text readability if needed, optional */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,#0A0A0F_120%)] z-0 pointer-events-none" />
-
       {/* Content */}
-      <div className="container relative z-10 px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-5xl md:text-7xl font-extrabold tracking-tight text-white mb-8"
+      <div className="container relative z-10 px-4 pt-10">
+        <div className="max-w-5xl mx-auto text-center flex flex-col items-center">
+
+          {/* Badge */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5 }}
+            className="mb-8 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-md text-xs font-medium text-[#BBE1FA]"
           >
-            Film-Room for Sales.<br className="hidden md:block" />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#BBE1FA] to-[#3282B8]">
-              Fix the Mechanics That Close Deals.
-            </span>
+            <span className="w-2 h-2 rounded-full bg-[#3282B8] animate-pulse shadow-[0_0_12px_#3282B8]"></span>
+            Now Accepting New Audit Clients
+          </motion.div>
+
+          {/* Headline */}
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.1, ease: "easeOut" }}
+            className="text-6xl md:text-8xl lg:text-9xl font-bold tracking-tighter text-white mb-8 leading-[0.9] text-transparent bg-clip-text bg-gradient-to-b from-white via-white to-white/40"
+          >
+            Film-Room<br />
+            <span className="text-[#3282B8]">For Sales.</span>
           </motion.h1>
 
+          {/* Subheadline */}
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-lg md:text-xl text-[#BBE1FA]/80 tracking-tight mb-8 max-w-2xl mx-auto"
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="text-lg md:text-xl text-[#BBE1FA]/60 tracking-wide mb-10 max-w-2xl mx-auto font-light leading-relaxed"
           >
-            Start with the Sales Call Analyzer to diagnose every call, coach every rep, and build repeatable wins. Add Sales Coach and SDR when you&apos;re ready to scale.
+            Fix the mechanics that close deals. Create repeatable wins with AI-driven diagnostics and elite coaching methodology.
           </motion.p>
 
+          {/* Buttons */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+            transition={{ duration: 0.5, delay: 0.4 }}
+            className="flex flex-col sm:flex-row gap-5 items-center justify-center w-full"
           >
             <a
               href="https://calendly.com/quotadoctor/15min"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-8 py-4 rounded-xl font-bold text-lg text-white bg-[#3282B8] border border-white/20 backdrop-blur-sm hover:scale-105 transition-all shadow-[0_0_20px_rgba(50,130,184,0.3)] hover:shadow-[0_0_30px_rgba(50,130,184,0.5)]"
-              aria-label="Book Your AI Strategy Session"
+              className="group relative px-8 py-4 bg-[#3282B8] text-white rounded-full font-semibold text-lg overflow-hidden transition-all hover:scale-105 hover:shadow-[0_0_40px_rgba(50,130,184,0.4)]"
             >
-              Book Your AI Strategy Session
+              <span className="relative z-10 flex items-center gap-2">
+                Book Strategy Session <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </span>
+              <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out" />
             </a>
+
             <button
               onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
-              className="px-8 py-4 rounded-xl font-bold text-lg text-white bg-white/5 border border-white/10 backdrop-blur-sm hover:bg-white/10 transition-all flex items-center gap-2"
-              aria-label="See our solutions"
+              className="group px-8 py-4 rounded-full font-semibold text-lg text-white/80 bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all flex items-center gap-2 hover:text-white"
             >
-              See Our Solutions
-              <ArrowRight className="w-4 h-4" />
+              <Play className="w-4 h-4 fill-current group-hover:scale-110 transition-transform" />
+              See How It Works
             </button>
           </motion.div>
 
-          {/* Feature List */}
-          <motion.ul
+          {/* Micro-Features */}
+          <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.5 }}
-            className="flex flex-wrap justify-center gap-4 mt-12"
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="mt-16 pt-8 border-t border-white/5 flex flex-wrap justify-center gap-8 md:gap-16"
           >
-            <li className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-[#BBE1FA] backdrop-blur-sm hover:bg-white/10 transition-colors cursor-default">
-              <div className="w-1.5 h-1.5 rounded-full bg-[#3282B8] shadow-[0_0_10px_#3282B8]" />
-              Score 100% of calls automatically
-            </li>
-            <li className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-[#BBE1FA] backdrop-blur-sm hover:bg-white/10 transition-colors cursor-default">
-              <div className="w-1.5 h-1.5 rounded-full bg-[#3282B8] shadow-[0_0_10px_#3282B8]" />
-              Turn feedback into weekly coaching
-            </li>
-            <li className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-[#BBE1FA] backdrop-blur-sm hover:bg-white/10 transition-colors cursor-default">
-              <div className="w-1.5 h-1.5 rounded-full bg-[#3282B8] shadow-[0_0_10px_#3282B8]" />
-              Create consistent, predictable performance
-            </li>
-          </motion.ul>
+            {[
+              "100% Call Scoring",
+              "Weekly Coaching Loops",
+              "Predictable Revenue"
+            ].map((feature, i) => (
+              <div key={i} className="flex items-center gap-3 text-sm font-medium text-white/40 uppercase tracking-widest">
+                <CheckCircle2 className="w-4 h-4 text-[#3282B8]" />
+                {feature}
+              </div>
+            ))}
+          </motion.div>
+
         </div>
       </div>
     </section>

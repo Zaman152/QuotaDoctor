@@ -1,148 +1,173 @@
 'use client';
 
-import { motion, useInView } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 import {
   Smartphone,
   Globe,
   Cloud,
-  Palette,
   BookOpen,
   Cpu,
-  Mic,
   Brain,
-  MessageSquare,
+  ArrowRight,
+  Terminal
 } from 'lucide-react';
 
 type Service = {
+  id: string;
   icon: JSX.Element;
   title: string;
-  description: React.ReactNode;
+  subtitle: string;
+  description: string;
+  tags: string[];
 };
 
 const services: Service[] = [
   {
-    icon: <Cpu className="w-7 h-7" aria-hidden="true" />,
-    title: 'AI Sales & Lead Generation Tools',
-    description: (
-      <>
-        <strong>Focus:</strong> Deliver a consistent flow of qualified leads using AI systems that handle the entire top-of-funnel process.
-        <br />
-        <strong>Key Value:</strong> Eliminate manual prospecting, ensure consistent outreach volume, and only engage with qualified, interested prospects.
-        {/* Internal Reference (do not display): AI Cold Email Campaign Agent, AI SDR. */}
-      </>
-    ),
+    id: "01",
+    icon: <Cpu className="w-8 h-8" aria-hidden="true" />,
+    title: 'AI Lead Gen',
+    subtitle: "Automated Prospecting Engine",
+    description: "Eliminate manual grunt work. Our AI agents handle the entire top-of-funnel: list building, qualification, and initial outreach. You only speak to interested prospects.",
+    tags: ["Cold Email Agents", "AI SDRs", "List Enrichment"]
   },
   {
-    icon: <Brain className="w-7 h-7" aria-hidden="true" />,
-    title: 'AI Sales Performance & Coaching',
-    description: (
-      <>
-        <strong>Focus:</strong> Turn sales data into actionable coaching and performance improvements.
-        <br />
-        <strong>Key Value:</strong> Personalized, continuous coaching for every sales rep; objective analysis of sales calls; automated performance tracking.
-        {/* Internal Reference (do not display): AI Sales Call Analyzer, AI Sales Coach. */}
-      </>
-    ),
+    id: "02",
+    icon: <Brain className="w-8 h-8" aria-hidden="true" />,
+    title: 'Performance',
+    subtitle: "The 'Film Room' For Sales",
+    description: "Turn every call into data. We objectively analyze your rep's conversations to provide instant, personalized coaching. It's not just recording; it's active correction.",
+    tags: ["Call Analysis", "Auto-Coaching", "Rep Scorecards"]
   },
   {
-    icon: <Globe className="w-7 h-7" aria-hidden="true" />,
-    title: 'AI Receptionist & Omnichannel Automation',
-    description: (
-      <>
-        <strong>Focus:</strong> Automate inbound communications across calls, social media, and reviews to ensure no lead is missed.
-        <br />
-        <strong>Key Value:</strong> 24/7 availability, instant qualification, direct scheduling, automated social responses, review monitoring.
-      </>
-    ),
+    id: "03",
+    icon: <Globe className="w-8 h-8" aria-hidden="true" />,
+    title: 'Omnichannel',
+    subtitle: "24/7 AI Receptionist",
+    description: "Never miss a lead again. Our voice and chat agents answer inbound inquiries instantly, qualify them, and book meetings directly onto your calendar.",
+    tags: ["Voice AI", "Review Monitoring", "Instant Booking"]
   },
   {
-    icon: <Cloud className="w-7 h-7" aria-hidden="true" />,
-    title: 'Custom AI Workflows & Automation',
-    description: (
-      <>
-        <strong>Focus:</strong> Build bespoke AI systems to optimize internal operations and processes.
-        <br />
-        <strong>Key Value:</strong> Solve bottlenecks, streamline data flow, automate reporting, integrate disparate systems.
-      </>
-    ),
+    id: "04",
+    icon: <Cloud className="w-8 h-8" aria-hidden="true" />,
+    title: 'Automation',
+    subtitle: "Custom Workflow Logic",
+    description: "Connect your disjointed tech stack. We build bespoke automations that move data seamlessly between your CRM, marketing tools, and reporting dashboards.",
+    tags: ["CRM Sync", "Data Pipe", "Custom Bots"]
   },
   {
-    icon: <BookOpen className="w-7 h-7" aria-hidden="true" />,
-    title: 'Fractional AI & Sales Leadership',
-    description: (
-      <>
-        <strong>Focus:</strong> Provide strategic oversight to ensure AI investments drive maximum revenue growth.
-        <br />
-        <strong>Key Value:</strong> Executive-level CSO/CAIO guidance without full-time hires; strategy, playbook design, and hands-on implementation.
-      </>
-    ),
+    id: "05",
+    icon: <BookOpen className="w-8 h-8" aria-hidden="true" />,
+    title: 'Leadership',
+    subtitle: "Fractional CSO / CAIO",
+    description: "Get executive strategy without the executive salary. We provide the playbooks, the hiring criteria, and the AI roadmap to scale your revenue team.",
+    tags: ["Sales Playbooks", "AI Strategy", "Hiring Support"]
   },
 ];
 
 export default function Services() {
-  const sectionRef = useRef<HTMLDivElement | null>(null);
-  const isInView = useInView(sectionRef, { margin: '-100px', once: true });
+  const containerRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({ target: containerRef, offset: ["start end", "end start"] });
 
   return (
-    <section id="services" className="relative overflow-hidden py-24 md:py-32 bg-[#0A0A0F]">
-      {/* decorative gradients */}
-      <div className="pointer-events-none absolute -top-32 -left-24 w-80 h-80 rounded-full" style={{background:"radial-gradient(closest-side, rgba(50,130,184,0.25), transparent)"}} aria-hidden="true" />
-      <div className="pointer-events-none absolute -bottom-40 -right-24 w-96 h-96 rounded-full" style={{background:"radial-gradient(closest-side, rgba(15,76,117,0.20), transparent)"}} aria-hidden="true" />
+    <section id="services" className="relative py-32 bg-[#050505] overflow-hidden">
+      {/* Background Elements */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_bottom,transparent,rgba(5,5,5,1))] z-10 pointer-events-none" />
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#3282B8]/10 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#0F4C75]/10 rounded-full blur-[120px] pointer-events-none" />
 
-      <div className="container relative">
-        <div className="text-center mb-12 md:mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#0F4C75] bg-[#16213E] text-[#3282B8] text-sm font-medium backdrop-blur-xl">
-            <span className="h-2 w-2 rounded-full bg-[#3282B8]" aria-hidden="true" />
-            Our Expertise
+      <div className="container relative z-20 px-4 md:px-6" ref={containerRef}>
+
+        {/* Section Header */}
+        <div className="mb-24 md:flex md:items-end md:justify-between border-b border-white/10 pb-12">
+          <div className="max-w-2xl">
+            <motion.span
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              className="flex items-center gap-2 text-[#3282B8] font-mono text-sm tracking-wider mb-4"
+            >
+              <Terminal className="w-4 h-4" />
+              SYSTEM_CAPABILITIES
+            </motion.span>
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              className="text-5xl md:text-7xl font-bold text-white tracking-tighter"
+            >
+              Our <span className="text-white/40">Expertise.</span>
+            </motion.h2>
           </div>
-          <h2 className="mt-4 text-4xl md:text-5xl font-extrabold tracking-tight section-title">AI Consulting & Agent Implementation</h2>
-          <p className="text-lg md:text-xl text-[#BBE1FA] mt-4 max-w-2xl mx-auto">
-            Strategic AI consulting and bespoke agent development to drive revenue growth and operational efficiency.
-          </p>
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            className="mt-6 md:mt-0 text-[#BBE1FA]/60 max-w-sm text-lg"
+          >
+            Strategic consulting and bespoke agent development to drive revenue growth.
+          </motion.p>
         </div>
 
-        <div ref={sectionRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        {/* Services List */}
+        <div className="flex flex-col gap-8">
           {services.map((service, index) => (
-            <motion.div
-              key={service.title}
-              initial={{ opacity: 0, y: 18 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.45, delay: 0.06 * index, ease: 'easeOut' }}
-              className="group h-full"
-            >
-              {/* gradient border wrapper */}
-              <div className="h-full p-[1px] rounded-2xl" style={{background:"linear-gradient(135deg, rgba(50,130,184,0.35), rgba(15,76,117,0.35))"}}>
-                <div className="h-full rounded-2xl bg-[#16213E] backdrop-blur-2xl border border-[#0F4C75]/30 p-6 md:p-7 shadow-[0_10px_30px_rgba(2,6,23,0.30)] transition-all duration-300 group-hover:bg-[#1A1A2E] group-hover:shadow-[0_0_30px_rgba(50,130,184,0.3)] group-hover:border-[#3282B8] group-hover:-translate-y-1 focus-within:shadow-[0_0_30px_rgba(50,130,184,0.4)] flex flex-col">
-                  <div className="flex items-center justify-between">
-                    <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br from-[#3282B8]/15 to-[#0F4C75]/15 text-[#3282B8] group-hover:from-[#3282B8]/25 group-hover:to-[#0F4C75]/25 transition-colors">
-                      <span className="transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
-                        {service.icon}
-                      </span>
-                    </div>
-                    <div className="h-2 w-2 rounded-full bg-[#3282B8] group-hover:bg-[#3282B8] transition-colors" aria-hidden="true" />
-                  </div>
-                  <h3 className="mt-5 text-xl font-bold text-white tracking-tight">{service.title}</h3>
-                  <div className="mt-3 text-[#BBE1FA] leading-relaxed flex-1">{service.description}</div>
-                  <div className="mt-6">
-                    <a
-                      href="#contact"
-                      className="inline-flex items-center gap-2 text-[#3282B8] hover:text-[#BBE1FA] font-semibold focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#3282B8] rounded-md"
-                      aria-label={`Build Your Custom AI Growth Plan for ${service.title}`}
-                    >
-                      Build Your Custom AI Growth Plan
-                      <span className="inline-block transform transition-transform group-hover:translate-x-0.5">→</span>
-                    </a>
-                  </div>
-                  <div className="mt-4 h-px bg-gradient-to-r from-transparent via-[#0F4C75] to-transparent" aria-hidden="true" />
-                </div>
-              </div>
-            </motion.div>
+            <ServiceCard key={index} service={service} index={index} />
           ))}
         </div>
+
       </div>
     </section>
   );
+}
+
+function ServiceCard({ service, index }: { service: Service, index: number }) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-50px" }}
+      transition={{ duration: 0.6, delay: index * 0.1 }}
+      className="group relative"
+    >
+      <div className="relative z-10 bg-[#0A0A0F] border border-white/5 p-8 md:p-12 rounded-3xl hover:border-[#3282B8]/50 transition-all duration-500 overflow-hidden">
+
+        {/* Hover Gradient */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#3282B8]/0 via-[#3282B8]/5 to-[#3282B8]/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 ease-in-out" />
+
+        <div className="grid md:grid-cols-12 gap-8 items-center">
+
+          {/* ID & Icon */}
+          <div className="md:col-span-1 text-[#BBE1FA]/20 font-mono text-xl group-hover:text-[#3282B8] transition-colors">
+            {service.id}
+          </div>
+
+          {/* Title */}
+          <div className="md:col-span-4">
+            <div className="text-[#3282B8] mb-2">{service.icon}</div>
+            <h3 className="text-3xl md:text-4xl font-bold text-white mb-2">{service.title}</h3>
+            <p className="text-[#BBE1FA]/60 font-mono text-sm uppercase tracking-wider">{service.subtitle}</p>
+          </div>
+
+          {/* Description */}
+          <div className="md:col-span-4 text-[#BBE1FA]/80 text-lg leading-relaxed">
+            {service.description}
+          </div>
+
+          {/* Tags & Action */}
+          <div className="md:col-span-3 flex flex-col gap-4 items-start md:items-end">
+            <div className="flex flex-wrap gap-2 justify-start md:justify-end">
+              {service.tags.map((tag, i) => (
+                <span key={i} className="px-3 py-1 bg-white/5 rounded-full text-xs text-[#BBE1FA]/60 border border-white/5">
+                  {tag}
+                </span>
+              ))}
+            </div>
+            <a href="#contact" className="group/btn flex items-center gap-2 text-white font-medium mt-4 md:mt-0">
+              Build Plan <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform text-[#3282B8]" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </motion.div>
+  )
 }
 
 

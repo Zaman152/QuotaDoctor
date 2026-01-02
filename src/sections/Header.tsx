@@ -1,38 +1,84 @@
+"use client";
+
 import { ArrowRight, Menu } from "lucide-react";
+import Link from "next/link";
+import { motion, useScroll, useMotionValueEvent } from "framer-motion";
+import { useState } from "react";
 
 export const Header = () => {
+  const [hidden, setHidden] = useState(false);
+  const { scrollY } = useScroll();
+
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    const previous = scrollY.getPrevious() ?? 0;
+    if (latest > previous && latest > 150) {
+      setHidden(true);
+    } else {
+      setHidden(false);
+    }
+  });
+
+  const navLinks = [
+    { name: "Home", href: "#home" },
+    { name: "Strategies", href: "#services" },
+    { name: "Leadership", href: "#about" },
+  ];
+
   return (
-    <header className="sticky top-0 backdrop-blur-lg z-20 bg-[#0A0A0F]/95">
-      <div className="flex justify-center items-center py-3 bg-[#0A0A0F] text-white text-sm gap-3">
-        <p className="text-[#BBE1FA] hidden md:block" aria-label="Company motto banner">
-          Fix the System, Elevate the Reps, Scale the Revenue
-        </p>
-        <div className="inline-flex gap-1 items-center">
+    <>
+      <div className="flex justify-center items-center py-3 bg-[#050505] text-white/60 text-xs gap-3 font-medium tracking-wide">
+        <div className="inline-flex gap-2 items-center">
+          <span className="w-2 h-2 rounded-full bg-[#3282B8] animate-pulse"></span>
           <p>Start with a 15-minute AI strategy diagnostic</p>
-          <ArrowRight className="h-4 w-4 inline-flex justify-center items-center" />
         </div>
       </div>
 
-      <div className="py-5 bg-[#0A0A0F]">
-        <div className="container">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-3">
-              <span className="text-2xl font-bold text-white">QuotaDoctor</span>
-            </div>
-            <Menu className="h-6 w-6 md:hidden text-white" />
+      <motion.header
+        variants={{
+          visible: { y: 0 },
+          hidden: { y: "-100%" },
+        }}
+        animate={hidden ? "hidden" : "visible"}
+        transition={{ duration: 0.35, ease: "easeInOut" }}
+        className="sticky top-6 z-50 flex justify-center px-4 mb-8"
+      >
+        <nav className="flex items-center gap-2 p-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-xl shadow-2xl shadow-black/20">
 
-            <nav className="hidden md:flex gap-6 text-[#BBE1FA] items-center">
-              <a href="#home" className="hover:text-[#3282B8] transition-colors">Home</a>
-              <a href="#services" className="hover:text-[#3282B8] transition-colors">AI Agent Strategies</a>
-              <a href="#about" className="hover:text-[#3282B8] transition-colors">Fractional Leadership</a>
-              <a href="#contact" className="hover:text-[#3282B8] transition-colors">Contact</a>
-              <a href="https://calendly.com/quotadoctor/15min" target="_blank" rel="noopener noreferrer" className="btn btn-primary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#3282B8]">
-                Book Your AI Strategy Session
+          {/* Logo */}
+          <Link href="/" className="px-4 py-2 flex items-center gap-2">
+            <span className="font-bold text-white tracking-tight">QuotaDoctor.</span>
+          </Link>
+
+          {/* Nav Items */}
+          <div className="hidden md:flex items-center gap-1">
+            {navLinks.map((link) => (
+              <a
+                key={link.name}
+                href={link.href}
+                className="px-4 py-2 text-sm text-white/70 hover:text-white hover:bg-white/5 rounded-full transition-all duration-300 font-medium"
+              >
+                {link.name}
               </a>
-            </nav>
+            ))}
           </div>
-        </div>
-      </div>
-    </header>
+
+          {/* CTA Button */}
+          <a
+            href="https://calendly.com/quotadoctor/15min"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="ml-2 px-5 py-2.5 bg-[#3282B8] hover:bg-[#276690] text-white text-sm font-semibold rounded-full transition-all flex items-center gap-2 group"
+          >
+            <span>Book Strategy</span>
+            <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+          </a>
+
+          {/* Mobile Menu Icon */}
+          <button className="md:hidden p-2 text-white/80 hover:text-white">
+            <Menu className="w-5 h-5" />
+          </button>
+        </nav>
+      </motion.header>
+    </>
   );
 };
