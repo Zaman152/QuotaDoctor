@@ -12,10 +12,10 @@ export default function CommentForm() {
                         Contact
                     </div>
                     <h2 className="section-title mt-4">Partner with QuotaDoctor</h2>
-                    <p className="section-description mt-4">We'd love to hear from you. Tell us a bit about your sales challenges.</p>
+                    <p className="section-description mt-4">We&apos;d love to hear from you. Tell us a bit about your sales challenges.</p>
                 </div>
 
-                <div className="p-[1px] rounded-2xl" style={{background:"linear-gradient(135deg, rgba(50,130,184,0.35), rgba(15,76,117,0.35))"}}>
+                <div className="p-[1px] rounded-2xl" style={{ background: "linear-gradient(135deg, rgba(50,130,184,0.35), rgba(15,76,117,0.35))" }}>
                     <div className="rounded-2xl bg-[#16213E] backdrop-blur-2xl border border-[#0F4C75]/30 p-8 shadow-[0_10px_30px_rgba(2,6,23,0.30)]">
                         <form className="space-y-5" onSubmit={(e) => { e.preventDefault(); alert('Thanks — we\'ll follow up to schedule your AI strategy session.'); }}>
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -61,8 +61,10 @@ export default function CommentForm() {
                             />
 
                             <div className="flex gap-3">
-                                <button type="submit" className="btn btn-primary w-full py-3 rounded-xl font-semibold">Book Your AI Strategy Session</button>
-                                <a href="https://calendly.com/quotadoctor/15min" target="_blank" rel="noopener noreferrer" className="btn btn-text w-full py-3 rounded-xl text-center">Book Your AI Strategy Session</a>
+                                <button type="submit" className="btn btn-primary w-full py-3 rounded-xl font-semibold">
+
+                                    <a href="https://calendly.com/quotadoctor/15min" target="_blank" rel="noopener noreferrer" >Book Your AI Strategy Session</a>
+                                </button>
                             </div>
                         </form>
                     </div>

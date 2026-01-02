@@ -2,12 +2,12 @@ import type { Metadata } from "next";
 import { DM_Sans } from "next/font/google";
 import "./globals.css";
 import clsx from "clsx";
-import {twMerge} from "tailwind-merge";
+import { twMerge } from "tailwind-merge";
 import dynamic from 'next/dynamic';
 
-const ChatbotClient = dynamic(() => import('@/components/ChatbotClient'), { 
+const ChatbotClient = dynamic(() => import('@/components/ChatbotClient'), {
   ssr: false,
-  loading: () => null 
+  loading: () => null
 });
 
 const dmSans = DM_Sans({ subsets: ["latin"] });
@@ -93,7 +93,6 @@ export default function RootLayout({
               ],
             }),
           }}
-          aria-hidden="true"
         />
         {children}
       </body>

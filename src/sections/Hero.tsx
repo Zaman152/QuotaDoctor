@@ -37,7 +37,7 @@ export const Hero = () => {
               Film-Room for Sales. Fix the Mechanics That Close Deals.
             </h1>
             <p className="text-lg md:text-xl text-[#BBE1FA] tracking-tight mt-6 max-w-xl relative z-20">
-              Start with the Sales Call Analyzer to diagnose every call, coach every rep, and build repeatable wins. Add Sales Coach and SDR when you're ready to scale.
+              Start with the Sales Call Analyzer to diagnose every call, coach every rep, and build repeatable wins. Add Sales Coach and SDR when you&apos;re ready to scale.
             </p>
             <ul className="text-lg text-[#BBE1FA] tracking-tight mt-6 space-y-2 list-disc list-inside relative z-20">
               <li>Score 100% of calls automatically</li>
@@ -46,7 +46,7 @@ export const Hero = () => {
             </ul>
             <div className="flex gap-3 items-center mt-8 relative z-20">
               <a href="https://calendly.com/quotadoctor/15min" target="_blank" rel="noopener noreferrer" className="btn btn-primary px-6 py-3 rounded-xl font-semibold" aria-label="Book Your AI Strategy Session">Book Your AI Strategy Session</a>
-              <button onClick={() => document.getElementById('services')?.scrollIntoView({behavior:'smooth'})} className="btn btn-text" aria-label="See our solutions">See Our Solutions</button>
+              <button onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })} className="btn btn-text" aria-label="See our solutions">See Our Solutions</button>
             </div>
             {/* <div className="flex gap-1 items-center mt-[30px]">
               <button className="btn btn-primary">Get for free</button>
@@ -81,7 +81,7 @@ export const Hero = () => {
             >
               <Settings className="h-20 w-20 text-[#3282B8]" />
             </motion.div>
-            
+
             {/* Floating Settings Icon - Alternative position */}
             <motion.div
               className="md:absolute md:h-full md:w-auto md:max-w-none md:-left-6 lg:left-0 z-0"
@@ -97,7 +97,7 @@ export const Hero = () => {
             >
               <Settings className="absolute h-16 w-16 text-[#3282B8]" />
             </motion.div>
-            
+
 
             {/* Floating Waves Icon */}
             <motion.div
@@ -167,7 +167,7 @@ export const Hero = () => {
               <Zap className="h-10 w-10 text-[#3282B8]/50" fill="#3282B8" />
             </motion.div>
 
-         {/* Additional Floating Cylinder - Bottom Right */}
+            {/* Additional Floating Cylinder - Bottom Right */}
             <motion.div
               className="hidden lg:block absolute bottom-32 right-12 z-0"
               style={{

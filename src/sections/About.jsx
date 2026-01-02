@@ -65,7 +65,7 @@ export default function About() {
                         About QuotaDoctor
                     </h1>
                     <p className="text-xl text-[#BBE1FA]">
-                        Learn about <span className="font-bold text-[#3282B8]">QuotaDoctor</span>'s mission to help B2B and SaaS companies scale revenue through fractional sales leadership and AI-driven optimization. 'Fix the System, Elevate the Reps, Scale the Revenue.'
+                        Learn about <span className="font-bold text-[#3282B8]">QuotaDoctor</span>&apos;s mission to help B2B and SaaS companies scale revenue through fractional sales leadership and AI-driven optimization. &apos;Fix the System, Elevate the Reps, Scale the Revenue.&apos;
                     </p>
                 </div>
 
