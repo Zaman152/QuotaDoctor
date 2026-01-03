@@ -3,6 +3,7 @@ import { Star, Phone, PhoneOff, Zap } from 'lucide-react';
 import { useEffect, useState, useRef } from 'react';
 import { RetellWebClient } from "retell-client-js-sdk";
 import ElectricBorder from '@/components/ElectricBorder';
+import CallPopup from '@/components/CallPopup';
 
 const receptionistAgentId = process.env.NEXT_PUBLIC_RETTELL_AGENT_ID;
 const sdrAgentId = "agent_a53228875f4f60dc0481757995";
@@ -235,7 +236,7 @@ export default function Nomisscalls() {
 
                 {/* Two Side-by-Side CTA Sections */}
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
-                    
+
                     {/* LEFT SECTION - MissNoCalls */}
                     <ElectricBorder color="#3282B8" borderRadius={16}>
                         <div className="bg-[#16213E] rounded-2xl shadow-xl pt-8 px-8 pb-6 md:pt-12 md:px-12 md:pb-8 h-full flex flex-col min-h-[800px]">
@@ -259,30 +260,13 @@ export default function Nomisscalls() {
                                     </p>
 
                                     <div className="bg-[#1A1A2E] border border-[#0F4C75]/30 rounded-xl p-6 mb-8">
-                                    <p className="text-xl font-semibold text-white">
-                                        <button onClick={takeDemoCall} disabled={isCallActive} className={`${isCallActive ? 'text-[#BBE1FA]/40 cursor-not-allowed' : 'text-[#3282B8] hover:text-[#BBE1FA] hover:underline cursor-pointer'}`}>Book a demo</button>{' '}
-                                        today to see how it can transform the way you handle calls and grow your customer relationships.
-                                    </p>
+                                        <p className="text-xl font-semibold text-white">
+                                            <button onClick={takeDemoCall} disabled={isCallActive} className={`${isCallActive ? 'text-[#BBE1FA]/40 cursor-not-allowed' : 'text-[#3282B8] hover:text-[#BBE1FA] hover:underline cursor-pointer'}`}>Book a demo</button>{' '}
+                                            today to see how it can transform the way you handle calls and grow your customer relationships.
+                                        </p>
 
-                                    {/* Call Status Display */}
-                                    {callStatus && (
-                                        <div className={`mt-4 p-4 rounded-lg ${isCallActive ? 'bg-[#3282B8]/20 border-2 border-[#3282B8]' : 'bg-[#1A1A2E] border border-[#0F4C75]/30'}`}>
-                                            <p className="text-lg font-semibold text-white flex items-center justify-center">
-                                                {isCallActive && <Phone className="w-5 h-5 mr-2 animate-pulse text-[#3282B8]" />}
-                                                {callStatus}
-                                            </p>
-                                            {isCallActive && (
-                                                <button
-                                                    onClick={endCall}
-                                                    className="mt-3 bg-[#3282B8] hover:bg-[#0F4C75] text-white font-bold px-6 py-2 rounded-lg transition-all duration-300 inline-flex items-center mx-auto"
-                                                >
-                                                    <PhoneOff className="w-5 h-5 mr-2" />
-                                                    End Call
-                                                </button>
-                                            )}
-                                        </div>
-                                    )}
-                                </div>
+                                        {/* Call Status Display Removed - utilizing CallPopup */}
+                                    </div>
                                 </div>
 
                                 <button onClick={takeDemoCall} disabled={isCallActive} className="bg-[#3282B8] hover:bg-[#0F4C75] text-white font-bold px-10 py-4 rounded-lg text-lg transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-[0_0_25px_rgba(50,130,184,0.5)] inline-flex items-center disabled:opacity-50 disabled:cursor-not-allowed mx-auto">
@@ -316,31 +300,14 @@ export default function Nomisscalls() {
                                     </p>
 
                                     <div className="bg-[#1A1A2E] border border-[#0F4C75]/30 rounded-xl p-6 mb-8">
-                                    <p className="text-xl font-semibold text-white">
-                                        Book a free 30-minute{' '}
-                                        <button onClick={takeDemoCall2} disabled={isCallActive2} className={`${isCallActive2 ? 'text-[#BBE1FA]/40 cursor-not-allowed' : 'text-[#3282B8] hover:text-[#BBE1FA] hover:underline cursor-pointer'}`}>strategy call</button>.
-                                        We&apos;ll analyze your numbers, identify the bottlenecks, and show you exactly how we can help.
-                                    </p>
+                                        <p className="text-xl font-semibold text-white">
+                                            Book a free 30-minute{' '}
+                                            <button onClick={takeDemoCall2} disabled={isCallActive2} className={`${isCallActive2 ? 'text-[#BBE1FA]/40 cursor-not-allowed' : 'text-[#3282B8] hover:text-[#BBE1FA] hover:underline cursor-pointer'}`}>strategy call</button>.
+                                            We&apos;ll analyze your numbers, identify the bottlenecks, and show you exactly how we can help.
+                                        </p>
 
-                                    {/* Call Status Display */}
-                                    {callStatus2 && (
-                                        <div className={`mt-4 p-4 rounded-lg ${isCallActive2 ? 'bg-[#3282B8]/20 border-2 border-[#3282B8]' : 'bg-[#1A1A2E] border border-[#0F4C75]/30'}`}>
-                                            <p className="text-lg font-semibold text-white flex items-center justify-center">
-                                                {isCallActive2 && <Phone className="w-5 h-5 mr-2 animate-pulse text-[#3282B8]" />}
-                                                {callStatus2}
-                                            </p>
-                                            {isCallActive2 && (
-                                                <button
-                                                    onClick={endCall2}
-                                                    className="mt-3 bg-[#3282B8] hover:bg-[#0F4C75] text-white font-bold px-6 py-2 rounded-lg transition-all duration-300 inline-flex items-center mx-auto"
-                                                >
-                                                    <PhoneOff className="w-5 h-5 mr-2" />
-                                                    End Call
-                                                </button>
-                                            )}
-                                        </div>
-                                    )}
-                                </div>
+                                        {/* Call Status Display Removed - utilizing CallPopup */}
+                                    </div>
                                 </div>
 
                                 <button onClick={takeDemoCall2} disabled={isCallActive2} className="bg-[#3282B8] hover:bg-[#0F4C75] text-white font-bold px-10 py-4 rounded-lg text-lg transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-[0_0_25px_rgba(50,130,184,0.5)] inline-flex items-center disabled:opacity-50 disabled:cursor-not-allowed mx-auto">
@@ -354,6 +321,21 @@ export default function Nomisscalls() {
                 </div>
 
             </div>
-        </div>
+
+
+            {/* Call Popups */}
+            <CallPopup
+                isOpen={isCallActive}
+                agentName="MissNoCalls Agent"
+                status={callStatus}
+                onEndCall={endCall}
+            />
+            <CallPopup
+                isOpen={isCallActive2}
+                agentName="QuotaDoctor Agent"
+                status={callStatus2}
+                onEndCall={endCall2}
+            />
+        </div >
     );
 }
