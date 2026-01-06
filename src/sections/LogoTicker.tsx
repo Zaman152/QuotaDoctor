@@ -25,6 +25,7 @@ export const LogoTicker = () => {
               ease: "linear",
               repeatType: "loop",
             }}
+            style={{ willChange: "transform" }}
           >
             <Image
               src={acmeLogo}

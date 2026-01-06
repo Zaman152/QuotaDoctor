@@ -82,7 +82,7 @@ const TestimonialsColumn = (props: {
 }) => (
   <div className={props.className}>
     <motion.div
-      animate={{ 
+      animate={{
         translateY: "-50%"
       }}
       transition={{
@@ -91,6 +91,7 @@ const TestimonialsColumn = (props: {
         ease: "linear",
         repeatType: "loop",
       }}
+      style={{ willChange: "transform" }}
       className="flex flex-col gap-6 pb-6"
     >
       {/* React Fragment  */}

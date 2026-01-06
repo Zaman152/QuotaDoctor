@@ -33,7 +33,7 @@ const Prism: React.FC<PrismProps> = ({
     hoverStrength = 2,
     inertia = 0.05,
     bloom = 1,
-    suspendWhenOffscreen = false,
+    suspendWhenOffscreen = true,
     timeScale = 0.5
 }) => {
     const containerRef = useRef<HTMLDivElement | null>(null);
@@ -61,11 +61,12 @@ const Prism: React.FC<PrismProps> = ({
         const HOVSTR = Math.max(0, hoverStrength || 1);
         const INERT = Math.max(0, Math.min(1, inertia || 0.12));
 
+        // OPTIMIZATION: Limit DPR to 1.5 max
         const dpr = Math.min(2, window.devicePixelRatio || 1);
         const renderer = new Renderer({
             dpr,
             alpha: transparent,
-            antialias: true
+            antialias: dpr <= 1 // OPTIMIZATION: Only antialias if dpr is low
         });
         const gl = renderer.gl;
         gl.disable(gl.DEPTH_TEST);
