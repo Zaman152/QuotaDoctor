@@ -58,7 +58,7 @@ export default function ChatbotClient() {
     };
 
     return (
-        <div className="fixed bottom-8 right-8 z-[100] flex flex-col items-end pointer-events-none">
+        <div className="fixed bottom-4 right-4 md:bottom-8 md:right-8 z-[100] flex flex-col items-end pointer-events-none">
 
             {/* Chat Interface */}
             <AnimatePresence>
@@ -68,7 +68,7 @@ export default function ChatbotClient() {
                         animate={{ opacity: 1, y: 0, scale: 1, filter: 'blur(0px)' }}
                         exit={{ opacity: 0, y: 20, scale: 0.95, filter: 'blur(10px)' }}
                         transition={{ duration: 0.4, ease: [0.23, 1, 0.32, 1] }}
-                        className="pointer-events-auto mb-6 w-[360px] md:w-[420px] h-[650px] max-h-[80vh] flex flex-col bg-[#030303]/80 backdrop-blur-3xl border border-white/5 rounded-[2rem] shadow-[0_0_50px_-10px_rgba(50,130,184,0.3)] overflow-hidden relative"
+                        className="pointer-events-auto mb-6 w-[90vw] sm:w-[360px] md:w-[420px] h-[650px] max-h-[80vh] flex flex-col bg-[#030303]/80 backdrop-blur-3xl border border-white/5 rounded-[2rem] shadow-[0_0_50px_-10px_rgba(50,130,184,0.3)] overflow-hidden relative"
                     >
                         {/* Decorative Gradient Blob */}
                         <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-[#3282B8]/10 to-transparent pointer-events-none" />
@@ -165,7 +165,7 @@ export default function ChatbotClient() {
             <motion.button
                 layout
                 onClick={() => setIsOpen(!isOpen)}
-                className="pointer-events-auto relative group w-16 h-16 flex items-center justify-center focus:outline-none"
+                className="pointer-events-auto relative group w-12 h-12 md:w-16 md:h-16 flex items-center justify-center focus:outline-none"
             >
                 {/* Outer Glow Ring */}
                 <div className="absolute inset-0 rounded-full border border-[#3282B8]/30 scale-100 group-hover:scale-110 transition-transform duration-500" />
@@ -174,7 +174,7 @@ export default function ChatbotClient() {
                 <div className="absolute inset-0 rounded-full border-t border-r border-[#3282B8] opacity-50 animate-[spin_4s_linear_infinite]" />
 
                 {/* Core Orb */}
-                <div className={`relative w-12 h-12 rounded-full flex items-center justify-center transition-all duration-500 ${isOpen ? 'bg-[#030303]' : 'bg-[#3282B8] shadow-[0_0_40px_rgba(50,130,184,0.6)]'}`}>
+                <div className={`relative w-9 h-9 md:w-12 md:h-12 rounded-full flex items-center justify-center transition-all duration-500 ${isOpen ? 'bg-[#030303]' : 'bg-[#3282B8] shadow-[0_0_40px_rgba(50,130,184,0.6)]'}`}>
                     <AnimatePresence mode='wait'>
                         {isOpen ? (
                             <motion.div

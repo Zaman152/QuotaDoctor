@@ -29,7 +29,7 @@ export default function Contact() {
                     <p className="text-[#BBE1FA]/60 text-lg">Direct line to our systems architecture team.</p>
                 </div>
 
-                <form className="space-y-8" onSubmit={(e) => { e.preventDefault(); alert('Transmission received. Strategy session request logged.'); }}>
+                <form className="space-y-8" onSubmit={(e) => { e.preventDefault(); alert('Transmission received. Audit request logged.'); }}>
 
                     <div className="grid md:grid-cols-2 gap-8">
                         <InputGroup label="IDENTIFIER_NAME" name="name" placeholder="Enter full name" active={focusedField === 'name'} onFocus={() => setFocusedField('name')} onBlur={() => setFocusedField(null)} />

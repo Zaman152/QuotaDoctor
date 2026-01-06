@@ -55,7 +55,7 @@ export const Header = () => {
               height={48}
               className="w-12 h-12 rounded-full object-contain"
             />
-            <span className="font-bold text-white tracking-tight text-lg">QuotaDoctor.</span>
+            <span className="font-bold text-white tracking-tight text-lg hidden sm:block">QuotaDoctor.</span>
           </Link>
 
           {/* Nav Items */}
@@ -78,7 +78,7 @@ export const Header = () => {
             rel="noopener noreferrer"
             className="ml-2 px-5 py-2.5 bg-[#3282B8] hover:bg-[#276690] text-white text-sm font-semibold rounded-full transition-all flex items-center gap-2 group"
           >
-            <span>Book Strategy</span>
+            <span>Book Audit</span>
             <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
           </a>
 

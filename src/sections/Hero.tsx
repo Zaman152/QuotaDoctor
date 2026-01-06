@@ -11,13 +11,20 @@ export const Hero = () => {
       className="relative min-h-[92vh] flex items-center justify-center overflow-hidden bg-transparent"
     >
       {/* Background Prism - Optimized for Dark Theme */}
-      <div className="absolute inset-x-0 -top-20 h-[100vh] z-0 opacity-60">
+      <div
+        className="absolute inset-x-0 top-0 h-[100vh] z-0 opacity-60"
+        style={{
+          maskImage: 'linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%)',
+          WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%)'
+        }}
+      >
         <Prism
           scale={2.2}
           baseWidth={6}
           animationType="rotate"
           hueShift={0.65} // tailored blue/cyan
           noise={0.02} // subtle texture
+          offset={{ x: 0, y: -90 }}
         />
       </div>
 
@@ -41,7 +48,7 @@ export const Hero = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1, ease: "easeOut" }}
-            className="text-6xl md:text-8xl lg:text-9xl font-bold tracking-tighter text-white mb-8 leading-[0.9] text-transparent bg-clip-text bg-gradient-to-b from-white via-white to-white/40"
+            className="text-5xl md:text-8xl lg:text-9xl font-bold tracking-tighter text-white mb-8 leading-[0.9] text-transparent bg-clip-text bg-gradient-to-b from-white via-white to-white/40"
           >
             Film-Room<br />
             <span className="text-[#3282B8]">For Sales.</span>
@@ -68,17 +75,17 @@ export const Hero = () => {
               href="https://calendly.com/quotadoctor/15min"
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative px-8 py-4 bg-[#3282B8] text-white rounded-full font-semibold text-lg overflow-hidden transition-all hover:scale-105 hover:shadow-[0_0_40px_rgba(50,130,184,0.4)]"
+              className="group relative px-5 py-2.5 md:px-8 md:py-4 bg-[#3282B8] text-white rounded-full font-semibold text-sm md:text-lg overflow-hidden transition-all hover:scale-105 hover:shadow-[0_0_40px_rgba(50,130,184,0.4)]"
             >
               <span className="relative z-10 flex items-center gap-2">
-                Book Strategy Session <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                Book Your Free AI Audit <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </span>
               <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out" />
             </a>
 
             <button
               onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
-              className="group px-8 py-4 rounded-full font-semibold text-lg text-white/80 bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all flex items-center gap-2 hover:text-white"
+              className="group px-5 py-2.5 md:px-8 md:py-4 rounded-full font-semibold text-sm md:text-lg text-white/80 bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all flex items-center gap-2 hover:text-white"
             >
               <Play className="w-4 h-4 fill-current group-hover:scale-110 transition-transform" />
               See How It Works

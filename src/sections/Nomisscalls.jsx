@@ -301,8 +301,8 @@ export default function Nomisscalls() {
 
                                     <div className="bg-[#1A1A2E] border border-[#0F4C75]/30 rounded-xl p-6 mb-8">
                                         <p className="text-xl font-semibold text-white">
-                                            Book a free 30-minute{' '}
-                                            <button onClick={takeDemoCall2} disabled={isCallActive2} className={`${isCallActive2 ? 'text-[#BBE1FA]/40 cursor-not-allowed' : 'text-[#3282B8] hover:text-[#BBE1FA] hover:underline cursor-pointer'}`}>strategy call</button>.
+                                            Book your free{' '}
+                                            <button onClick={takeDemoCall2} disabled={isCallActive2} className={`${isCallActive2 ? 'text-[#BBE1FA]/40 cursor-not-allowed' : 'text-[#3282B8] hover:text-[#BBE1FA] hover:underline cursor-pointer'}`}>AI Audit</button>.
                                             We&apos;ll analyze your numbers, identify the bottlenecks, and show you exactly how we can help.
                                         </p>
 
