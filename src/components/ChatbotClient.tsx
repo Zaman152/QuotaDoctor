@@ -68,7 +68,7 @@ export default function ChatbotClient() {
                         animate={{ opacity: 1, y: 0, scale: 1, filter: 'blur(0px)' }}
                         exit={{ opacity: 0, y: 20, scale: 0.95, filter: 'blur(10px)' }}
                         transition={{ duration: 0.4, ease: [0.23, 1, 0.32, 1] }}
-                        className="pointer-events-auto mb-6 w-[90vw] sm:w-[360px] md:w-[420px] h-[650px] max-h-[80vh] flex flex-col bg-[#030303]/80 backdrop-blur-3xl border border-white/5 rounded-[2rem] shadow-[0_0_50px_-10px_rgba(50,130,184,0.3)] overflow-hidden relative"
+                        className="pointer-events-auto mb-6 w-[calc(100vw-2rem)] max-w-[calc(100vw-2rem)] sm:w-[360px] md:w-[420px] h-[650px] max-h-[80vh] flex flex-col bg-[#030303]/80 backdrop-blur-3xl border border-white/5 rounded-[2rem] shadow-[0_0_50px_-10px_rgba(50,130,184,0.3)] overflow-hidden relative"
                     >
                         {/* Decorative Gradient Blob */}
                         <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-[#3282B8]/10 to-transparent pointer-events-none" />

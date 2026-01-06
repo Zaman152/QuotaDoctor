@@ -59,7 +59,7 @@ export const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="text-lg md:text-xl text-[#BBE1FA]/60 tracking-wide mb-10 max-w-2xl mx-auto font-light leading-relaxed"
+            className="text-lg md:text-xl text-[#BBE1FA]/60 tracking-wide mb-10 max-w-[90vw] md:max-w-2xl mx-auto font-light leading-relaxed px-2"
           >
             Fix the mechanics that close deals. Create repeatable wins with AI-driven diagnostics and elite coaching methodology.
           </motion.p>
@@ -69,13 +69,13 @@ export const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="flex flex-col sm:flex-row gap-5 items-center justify-center w-full"
+            className="flex flex-col md:flex-row gap-5 items-center justify-center w-full px-4"
           >
             <a
               href="https://calendly.com/quotadoctor/15min"
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative px-5 py-2.5 md:px-8 md:py-4 bg-[#3282B8] text-white rounded-full font-semibold text-sm md:text-lg overflow-hidden transition-all hover:scale-105 hover:shadow-[0_0_40px_rgba(50,130,184,0.4)]"
+              className="group relative w-full md:w-auto px-5 py-2.5 md:px-8 md:py-4 bg-[#3282B8] text-white rounded-full font-semibold text-sm md:text-lg overflow-hidden transition-all hover:scale-105 hover:shadow-[0_0_40px_rgba(50,130,184,0.4)] flex justify-center"
             >
               <span className="relative z-10 flex items-center gap-2">
                 Book Your Free AI Audit <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -85,7 +85,7 @@ export const Hero = () => {
 
             <button
               onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
-              className="group px-5 py-2.5 md:px-8 md:py-4 rounded-full font-semibold text-sm md:text-lg text-white/80 bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all flex items-center gap-2 hover:text-white"
+              className="group w-full md:w-auto px-5 py-2.5 md:px-8 md:py-4 rounded-full font-semibold text-sm md:text-lg text-white/80 bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all flex items-center justify-center gap-2 hover:text-white"
             >
               <Play className="w-4 h-4 fill-current group-hover:scale-110 transition-transform" />
               See How It Works

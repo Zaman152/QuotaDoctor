@@ -41,9 +41,9 @@ export const Header = () => {
 
   return (
     <>
-      <div className="flex justify-center items-center py-3 bg-[#050505] text-white/60 text-xs gap-3 font-medium tracking-wide">
-        <div className="inline-flex gap-2 items-center">
-          <span className="w-2 h-2 rounded-full bg-[#3282B8] animate-pulse"></span>
+      <div className="flex justify-center items-center py-3 bg-[#050505] text-white/60 text-xs gap-3 font-medium tracking-wide px-4 flex-wrap text-center">
+        <div className="inline-flex gap-2 items-center justify-center flex-wrap">
+          <span className="w-2 h-2 rounded-full bg-[#3282B8] animate-pulse shrink-0"></span>
           <p>Start with a 15-minute AI strategy diagnostic</p>
         </div>
       </div>
