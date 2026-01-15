@@ -67,12 +67,12 @@ export default function About() {
                         </a>
 
                         {/* Phone - Added Back */}
-                        <a href="tel:17207307899" className="flex items-center justify-between p-4 rounded-xl bg-white/5 border border-white/5 hover:bg-[#3282B8] hover:border-[#3282B8] transition-all group/item">
+                        <a href="tel:17203628155" className="flex items-center justify-between p-4 rounded-xl bg-white/5 border border-white/5 hover:bg-[#3282B8] hover:border-[#3282B8] transition-all group/item">
                             <div className="flex items-center gap-4">
                                 <div className="p-2 bg-white/10 rounded-lg"><Phone className="w-5 h-5 text-white" /></div>
                                 <div>
                                     <p className="text-xs text-white/50 group-hover/item:text-white/80 uppercase tracking-wider">Call Us</p>
-                                    <p className="text-white font-medium">1-720-730-7899</p>
+                                    <p className="text-white font-medium">1-720-362-8155</p>
                                 </div>
                             </div>
                             <ArrowUpRight className="w-5 h-5 text-white/30 group-hover/item:text-white" />

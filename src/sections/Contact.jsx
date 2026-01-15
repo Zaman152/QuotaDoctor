@@ -29,7 +29,14 @@ export default function Contact() {
                     <p className="text-[#BBE1FA]/60 text-lg">Direct line to our systems architecture team.</p>
                 </div>
 
-                <form className="space-y-8" onSubmit={(e) => { e.preventDefault(); alert('Transmission received. Audit request logged.'); }}>
+                <form className="space-y-8" onSubmit={(e) => {
+                    e.preventDefault();
+                    const formData = new FormData(e.currentTarget);
+                    const payload = Object.fromEntries(formData.entries());
+                    console.log("Submitting payload:", payload);
+                    // This is where you'd send 'payload' to your webhook
+                    alert('Transmission received. Audit request logged.');
+                }}>
 
                     <div className="grid md:grid-cols-2 gap-8">
                         <InputGroup label="IDENTIFIER_NAME" name="name" placeholder="Enter full name" active={focusedField === 'name'} onFocus={() => setFocusedField('name')} onBlur={() => setFocusedField(null)} />
@@ -37,7 +44,11 @@ export default function Contact() {
                     </div>
 
                     <div className="grid md:grid-cols-2 gap-8">
+                        <InputGroup label="PHONE_NUMBER" name="phone" type="tel" placeholder="+1 (555) 000-0000" active={focusedField === 'phone'} onFocus={() => setFocusedField('phone')} onBlur={() => setFocusedField(null)} />
                         <InputGroup label="ORGANIZATION" name="company" placeholder="Company designation" active={focusedField === 'company'} onFocus={() => setFocusedField('company')} onBlur={() => setFocusedField(null)} />
+                    </div>
+
+                    <div className="grid md:grid-cols-2 gap-8">
                         <div className="relative">
                             <label className="block text-xs font-mono text-[#3282B8] mb-2 tracking-widest uppercase">CURRENT_REVENUE</label>
                             <select
