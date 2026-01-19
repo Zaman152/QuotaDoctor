@@ -1,6 +1,6 @@
 "use client";
 
-import { Instagram, Linkedin, Mail, ArrowUpRight } from "lucide-react";
+import { Instagram, Linkedin, Mail, ArrowUpRight, Facebook } from "lucide-react";
 import Link from 'next/link';
 import Image from "next/image";
 import Logo from "@/assets/cropped_logo.png";
@@ -17,6 +17,7 @@ export const Footer = () => {
   const y = useTransform(scrollYProgress, [0, 1], [-100, 0]);
 
   const socialLinks = [
+    { icon: Facebook, href: "https://www.facebook.com/profile.php?id=61585199853574" },
     { icon: Instagram, href: "https://www.instagram.com/quotadoctorai/" },
     { icon: Linkedin, href: "https://linkedin.com/in/david-thompson-720" },
     { icon: Mail, href: "mailto:info@quotadoctor.com" },

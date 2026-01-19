@@ -1,5 +1,5 @@
 "use client";
-import { Mail, Linkedin, Instagram, ArrowUpRight, Phone } from 'lucide-react';
+import { Mail, Linkedin, Instagram, ArrowUpRight, Phone, Facebook } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export default function About() {
@@ -79,7 +79,7 @@ export default function About() {
                         </a>
 
 
-                        <div className="grid grid-cols-2 gap-4">
+                        <div className="grid grid-cols-3 gap-4">
                             <a href="https://linkedin.com/in/david-thompson-720" target="_blank" className="p-4 rounded-xl bg-white/5 border border-white/5 hover:bg-[#0077b5] hover:border-[#0077b5] transition-all flex flex-col items-center gap-3 text-center group/social">
                                 <Linkedin className="w-6 h-6 text-white/70 group-hover/social:text-white" />
                                 <span className="text-sm text-white font-medium">LinkedIn</span>
@@ -88,10 +88,14 @@ export default function About() {
                                 <Instagram className="w-6 h-6 text-white/70 group-hover/social:text-white" />
                                 <span className="text-sm text-white font-medium">Instagram</span>
                             </a>
+                            <a href="https://www.facebook.com/profile.php?id=61585199853574" target="_blank" className="p-4 rounded-xl bg-white/5 border border-white/5 hover:bg-[#1877F2] hover:border-[#1877F2] transition-all flex flex-col items-center gap-3 text-center group/social">
+                                <Facebook className="w-6 h-6 text-white/70 group-hover/social:text-white" />
+                                <span className="text-sm text-white font-medium">Facebook</span>
+                            </a>
                         </div>
                     </div>
                 </motion.div>
-            </div>
-        </section>
+            </div >
+        </section >
     );
 }
