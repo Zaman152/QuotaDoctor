@@ -55,12 +55,12 @@ export default function About() {
 
                     <div className="space-y-4 relative z-10">
                         {/* Email */}
-                        <a href="mailto:dave@quotadoctor.com" className="flex items-center justify-between p-4 rounded-xl bg-white/5 border border-white/5 hover:bg-[#3282B8] hover:border-[#3282B8] transition-all group/item">
+                        <a href="mailto:info@quotadoctor.com" className="flex items-center justify-between p-4 rounded-xl bg-white/5 border border-white/5 hover:bg-[#3282B8] hover:border-[#3282B8] transition-all group/item">
                             <div className="flex items-center gap-4">
                                 <div className="p-2 bg-white/10 rounded-lg"><Mail className="w-5 h-5 text-white" /></div>
                                 <div>
                                     <p className="text-xs text-white/50 group-hover/item:text-white/80 uppercase tracking-wider">Email Us</p>
-                                    <p className="text-white font-medium">dave@quotadoctor.com</p>
+                                    <p className="text-white font-medium">info@quotadoctor.com</p>
                                 </div>
                             </div>
                             <ArrowUpRight className="w-5 h-5 text-white/30 group-hover/item:text-white" />
@@ -80,11 +80,11 @@ export default function About() {
 
 
                         <div className="grid grid-cols-2 gap-4">
-                            <a href="https://linkedin.com/company/quotadoctor" target="_blank" className="p-4 rounded-xl bg-white/5 border border-white/5 hover:bg-[#0077b5] hover:border-[#0077b5] transition-all flex flex-col items-center gap-3 text-center group/social">
+                            <a href="https://linkedin.com/in/david-thompson-720" target="_blank" className="p-4 rounded-xl bg-white/5 border border-white/5 hover:bg-[#0077b5] hover:border-[#0077b5] transition-all flex flex-col items-center gap-3 text-center group/social">
                                 <Linkedin className="w-6 h-6 text-white/70 group-hover/social:text-white" />
                                 <span className="text-sm text-white font-medium">LinkedIn</span>
                             </a>
-                            <a href="https://instagram.com/quotadoctor" target="_blank" className="p-4 rounded-xl bg-white/5 border border-white/5 hover:bg-[#E1306C] hover:border-[#E1306C] transition-all flex flex-col items-center gap-3 text-center group/social">
+                            <a href="https://www.instagram.com/dave_thompson720/" target="_blank" className="p-4 rounded-xl bg-white/5 border border-white/5 hover:bg-[#E1306C] hover:border-[#E1306C] transition-all flex flex-col items-center gap-3 text-center group/social">
                                 <Instagram className="w-6 h-6 text-white/70 group-hover/social:text-white" />
                                 <span className="text-sm text-white font-medium">Instagram</span>
                             </a>
