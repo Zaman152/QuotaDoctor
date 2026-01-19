@@ -17,7 +17,7 @@ export const Footer = () => {
   const y = useTransform(scrollYProgress, [0, 1], [-100, 0]);
 
   const socialLinks = [
-    { icon: Instagram, href: "https://www.instagram.com/dave_thompson720/" },
+    { icon: Instagram, href: "https://www.instagram.com/quotadoctorai/" },
     { icon: Linkedin, href: "https://linkedin.com/in/david-thompson-720" },
     { icon: Mail, href: "mailto:info@quotadoctor.com" },
   ];

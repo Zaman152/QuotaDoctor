@@ -84,7 +84,7 @@ export default function About() {
                                 <Linkedin className="w-6 h-6 text-white/70 group-hover/social:text-white" />
                                 <span className="text-sm text-white font-medium">LinkedIn</span>
                             </a>
-                            <a href="https://www.instagram.com/dave_thompson720/" target="_blank" className="p-4 rounded-xl bg-white/5 border border-white/5 hover:bg-[#E1306C] hover:border-[#E1306C] transition-all flex flex-col items-center gap-3 text-center group/social">
+                            <a href="https://www.instagram.com/quotadoctorai/" target="_blank" className="p-4 rounded-xl bg-white/5 border border-white/5 hover:bg-[#E1306C] hover:border-[#E1306C] transition-all flex flex-col items-center gap-3 text-center group/social">
                                 <Instagram className="w-6 h-6 text-white/70 group-hover/social:text-white" />
                                 <span className="text-sm text-white font-medium">Instagram</span>
                             </a>
