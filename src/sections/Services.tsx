@@ -42,7 +42,7 @@ const services: Service[] = [
   {
     id: "03",
     icon: <Globe className="w-8 h-8" aria-hidden="true" />,
-    title: 'Omnichannel',
+    title: 'Communication',
     subtitle: "24/7 AI Receptionist",
     description: "Never miss a lead again. Our voice and chat agents answer inbound inquiries instantly, qualify them, and book meetings directly onto your calendar.",
     tags: ["Voice AI", "Review Monitoring", "Instant Booking"]

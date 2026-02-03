@@ -12,6 +12,7 @@ import About from '@/sections/About';
 import Features from '@/sections/Features';
 import Nomisscalls from '@/sections/Nomisscalls';
 import Contact from '@/sections/Contact';
+import { SalesCallAnalyzer } from '@/sections/SalesCallAnalyzer';
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
       <Header />
       <Hero />
       <Services />
+      <SalesCallAnalyzer />
       {/* <Method /> */}
       <Stats />
       {/* <LogoTicker /> */}
