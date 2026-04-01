@@ -104,7 +104,7 @@ export default function AboutPage() {
           {credentials.map((cred, idx) => (
             <motion.div
               key={idx}
-              className={`glass-card-dark rounded-[2.5rem] p-10 flex flex-col justify-center min-h-[250px] shadow-lg ${idx === 0 || idx === 3 ? "md:col-span-2 lg:col-span-2" : ""}`}
+              className={`glass-card-dark rounded-[2.5rem] p-10 flex flex-col justify-center min-h-[250px] shadow-lg relative overflow-hidden ${idx === 0 || idx === 3 ? "md:col-span-2 lg:col-span-2" : ""}`}
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               whileHover={{ scale: 1.05, y: -10 }}

@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Send, X, Sparkles, Cpu, ChevronRight, CircleUser, MessageCircle, MessageCircleCode, MessageCircleX, MessageSquareDashed, MessageSquareDot, MessageSquareDiff, MessageSquareMore } from 'lucide-react';
+import { X, ChevronRight, CircleUser, MessageSquareMore } from 'lucide-react';
 
 interface Message {
     text: string;
@@ -144,7 +144,7 @@ export default function ChatbotClient() {
                                     type="text"
                                     value={inputMessage}
                                     onChange={(e) => setInputMessage(e.target.value)}
-                                    onKeyPress={handleKeyPress}
+                                    onKeyDown={handleKeyPress}
                                     placeholder="Type your message..."
                                     className="w-full bg-transparent py-4 pl-4 pr-12 text-sm text-white placeholder-white/20 focus:outline-none font-mono"
                                 />

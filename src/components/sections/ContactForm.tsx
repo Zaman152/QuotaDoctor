@@ -4,6 +4,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, Linkedin, Instagram, Facebook } from "lucide-react";
 import MagneticButton from "@/components/ui/MagneticButton";
+import Link from "next/link";
 
 const CALENDLY = "https://calendly.com/quotadoctor/30min";
 
@@ -15,6 +16,7 @@ export default function ContactForm() {
     business: "",
     challenge: "",
   });
+  const [smsConsent, setSmsConsent] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
 
@@ -57,7 +59,7 @@ export default function ContactForm() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 1, delay: 0.1, type: "spring", bounce: 0.5 }}
           >
-            Just fill out the simple form below, and Dave will text you right back.
+            Fill out the form below and Dave will reach out within 24 hours.
           </motion.p>
         </div>
 
@@ -132,7 +134,49 @@ export default function ContactForm() {
                   />
                 </motion.div>
 
-                <div className="pt-8">
+                {/* SMS Consent Checkbox */}
+                <div className="glass-card border border-white/60 rounded-[2rem] px-8 py-6">
+                  <label className="flex items-start gap-4 cursor-pointer group">
+                    <div className="relative mt-0.5 shrink-0">
+                      <input
+                        type="checkbox"
+                        id="sms-consent"
+                        checked={smsConsent}
+                        onChange={(e) => setSmsConsent(e.target.checked)}
+                        className="sr-only"
+                      />
+                      <div
+                        className={`w-6 h-6 rounded-md border-2 flex items-center justify-center transition-all duration-200 ${
+                          smsConsent
+                            ? "bg-[#0A2F4C] border-[#0A2F4C]"
+                            : "bg-white border-[#0A2F4C]/30 group-hover:border-[#4AACDE]"
+                        }`}
+                        onClick={() => setSmsConsent((v) => !v)}
+                      >
+                        {smsConsent && (
+                          <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                          </svg>
+                        )}
+                      </div>
+                    </div>
+                    <span className="text-sm text-[#6B7280] leading-relaxed" onClick={() => setSmsConsent((v) => !v)}>
+                      I agree to receive text messages (SMS) from{" "}
+                      <strong className="text-[#0A2F4C]">QuotaDoctor</strong> at the phone number provided. Message frequency varies. Message and data rates may apply. Reply{" "}
+                      <strong>STOP</strong> to cancel, <strong>HELP</strong> for help. This consent is not a condition of purchase. View our{" "}
+                      <Link href="/privacy-policy" className="text-[#4AACDE] underline hover:text-[#0A2F4C] transition-colors" onClick={(e) => e.stopPropagation()}>
+                        Privacy Policy
+                      </Link>{" "}
+                      and{" "}
+                      <Link href="/terms" className="text-[#4AACDE] underline hover:text-[#0A2F4C] transition-colors" onClick={(e) => e.stopPropagation()}>
+                        Terms of Service
+                      </Link>
+                      .
+                    </span>
+                  </label>
+                </div>
+
+                <div className="pt-4">
                   <MagneticButton>
                     <button
                       id="contact-submit"
@@ -143,6 +187,12 @@ export default function ContactForm() {
                       {loading ? "Sending..." : "Send Message"}
                     </button>
                   </MagneticButton>
+                  <p className="text-center text-xs text-[#6B7280]/70 mt-4">
+                    By submitting, you agree to our{" "}
+                    <Link href="/privacy-policy" className="text-[#4AACDE] underline">Privacy Policy</Link>
+                    {" "}and{" "}
+                    <Link href="/terms" className="text-[#4AACDE] underline">Terms of Service</Link>.
+                  </p>
                 </div>
               </form>
             )}

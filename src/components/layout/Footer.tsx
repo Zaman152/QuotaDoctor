@@ -11,6 +11,11 @@ const quickLinks = [
   { label: "Contact", href: "/#contact" },
 ];
 
+const legalLinks = [
+  { label: "Privacy Policy", href: "/privacy-policy" },
+  { label: "Terms of Service", href: "/terms" },
+];
+
 const socialLinks = [
   {
     label: "LinkedIn",
@@ -110,10 +115,28 @@ export default function Footer() {
           </div>
         </div>
 
+        {/* SMS Disclosure */}
+        <div className="mt-10 pt-8 border-t border-white/10">
+          <p className="text-white/40 text-xs leading-relaxed max-w-2xl">
+            <strong className="text-white/60">SMS Disclosure:</strong> By providing your phone number and opting in, you consent to receive text messages from QuotaDoctor. Message and data rates may apply. Message frequency varies. Reply STOP to cancel, HELP for help. SMS opt-in data will not be shared with third parties for marketing purposes.
+          </p>
+        </div>
+
         {/* Bottom bar */}
-        <div className="mt-12 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-2 text-white/50 text-sm">
+        <div className="mt-6 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-3 text-white/50 text-sm">
           <span>© 2026 QuotaDoctor. All rights reserved.</span>
-          <span>Denver, CO</span>
+          <div className="flex items-center gap-4">
+            {legalLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="text-white/50 hover:text-white text-xs transition-colors duration-200"
+              >
+                {link.label}
+              </Link>
+            ))}
+            <span className="text-white/30 text-xs">Denver, CO</span>
+          </div>
         </div>
       </div>
     </footer>
