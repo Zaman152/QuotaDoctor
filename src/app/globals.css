@@ -2,132 +2,147 @@
 @tailwind components;
 @tailwind utilities;
 
-@keyframes fadeUp {
-  0% {
-    opacity: 0;
-    transform: translateY(8px);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 /* Design tokens */
 :root {
-  --bg: #0A0A0F;
-  --bg-soft: #1A1A2E;
-  --text-primary: #FFFFFF;
-  --text-secondary: #BBE1FA;
-  --text-muted: #9ca3af;
-  --accent-blue: #3282B8;
-  --accent-blue-dark: #0F4C75;
-  --card-bg: #16213E;
-  --glass-bg: rgba(22, 33, 62, 0.5);
-  --glass-bg-strong: rgba(22, 33, 62, 0.8);
-  --glass-border: rgba(15, 76, 117, 0.3);
-  --glow: 0 0 20px rgba(50, 130, 184, 0.2);
+  --navy:       #0A2F4C;
+  --blue:       #4AACDE;
+  --bg-white:   #FFFFFF;
+  --bg-light:   #F7F9FB;
+  --text-dark:  #333333;
+  --text-muted: #6B7280;
+  --green:      #1B7A2B;
+  --border:     #E5EAF0;
 }
 
 html,
 body {
-  background-color: var(--bg) !important;
-  color: var(--text-primary);
+  background-color: #FFFFFF;
+  color: #333333;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
   width: 100%;
 }
 
-/* Container max width 1400px */
-.container {
-  max-width: 1400px;
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
+/* Remove default purple hover that was from cyberpunk theme */
+@layer components {
+  a {
+    transition: color 0.2s ease;
+  }
+
+  /* Scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #f1f5f9;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #4AACDE;
+    border-radius: 3px;
+  }
 }
 
-@layer components {
-  .btn {
-    @apply px-4 py-2 rounded-lg font-medium inline-flex items-center justify-center tracking-tight transition-transform duration-300 ease-out;
+  /* Extreme typographical utility classes */
+  .display-huge {
+    font-size: clamp(3rem, 10vw + 1rem, 12rem);
+    line-height: 0.9;
+    letter-spacing: -0.05em;
+  }
+  
+  .glass-card {
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(30px) saturate(180%);
+    -webkit-backdrop-filter: blur(30px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    box-shadow: 
+      0 12px 40px 0 rgba(10, 47, 76, 0.08),
+      inset 0 0 0 1px rgba(255, 255, 255, 0.4);
+    will-change: transform, backdrop-filter;
+    transform: translateZ(0); /* Force HW acceleration */
   }
 
-  .btn-primary {
-    background: var(--accent-blue);
-    color: var(--text-primary);
-    box-shadow: var(--glow);
+  .glass-card-dark {
+    background: linear-gradient(135deg, rgba(74, 172, 222, 0.15), rgba(10, 47, 76, 0.05));
+    backdrop-filter: blur(30px) saturate(180%);
+    -webkit-backdrop-filter: blur(30px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 
+      0 12px 40px 0 rgba(10, 47, 76, 0.15),
+      inset 0 0 0 1px rgba(255, 255, 255, 0.3);
+    will-change: transform, backdrop-filter;
+    transform: translateZ(0); /* Force HW acceleration */
+  }
+  
+  .noise-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.04;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
   }
 
-  .btn-primary:hover {
-    transform: scale(1.05);
-    background: var(--accent-blue-dark);
-    box-shadow: 0 0 25px rgba(50, 130, 184, 0.5);
-  }
+/* Smooth scroll & Typography fixes */
+html {
+  scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
-  .btn-text {
-    background: transparent;
-    color: var(--accent-blue);
-    border: 2px solid var(--accent-blue);
-  }
+body {
+  position: relative;
+  background-color: #F7F9FB; /* Base light tint */
+}
 
-  .btn-text:hover {
-    transform: scale(1.03);
-    background: var(--accent-blue);
-    color: var(--text-primary);
-    box-shadow: 0 0 25px rgba(50, 130, 184, 0.5);
-  }
+/* Ambient Liquid Gradient Blobs */
+body::before {
+  content: "";
+  position: fixed;
+  top: -20vh; left: -10vw;
+  width: 70vw; height: 70vh;
+  background: radial-gradient(circle, rgba(74,172,222,0.3) 0%, rgba(74,172,222,0) 70%);
+  filter: blur(80px);
+  z-index: -1;
+  pointer-events: none;
+  animation: float-blob 20s infinite ease-in-out alternate;
+  will-change: transform;
+  transform: translateZ(0);
+}
 
-  .logo-ticker-image {
-    @apply h-8 w-auto;
-    filter: drop-shadow(0 8px 20px rgba(139, 92, 246, 0.25));
-  }
+body::after {
+  content: "";
+  position: fixed;
+  bottom: -20vh; right: -10vw;
+  width: 80vw; height: 80vh;
+  background: radial-gradient(circle, rgba(27,122,43,0.15) 0%, rgba(27,122,43,0) 70%);
+  filter: blur(100px);
+  z-index: -1;
+  pointer-events: none;
+  animation: float-blob 25s infinite ease-in-out alternate-reverse;
+  will-change: transform;
+  transform: translateZ(0);
+}
 
-  .tag {
-    @apply text-sm inline-flex px-3 py-1 rounded-lg tracking-tight;
-    background: var(--glass-bg);
-    border: 1px solid var(--glass-border);
-    backdrop-filter: blur(20px) saturate(180%);
-    color: var(--text-secondary);
-  }
+/* Global Noise Overlay superimposed */
+html::after {
+  content: "";
+  position: fixed;
+  top: 0; left: 0; width: 100vw; height: 100vh;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.12;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  will-change: transform; /* Helps stabilize the noise layer */
+  transform: translateZ(0); 
+}
 
-  .section-title {
-    @apply text-center text-3xl md:text-[54px] md:leading-[60px] font-extrabold tracking-tight;
-    background-image: linear-gradient(135deg, #FFFFFF 0%, var(--text-secondary) 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-  }
-
-  .section-description {
-    @apply text-center text-[18px] leading-[30px] tracking-tight;
-    color: var(--text-secondary);
-  }
-
-  .section-heading {
-    @apply max-w-[700px] mx-auto;
-  }
-
-  .card {
-    @apply p-10 max-w-xs w-full rounded-3xl;
-    background: var(--glass-bg);
-    border: 1px solid var(--glass-border);
-    backdrop-filter: blur(20px) saturate(180%);
-    box-shadow: 0 10px 30px rgba(2, 6, 23, 0.25);
-  }
-
-  .card:hover {
-    box-shadow: 0 20px 50px rgba(139, 92, 246, 0.35);
-    transform: translateY(-4px);
-  }
-
-  a {
-    transition: color .3s ease, text-shadow .3s ease;
-  }
-
-  a:hover {
-    color: #C4B5FD;
-    /* lighter purple */
-    text-shadow: 0 0 24px rgba(139, 92, 246, 0.45);
-  }
+@keyframes float-blob {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(5vw, 10vh) scale(1.1); }
 }

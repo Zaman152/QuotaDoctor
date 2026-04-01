@@ -1,38 +1,21 @@
-import { CallToAction } from '@/sections/CallToAction';
-import { Footer } from '@/sections/Footer';
-import { Header } from '@/sections/Header';
-import { Hero } from '@/sections/Hero';
-import { LogoTicker } from '@/sections/LogoTicker';
-import Method from '@/sections/Method';
-import { ProductShowcase } from '@/sections/ProductShowcase';
-import { Testimonials } from '@/sections/Testimonials';
-import Services from '@/sections/Services';
-import Stats from '@/sections/Stats';
-import About from '@/sections/About';
-import Features from '@/sections/Features';
-import Nomisscalls from '@/sections/Nomisscalls';
-import Contact from '@/sections/Contact';
-import { SalesCallAnalyzer } from '@/sections/SalesCallAnalyzer';
+import Hero from "@/components/sections/Hero";
+import WhoWeHelp from "@/components/sections/WhoWeHelp";
+import MeetYourTeam from "@/components/sections/MeetYourTeam";
+import WhyQuotaDoctor from "@/components/sections/WhyQuotaDoctor";
+import HowItWorks from "@/components/sections/HowItWorks";
+import MeetDave from "@/components/sections/MeetDave";
+import ContactForm from "@/components/sections/ContactForm";
 
-export default function Home() {
+export default function HomePage() {
   return (
     <>
-      <Header />
       <Hero />
-      <Services />
-      <SalesCallAnalyzer />
-      {/* <Method /> */}
-      <Stats />
-      {/* <LogoTicker /> */}
-      {/* <ProductShowcase /> */}
-      <About />
-      {/*<Features /> */}
-      {/* <Pricing /> */}
-      <Nomisscalls />
-      <Testimonials />
-      <CallToAction />
-      <Contact />
-      <Footer />
+      <WhoWeHelp />
+      <MeetYourTeam />
+      <WhyQuotaDoctor />
+      <HowItWorks />
+      <MeetDave />
+      <ContactForm />
     </>
   );
 }
