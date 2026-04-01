@@ -8,13 +8,13 @@ export default function MagneticButton({
   className = "",
   onClick,
   href,
-  as = "button",
+  as,
 }: {
   children: React.ReactNode;
   className?: string;
   onClick?: () => void;
   href?: string;
-  as?: any;
+  as?: React.ElementType;
 }) {
   const ref = useRef<HTMLDivElement>(null);
   const [position, setPosition] = useState({ x: 0, y: 0 });
@@ -42,15 +42,19 @@ export default function MagneticButton({
       transition={{ type: "spring", stiffness: 150, damping: 15, mass: 0.1 }}
       className="relative z-10"
     >
-      <Component
-        onClick={onClick}
-        href={href}
-        className={className}
-        onMouseMove={handleMouse}
-        onMouseLeave={reset}
-      >
-        {children}
-      </Component>
+      {Component ? (
+        <Component
+          onClick={onClick}
+          href={href}
+          className={className}
+          onMouseMove={handleMouse}
+          onMouseLeave={reset}
+        >
+          {children}
+        </Component>
+      ) : (
+        <div className={className}>{children}</div>
+      )}
     </motion.div>
   );
 }

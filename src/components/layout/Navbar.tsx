@@ -18,14 +18,18 @@ const CALENDLY = "https://calendly.com/quotadoctor/30min";
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
     const handleScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const closeMenu = () => setIsOpen(false);
+
+  if (!mounted) return null;
 
   return (
     <header
