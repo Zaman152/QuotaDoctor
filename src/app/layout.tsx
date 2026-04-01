@@ -1,41 +1,50 @@
 import type { Metadata } from "next";
-import { DM_Sans } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
-import clsx from "clsx";
-import { twMerge } from "tailwind-merge";
-import dynamic from 'next/dynamic';
+import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
 
-const ChatbotClient = dynamic(() => import('@/components/ChatbotClient'), {
-  ssr: false,
-  loading: () => null
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
 });
 
-const dmSans = DM_Sans({ subsets: ["latin"] });
-
 export const metadata: Metadata = {
-  title: "QuotaDoctor — Fix the System, Elevate the Reps, Scale the Revenue",
+  title: "QuotaDoctor — Never Miss Another Lead",
   description:
-    "QuotaDoctor provides fractional VP sales leadership, AI-driven diagnostics, coaching, and end-to-end sales automation to scale revenue for B2B and SaaS companies.",
+    "QuotaDoctor gives small businesses a 24/7 AI team that answers every call, captures every lead, and runs your marketing — for less than one part-time hire.",
   applicationName: "QuotaDoctor",
+  keywords: [
+    "AI receptionist",
+    "small business marketing",
+    "lead capture",
+    "24/7 answering",
+    "home services",
+    "HVAC",
+    "plumbing",
+    "dental marketing",
+  ],
   openGraph: {
-    title: "QuotaDoctor",
-    description: "Fix the System, Elevate the Reps, Scale the Revenue",
+    title: "QuotaDoctor — Never Miss Another Lead",
+    description:
+      "We give small businesses a 24/7 team that answers every call, captures every lead, and runs your marketing — for less than one part-time hire.",
     siteName: "QuotaDoctor",
     type: "website",
     locale: "en_US",
+    url: "https://www.quotadoctor.ai",
   },
   twitter: {
     card: "summary_large_image",
-    title: "QuotaDoctor",
-    description: "Fix the System, Elevate the Reps, Scale the Revenue",
+    title: "QuotaDoctor — Never Miss Another Lead",
+    description:
+      "We give small businesses a 24/7 team that answers every call, captures every lead, and runs your marketing — for less than one part-time hire.",
   },
 };
 
 export const viewport = {
   width: "device-width",
   initialScale: 1,
-  maximumScale: 1,
-  userScalable: false,
 };
 
 export default function RootLayout({
@@ -44,67 +53,40 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="relative">
-      <body className={clsx(dmSans.className, "antialiased bg-[#050505] text-white relative overflow-x-hidden")}>
-        {/* Global Premium Grid Background */}
-        <div className="fixed inset-0 bg-[linear-gradient(rgba(15,76,117,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(15,76,117,0.03)_1px,transparent_1px)] bg-[size:64px_64px] [mask-image:radial-gradient(ellipse_60%_60%_at_50%_50%,#000_70%,transparent_100%)] pointer-events-none z-[-1]" />
-
-        <ChatbotClient />
+    <html lang="en" className={inter.variable}>
+      <body
+        className="font-inter antialiased bg-white text-[#333333] overflow-x-hidden"
+        style={{ fontFamily: "Inter, Arial, sans-serif" }}
+      >
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@type": "Organization",
+              "@type": "LocalBusiness",
               name: "QuotaDoctor",
-              slogan: "Fix the System, Elevate the Reps, Scale the Revenue",
-              url: "https://www.quotadoctor.com",
-              sameAs: [],
-              logo: "/logo.png",
               description:
-                "QuotaDoctor provides fractional VP sales leadership, AI-powered diagnostics, coaching, and full sales operating systems for B2B and SaaS companies.",
-              makesOffer: [
-                {
-                  "@type": "Offer",
-                  itemOffered: { "@type": "Service", name: "Mobile App Development" },
-                },
-                {
-                  "@type": "Offer",
-                  itemOffered: { "@type": "Service", name: "Web Development" },
-                },
-                {
-                  "@type": "Offer",
-                  itemOffered: { "@type": "Service", name: "Cloud Consultancy" },
-                },
-                {
-                  "@type": "Offer",
-                  itemOffered: { "@type": "Service", name: "Graphic Design" },
-                },
-                {
-                  "@type": "Offer",
-                  itemOffered: { "@type": "Service", name: "Ebook Development" },
-                },
-                {
-                  "@type": "Offer",
-                  itemOffered: { "@type": "Service", name: "Advanced Technologies" },
-                },
-                {
-                  "@type": "Offer",
-                  itemOffered: { "@type": "Service", name: "AI Voice Agents" },
-                },
-                {
-                  "@type": "Offer",
-                  itemOffered: { "@type": "Service", name: "RAG (Retrieval-Augmented Generation) Systems" },
-                },
-                {
-                  "@type": "Offer",
-                  itemOffered: { "@type": "Service", name: "AI Chatbots" },
-                },
+                "QuotaDoctor gives small businesses a 24/7 AI workforce that answers every call, captures every lead, and manages marketing automatically.",
+              url: "https://www.quotadoctor.ai",
+              telephone: "720-465-1809",
+              email: "Dave@quotadoctor.ai",
+              address: {
+                "@type": "PostalAddress",
+                addressLocality: "Denver",
+                addressRegion: "CO",
+                addressCountry: "US",
+              },
+              sameAs: [
+                "https://linkedin.com/in/david-thompson-720",
+                "https://instagram.com/quotadoctorai/",
+                "https://facebook.com/profile.php?id=61585199853574",
               ],
             }),
           }}
         />
-        {children}
+        <Navbar />
+        <main>{children}</main>
+        <Footer />
       </body>
     </html>
   );
