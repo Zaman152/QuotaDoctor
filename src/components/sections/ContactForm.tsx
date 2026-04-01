@@ -2,8 +2,8 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, Linkedin, Instagram, Facebook, CheckCircle2 } from "lucide-react";
-import SectionLabel from "@/components/ui/SectionLabel";
+import { Mail, Phone, MapPin, Linkedin, Instagram, Facebook } from "lucide-react";
+import MagneticButton from "@/components/ui/MagneticButton";
 
 const CALENDLY = "https://calendly.com/quotadoctor/30min";
 
@@ -27,247 +27,191 @@ export default function ContactForm() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    // Simulate async submission — wire up to Netlify/Vercel forms or API later
     await new Promise((r) => setTimeout(r, 800));
     setLoading(false);
     setSubmitted(true);
   };
 
   const inputClass =
-    "w-full bg-transparent border-b border-white/30 focus:border-white/80 text-white placeholder:text-white/40 py-3 text-base outline-none transition-colors duration-200";
+    "w-full glass-card border border-white/60 focus:border-[#4AACDE] focus:bg-white/60 text-[#0A2F4C] placeholder:text-[#0A2F4C]/40 py-6 px-8 text-xl font-bold rounded-[2rem] outline-none transition-all duration-300 shadow-md focus:shadow-xl focus:-translate-y-1";
 
   return (
-    <section id="contact" className="bg-[#0A2F4C] py-20 md:py-28">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="text-center mb-12">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-60px" }}
-            transition={{ duration: 0.5, ease: "easeOut" }}
-          >
-            <SectionLabel className="bg-white/10 text-white border-0">
-              LET&apos;S TALK
-            </SectionLabel>
-          </motion.div>
+    <section id="contact" className="py-32 relative overflow-hidden">
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        
+        <div className="text-center mb-20">
           <motion.h2
-            className="text-[28px] md:text-[40px] font-bold text-white leading-tight mt-1"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-60px" }}
-            transition={{ duration: 0.5, delay: 0.1, ease: "easeOut" }}
+            className="text-[4rem] md:text-[6rem] font-black text-[#0A2F4C] tracking-tighter"
+            initial={{ opacity: 0, scale: 0.5 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 1, type: "spring", bounce: 0.6 }}
           >
-            Tell Us About Your Business.
+            LET&apos;S CHAT.
           </motion.h2>
           <motion.p
-            className="text-white/60 mt-3 text-base"
-            initial={{ opacity: 0, y: 20 }}
+            className="text-2xl text-[#6B7280] mt-4 font-medium"
+            initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-60px" }}
-            transition={{ duration: 0.5, delay: 0.15, ease: "easeOut" }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 1, delay: 0.1, type: "spring", bounce: 0.5 }}
           >
-            We&apos;ll reach out within 2 hours.
+            Just fill out the simple form below, and Dave will text you right back.
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-12 md:gap-16">
-          {/* Form — spans 3 of 5 cols */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
+          {/* Form */}
           <motion.div
-            className="md:col-span-3"
-            initial={{ opacity: 0, x: -24 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-60px" }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="lg:col-span-8"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, delay: 0.2, type: "spring", bounce: 0.4 }}
           >
             {submitted ? (
-              <div className="flex flex-col items-center justify-center py-16 text-center">
-                <CheckCircle2 size={52} className="text-[#4AACDE] mb-4" />
-                <h3 className="text-white text-2xl font-bold mb-2">
-                  Thanks! We&apos;ll be in touch within 2 hours.
+              <div className="glass-card p-16 rounded-[3rem] text-center">
+                <h3 className="text-[#0A2F4C] text-5xl font-black mb-4">
+                  All Set!
                 </h3>
-                <p className="text-white/60">
-                  Keep an eye on your phone — Dave will reach out shortly.
+                <p className="text-[#6B7280] text-2xl font-medium">
+                  We got your message. Dave will message you shortly.
                 </p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-8">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                  <div>
-                    <label className="text-white/50 text-xs uppercase tracking-wider block mb-1">
-                      Your Name
-                    </label>
-                    <input
-                      id="contact-name"
-                      type="text"
-                      name="name"
-                      required
-                      value={formData.name}
-                      onChange={handleChange}
-                      placeholder="John Smith"
-                      className={inputClass}
-                    />
-                  </div>
-                  <div>
-                    <label className="text-white/50 text-xs uppercase tracking-wider block mb-1">
-                      Phone Number
-                    </label>
-                    <input
-                      id="contact-phone"
-                      type="tel"
-                      name="phone"
-                      required
-                      value={formData.phone}
-                      onChange={handleChange}
-                      placeholder="(555) 000-0000"
-                      className={inputClass}
-                    />
-                  </div>
-                </div>
+                <motion.div whileHover={{ scale: 1.02 }} transition={{ type: "spring", bounce: 0.5 }}>
+                  <input
+                    id="contact-name"
+                    type="text"
+                    name="name"
+                    required
+                    value={formData.name}
+                    onChange={handleChange}
+                    placeholder="Your Name"
+                    className={inputClass}
+                  />
+                </motion.div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                  <div>
-                    <label className="text-white/50 text-xs uppercase tracking-wider block mb-1">
-                      Email Address
-                    </label>
-                    <input
-                      id="contact-email"
-                      type="email"
-                      name="email"
-                      required
-                      value={formData.email}
-                      onChange={handleChange}
-                      placeholder="john@company.com"
-                      className={inputClass}
-                    />
-                  </div>
-                  <div>
-                    <label className="text-white/50 text-xs uppercase tracking-wider block mb-1">
-                      Business Name
-                    </label>
-                    <input
-                      id="contact-business"
-                      type="text"
-                      name="business"
-                      required
-                      value={formData.business}
-                      onChange={handleChange}
-                      placeholder="Smith Plumbing Co."
-                      className={inputClass}
-                    />
-                  </div>
-                </div>
+                <motion.div whileHover={{ scale: 1.02 }} transition={{ type: "spring", bounce: 0.5 }}>
+                  <input
+                    id="contact-phone"
+                    type="tel"
+                    name="phone"
+                    required
+                    value={formData.phone}
+                    onChange={handleChange}
+                    placeholder="Your Phone Number"
+                    className={inputClass}
+                  />
+                </motion.div>
 
-                <div>
-                  <label className="text-white/50 text-xs uppercase tracking-wider block mb-1">
-                    What&apos;s your biggest challenge right now?
-                  </label>
+                <motion.div whileHover={{ scale: 1.02 }} transition={{ type: "spring", bounce: 0.5 }}>
+                  <input
+                    id="contact-business"
+                    type="text"
+                    name="business"
+                    required
+                    value={formData.business}
+                    onChange={handleChange}
+                    placeholder="Your Business Name"
+                    className={inputClass}
+                  />
+                </motion.div>
+                
+                <motion.div whileHover={{ scale: 1.02 }} transition={{ type: "spring", bounce: 0.5 }}>
                   <textarea
                     id="contact-challenge"
                     name="challenge"
                     rows={4}
                     value={formData.challenge}
                     onChange={handleChange}
-                    placeholder="Tell us what you're struggling with..."
-                    className={`${inputClass} resize-none`}
+                    placeholder="How can we help you?"
+                    className={`${inputClass} resize-none rounded-[3rem]`}
                   />
-                </div>
+                </motion.div>
 
-                <div className="flex flex-col sm:flex-row gap-4 pt-2">
-                  <button
-                    id="contact-submit"
-                    type="submit"
-                    disabled={loading}
-                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white text-[#0A2F4C] hover:bg-[#F7F9FB] font-semibold px-8 py-4 rounded-lg text-base transition-all duration-200 shadow-md disabled:opacity-60"
-                  >
-                    {loading ? "Sending..." : "Send Message"}
-                  </button>
+                <div className="pt-8">
+                  <MagneticButton>
+                    <button
+                      id="contact-submit"
+                      type="submit"
+                      disabled={loading}
+                      className="w-full glass-card-dark border-[#0A2F4C]/20 border-2 text-[#0A2F4C] hover:bg-white px-8 py-6 rounded-full text-2xl font-black transition-all duration-300 shadow-xl hover:scale-105 disabled:opacity-50"
+                    >
+                      {loading ? "Sending..." : "Send Message"}
+                    </button>
+                  </MagneticButton>
                 </div>
-
-                <p className="text-white/40 text-sm">
-                  Or skip the form and book directly:{" "}
-                  <a
-                    href={CALENDLY}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    id="contact-calendly-link"
-                    className="text-[#4AACDE] hover:text-white underline transition-colors"
-                  >
-                    Book Your Free Strategy Call →
-                  </a>
-                </p>
               </form>
             )}
           </motion.div>
 
-          {/* Contact details — 2 of 5 cols */}
+          {/* Contact details */}
           <motion.div
-            className="md:col-span-2 flex flex-col gap-6"
-            initial={{ opacity: 0, x: 24 }}
+            className="lg:col-span-4 flex flex-col gap-12"
+            initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-60px" }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, delay: 0.3, type: "spring", bounce: 0.5 }}
           >
-            <div className="space-y-5">
-              <a
-                href="mailto:Dave@quotadoctor.ai"
-                className="flex items-center gap-3 text-white/70 hover:text-white transition-colors group"
-              >
-                <div className="w-10 h-10 rounded-xl bg-white/10 group-hover:bg-[#4AACDE] flex items-center justify-center transition-colors">
-                  <Mail size={16} />
-                </div>
-                <span className="text-sm">Dave@quotadoctor.ai</span>
-              </a>
-              <a
-                href="tel:7204651809"
-                className="flex items-center gap-3 text-white/70 hover:text-white transition-colors group"
-              >
-                <div className="w-10 h-10 rounded-xl bg-white/10 group-hover:bg-[#4AACDE] flex items-center justify-center transition-colors">
-                  <Phone size={16} />
-                </div>
-                <span className="text-sm">720-465-1809</span>
-              </a>
-              <div className="flex items-center gap-3 text-white/70">
-                <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center">
-                  <MapPin size={16} />
-                </div>
-                <span className="text-sm">Denver, CO</span>
-              </div>
-            </div>
-
-            <div className="pt-4 border-t border-white/10">
-              <p className="text-white/40 text-xs uppercase tracking-wider mb-3">
-                Find us online
-              </p>
-              <div className="flex items-center gap-3">
-                {[
-                  {
-                    href: "https://linkedin.com/in/david-thompson-720",
-                    icon: Linkedin,
-                    label: "LinkedIn",
-                  },
-                  {
-                    href: "https://instagram.com/quotadoctorai/",
-                    icon: Instagram,
-                    label: "Instagram",
-                  },
-                  {
-                    href: "https://facebook.com/profile.php?id=61585199853574",
-                    icon: Facebook,
-                    label: "Facebook",
-                  },
-                ].map(({ href, icon: Icon, label }) => (
+            <div className="glass-card p-10 flex flex-col gap-8 rounded-[3rem] shadow-2xl">
+              
+              <div>
+                <h4 className="text-xl font-black text-[#0A2F4C] mb-6">Reach Out Directly</h4>
+                <div className="space-y-6">
                   <a
-                    key={label}
-                    href={href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={label}
-                    className="w-10 h-10 rounded-xl bg-white/10 hover:bg-[#4AACDE] flex items-center justify-center transition-all duration-200 text-white"
+                    href="tel:7204651809"
+                    className="flex items-center gap-4 text-[#6B7280] hover:text-[#0A2F4C] transition-colors"
                   >
-                    <Icon size={16} />
+                    <div className="w-12 h-12 bg-white rounded-full flex justify-center items-center shadow-md">
+                      <Phone size={24} className="text-[#4AACDE]" />
+                    </div>
+                    <span className="text-xl font-bold">720.465.1809</span>
                   </a>
-                ))}
+                  <a
+                    href="mailto:Dave@quotadoctor.ai"
+                    className="flex items-center gap-4 text-[#6B7280] hover:text-[#0A2F4C] transition-colors"
+                  >
+                    <div className="w-12 h-12 bg-white rounded-full flex justify-center items-center shadow-md">
+                      <Mail size={24} className="text-[#4AACDE]" />
+                    </div>
+                    <span className="text-xl font-bold">Dave@quotadoctor.ai</span>
+                  </a>
+                  <div className="flex items-center gap-4 text-[#6B7280]">
+                    <div className="w-12 h-12 bg-white rounded-full flex justify-center items-center shadow-md">
+                      <MapPin size={24} className="text-[#4AACDE]" />
+                    </div>
+                    <span className="text-xl font-bold">Denver, CO</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="w-full h-px bg-[#0A2F4C]/10" />
+
+              <div>
+                <h4 className="text-xl font-black text-[#0A2F4C] mb-6">Socials</h4>
+                <div className="flex gap-4">
+                  {[
+                    { href: "https://linkedin.com/in/david-thompson-720", icon: Linkedin, label: "LinkedIn" },
+                    { href: "https://instagram.com/quotadoctorai/", icon: Instagram, label: "Instagram" },
+                    { href: "https://facebook.com/profile.php?id=61585199853574", icon: Facebook, label: "Facebook" },
+                  ].map(({ href, icon: Icon, label }) => (
+                    <motion.a
+                      key={label}
+                      href={href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={label}
+                      className="w-16 h-16 glass-card border border-white flex items-center justify-center text-[#0A2F4C] transition-all rounded-full shadow-lg hover:bg-white hover:scale-110"
+                      whileHover={{ y: -5 }}
+                      transition={{ type: "spring", bounce: 0.6 }}
+                    >
+                      <Icon size={24} />
+                    </motion.a>
+                  ))}
+                </div>
               </div>
             </div>
           </motion.div>

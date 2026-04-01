@@ -1,119 +1,89 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Phone, ClipboardList, Rocket } from "lucide-react";
-import SectionLabel from "@/components/ui/SectionLabel";
+import MagneticButton from "@/components/ui/MagneticButton";
 
 const CALENDLY = "https://calendly.com/quotadoctor/30min";
 
 const steps = [
   {
-    number: "01",
-    icon: Phone,
-    title: "Free Strategy Call",
-    description:
-      "We learn about your business, your challenges, and where you're losing leads. 15-30 minutes. No pitch, no pressure. Just an honest conversation about where you stand.",
-    id: "step-strategy-call",
+    number: "1",
+    title: "Talk With Us",
+    description: "We get on a quick 15-minute call. We figure out where you are losing customers. No boring sales pitches.",
   },
   {
-    number: "02",
-    icon: ClipboardList,
-    title: "Custom Game Plan",
-    description:
-      "We show you exactly where you're leaking revenue and which solutions will have the biggest impact fastest. You'll see the numbers and the math before you spend a dollar.",
-    id: "step-game-plan",
+    number: "2",
+    title: "We Build It",
+    description: "We set up your new phone and text system. You don't have to lift a finger or learn any new software.",
   },
   {
-    number: "03",
-    icon: Rocket,
-    title: "We Handle Everything",
-    description:
-      "Our team builds and manages your entire system. You focus on running your business. We focus on making sure no lead ever slips through the cracks again.",
-    id: "step-handle-everything",
+    number: "3",
+    title: "Watch It Work",
+    description: "Your phone rings, the AI answers, and books the job for you. You just focus on doing the actual work.",
   },
 ];
 
 export default function HowItWorks() {
   return (
-    <section id="how-it-works" className="bg-white py-20 md:py-28">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="text-center mb-14">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-60px" }}
-            transition={{ duration: 0.5, ease: "easeOut" }}
-          >
-            <SectionLabel>HOW IT WORKS</SectionLabel>
-          </motion.div>
+    <section id="how-it-works" className="py-32 relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="text-center mb-24">
           <motion.h2
-            className="text-[28px] md:text-[40px] font-bold text-[#0A2F4C] leading-tight mt-1"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-60px" }}
-            transition={{ duration: 0.5, delay: 0.1, ease: "easeOut" }}
+            className="text-[4rem] md:text-[6rem] font-black text-[#0A2F4C] leading-[0.85] tracking-tighter"
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, type: "spring", bounce: 0.5 }}
           >
-            Up and Running in 3 Simple Steps.
+            HOW IT WORKS.
           </motion.h2>
         </div>
 
-        {/* Steps */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6 relative">
-          {/* Connector line on desktop */}
-          <div className="hidden md:block absolute top-16 left-[calc(16.66%+48px)] right-[calc(16.66%+48px)] h-[2px] border-t-2 border-dashed border-[#E5EAF0] z-0" />
-
-          {steps.map((step, idx) => {
-            const Icon = step.icon;
-            return (
-              <motion.div
-                key={step.id}
-                id={step.id}
-                className="relative z-10 flex flex-col items-center text-center"
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-60px" }}
-                transition={{ duration: 0.5, delay: idx * 0.15, ease: "easeOut" }}
-              >
-                {/* Step number watermark */}
-                <div className="relative mb-5">
-                  <span className="absolute -top-4 -left-4 text-[80px] font-bold text-[#0A2F4C]/[0.04] leading-none select-none pointer-events-none">
-                    {step.number}
-                  </span>
-                  {/* Icon circle */}
-                  <div className="relative w-[72px] h-[72px] rounded-2xl bg-[#F7F9FB] border border-[#E5EAF0] flex items-center justify-center shadow-sm">
-                    <Icon size={28} className="text-[#4AACDE]" />
-                  </div>
-                </div>
-
-                <h3 className="text-xl font-semibold text-[#0A2F4C] mb-3">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 relative">
+          {steps.map((step, idx) => (
+            <motion.div
+              key={step.number}
+              className="glass-card rounded-[3rem] p-10 relative flex flex-col group overflow-hidden"
+              initial={{ opacity: 0, y: 100, rotateZ: idx === 1 ? -5 : 5 }}
+              whileInView={{ opacity: 1, y: 0, rotateZ: 0 }}
+              whileHover={{ y: -20, scale: 1.05 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8, delay: idx * 0.15, type: "spring", bounce: 0.6 }}
+            >
+              {/* Massive glass number */}
+              <div className="absolute -top-10 -right-4 text-[12rem] font-black text-[#4AACDE] opacity-20 pointer-events-none group-hover:scale-125 transition-transform duration-500 blur-sm group-hover:blur-none">
+                {step.number}
+              </div>
+              
+              <div className="relative z-10 mt-12">
+                <h3 className="text-3xl font-black text-[#0A2F4C] tracking-tighter mb-4">
                   {step.title}
                 </h3>
-                <p className="text-[#6B7280] text-sm leading-relaxed max-w-xs">
+                <p className="text-lg text-[#0A2F4C] font-medium leading-relaxed">
                   {step.description}
                 </p>
-              </motion.div>
-            );
-          })}
+              </div>
+            </motion.div>
+          ))}
         </div>
 
-        {/* CTA */}
         <motion.div
-          className="mt-14 text-center"
+          className="mt-24 text-center flex justify-center"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-60px" }}
-          transition={{ duration: 0.5, ease: "easeOut" }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, type: "spring", bounce: 0.6 }}
         >
-          <a
-            href={CALENDLY}
-            target="_blank"
-            rel="noopener noreferrer"
-            id="how-it-works-cta"
-            className="inline-flex items-center gap-2 bg-[#4AACDE] hover:bg-[#3A9CCC] text-white font-semibold px-8 py-4 rounded-lg text-lg transition-all duration-200 shadow-md hover:shadow-lg hover:-translate-y-0.5"
-          >
-            Book Your Free Strategy Call →
-          </a>
+          <MagneticButton>
+            <a
+              href={CALENDLY}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-4 glass-card-dark text-[#0A2F4C] font-black px-12 py-6 rounded-full text-2xl transition-all hover:bg-white hover:shadow-2xl hover:scale-110"
+            >
+              START NOW
+            </a>
+          </MagneticButton>
         </motion.div>
       </div>
     </section>
