@@ -23,7 +23,7 @@ export default function ChatbotWidget() {
         Because the widget renders in a shadow DOM or iframe, these rules target
         the host element only; the inner iframe styling is handled by the platform.
       */}
-      <style>{`
+      <style dangerouslySetInnerHTML={{ __html: `
         /* ── Floating trigger button ──────────────────────────────────── */
         #webchat-button,
         [id*="webchat"] button,
@@ -89,7 +89,7 @@ export default function ChatbotWidget() {
         [class*="wcb-container"] {
           z-index: 999 !important;
         }
-      `}</style>
+      ` }} />
     </>
   );
 }
