@@ -26,7 +26,8 @@ const config: Config = {
         border: "#E5EAF0",
       },
       fontFamily: {
-        inter: ["Inter", "Arial", "sans-serif"],
+        inter: ["var(--font-inter)", "Arial", "sans-serif"],
+        playfair: ["var(--font-playfair)", "Georgia", "serif"],
       },
       container: {
         center: true,

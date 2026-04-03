@@ -5,8 +5,8 @@ const CALENDLY = "https://calendly.com/quotadoctor/30min";
 
 const quickLinks = [
   { label: "Home", href: "/" },
-  { label: "What We Do", href: "/#meet-your-team" },
-  { label: "Who We Help", href: "/#who-we-help" },
+  { label: "AI Workforce", href: "/ai-workforce" },
+  { label: "Products & Services", href: "/products-services" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/#contact" },
 ];
