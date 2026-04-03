@@ -6,7 +6,6 @@ import { Menu, X } from "lucide-react";
 import MagneticButton from "@/components/ui/MagneticButton";
 
 const navLinks = [
-  { label: "Home", href: "/" },
   { label: "AI Workforce", href: "/ai-workforce" },
   { label: "Products & Services", href: "/products-services" },
   { label: "About", href: "/about" },
@@ -33,11 +32,10 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed z-50 transition-all duration-500 left-4 right-4 md:left-1/2 md:-translate-x-1/2 md:w-[800px] max-w-full ${
-        scrolled
+      className={`fixed z-50 transition-all duration-500 left-4 right-4 md:left-1/2 md:-translate-x-1/2 md:w-[800px] max-w-full ${scrolled
           ? "top-6 glass-card rounded-full shadow-2xl py-2 px-6"
           : "top-6 bg-white/40 backdrop-blur-md rounded-full border border-white/40 shadow-lg py-4 px-6"
-      }`}
+        }`}
     >
       <div className="relative flex items-center justify-between h-14">
         {/* Logo */}
@@ -87,9 +85,8 @@ export default function Navbar() {
 
         {/* Mobile Drawer (Floating absolute) */}
         <div
-          className={`md:hidden absolute top-[120%] left-0 right-0 glass-card rounded-[2rem] overflow-hidden transition-all duration-300 origin-top shadow-2xl border border-white/60 ${
-            isOpen ? "scale-y-100 opacity-100" : "scale-y-0 opacity-0 pointer-events-none"
-          }`}
+          className={`md:hidden absolute top-[120%] left-0 right-0 glass-card rounded-[2rem] overflow-hidden transition-all duration-300 origin-top shadow-2xl border border-white/60 ${isOpen ? "scale-y-100 opacity-100" : "scale-y-0 opacity-0 pointer-events-none"
+            }`}
         >
           <div className="px-6 py-6 flex flex-col gap-4">
             {navLinks.map((link) => (
