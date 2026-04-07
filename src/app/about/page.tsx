@@ -29,14 +29,14 @@ export default function AboutPage() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 1, type: "spring", bounce: 0.5 }}
             >
-              <h1 className="text-[5rem] md:text-[8rem] lg:text-[10rem] font-black text-navy leading-[0.8] tracking-tighter">
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-navy leading-[1.1] tracking-tighter uppercase">
                 MY <br />
-                <span className="italic font-light text-blue font-serif-display">STORY.</span>
+                <span className="font-playfair italic font-medium capitalize text-blue tracking-normal">Story.</span>
               </h1>
             </motion.div>
             
             <motion.div 
-               className="flex-none max-w-xl text-xl lg:text-2xl text-text-muted font-medium mb-4"
+               className="flex-none max-w-xl text-lg md:text-xl text-text-muted font-medium mb-4"
                initial={{ opacity: 0, y: 20 }}
                animate={{ opacity: 1, y: 0 }}
                transition={{ duration: 1, delay: 0.2 }}
@@ -64,10 +64,10 @@ export default function AboutPage() {
             <div className="absolute inset-0 bg-gradient-to-t from-navy/90 via-navy/30 to-transparent z-10 pointer-events-none" />
             
             <div className="absolute bottom-8 left-8 md:bottom-16 md:left-16 z-20">
-              <span className="block text-white text-5xl md:text-7xl font-black tracking-tighter mb-2 shadow-sm drop-shadow-2xl">
-                Dave Thompson
+              <span className="block text-white text-4xl md:text-5xl font-black tracking-tighter mb-1 shadow-sm drop-shadow-2xl uppercase">
+                DAVE THOMPSON
               </span>
-              <span className="block text-blue text-2xl md:text-3xl font-bold font-serif-display italic drop-shadow-xl">
+              <span className="block text-blue text-lg md:text-xl font-playfair font-medium capitalize italic drop-shadow-xl tracking-normal">
                 Husband, Dog Dad & Founder
               </span>
             </div>
@@ -86,11 +86,12 @@ export default function AboutPage() {
         >
           <div className="absolute top-0 right-0 w-64 h-64 bg-blue rounded-full blur-[100px] opacity-20 pointer-events-none" />
           
-          <h2 className="text-4xl md:text-5xl font-black text-navy tracking-tighter mb-8 leading-tight max-w-3xl">
-            I built this because I was bleeding money.
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-navy tracking-tighter mb-8 leading-tight max-w-3xl uppercase">
+            I BUILT THIS BECAUSE <br />
+            <span className="font-playfair italic font-medium capitalize text-blue tracking-normal">I Was Bleeding Money.</span>
           </h2>
           
-          <div className="space-y-6 text-xl md:text-2xl text-text-muted font-medium leading-relaxed max-w-4xl">
+          <div className="space-y-6 text-base md:text-lg lg:text-xl text-text-muted font-medium leading-relaxed max-w-4xl">
             <p>
               When I was running my real estate company, I couldn't find a reliable contractor. Every time I called a plumber, an electrician, or a roofer, I got sent to voicemail. They were too busy working to answer the phone to take my money.
             </p>
@@ -108,13 +109,14 @@ export default function AboutPage() {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full mb-40">
         <div className="text-center mb-16">
           <motion.h2
-            className="text-[4rem] md:text-[6rem] font-black text-navy tracking-tighter"
+            className="text-4xl md:text-5xl lg:text-6xl font-black text-navy leading-[1.1] tracking-tighter uppercase"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 1, type: "spring", bounce: 0.5 }}
           >
-            THE PROOF.
+            THE <br />
+            <span className="font-playfair italic font-medium capitalize text-blue tracking-normal">Proof.</span>
           </motion.h2>
         </div>
 
@@ -132,7 +134,7 @@ export default function AboutPage() {
               <span className="text-6xl text-blue opacity-20 font-black absolute top-6 right-8">
                 0{idx + 1}
               </span>
-              <p className="text-2xl md:text-3xl font-bold text-navy leading-tight relative z-10">
+              <p className="text-xl md:text-2xl font-bold text-navy leading-tight relative z-10">
                 {cred}
               </p>
             </motion.div>
@@ -148,8 +150,9 @@ export default function AboutPage() {
           viewport={{ once: true }}
           transition={{ duration: 1, type: "spring", bounce: 0.5 }}
         >
-          <h2 className="text-5xl md:text-7xl font-black text-navy tracking-tighter mb-10">
-            Let's build your machine.
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-navy leading-[1.1] tracking-tighter uppercase mb-10">
+            LET'S <br />
+            <span className="font-playfair italic font-medium capitalize text-blue tracking-normal">Build Your Machine.</span>
           </h2>
           <div className="flex justify-center">
             <MagneticButton>
@@ -157,7 +160,7 @@ export default function AboutPage() {
                 href={CALENDLY}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex glass-card border-navy/20 border-2 items-center gap-4 text-navy bg-white px-12 py-6 text-2xl font-black rounded-full hover:bg-white hover:scale-110 transition-all shadow-xl"
+                className="inline-flex glass-card border-navy/20 border-2 items-center gap-4 text-navy bg-white px-8 py-4 text-lg md:text-xl font-black rounded-full hover:bg-white hover:scale-110 transition-all shadow-xl"
               >
                 Book a Quick Chat
               </a>
