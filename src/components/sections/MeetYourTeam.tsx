@@ -40,17 +40,17 @@ export default function MeetYourTeam() {
         {/* Section header */}
         <div className="text-center mb-24">
           <motion.h2
-            className="text-[4rem] md:text-[6rem] lg:text-[7rem] font-black text-[#0A2F4C] leading-[0.85] tracking-tighter"
+            className="text-4xl md:text-5xl lg:text-6xl font-black text-[#0A2F4C] leading-[1.1] tracking-tighter uppercase"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 1, type: "spring", bounce: 0.5 }}
           >
             MEET THE <br/>
-            <span className="italic font-light text-[#4AACDE]">DREAM TEAM.</span>
+            <span className="font-playfair italic font-medium capitalize text-[#4AACDE] tracking-normal">Dream Team.</span>
           </motion.h2>
           <motion.p
-            className="mt-8 text-[#6B7280] text-2xl font-medium max-w-2xl mx-auto leading-relaxed"
+            className="mt-8 text-[#6B7280] text-lg md:text-xl font-medium max-w-2xl mx-auto leading-relaxed"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
@@ -79,10 +79,10 @@ export default function MeetYourTeam() {
             >
               <div className="absolute top-0 right-0 w-32 h-32 bg-[#4AACDE] rounded-full blur-[80px] opacity-20 pointer-events-none group-hover:scale-150 transition-transform duration-700" />
 
-              <h3 className="text-3xl md:text-4xl font-black text-[#0A2F4C] tracking-tighter mb-6">
+              <h3 className="text-2xl md:text-3xl font-black text-[#0A2F4C] tracking-tight mb-4">
                 {emp.role}
               </h3>
-              <p className="text-xl text-[#0A2F4C]/80 font-medium leading-relaxed">
+              <p className="text-base text-[#0A2F4C]/80 font-medium leading-relaxed">
                 {emp.description}
               </p>
             </motion.div>
@@ -99,9 +99,9 @@ export default function MeetYourTeam() {
         >
           <div className="absolute -left-32 top-0 w-64 h-64 bg-white rounded-full blur-[100px] opacity-20 pointer-events-none" />
           
-          <p className="text-[#0A2F4C] font-black text-3xl md:text-5xl tracking-tighter mb-10 leading-tight">
-            An Entire Office Staff. <br />
-            <span className="italic text-[#4AACDE] font-light">One Easy Price.</span>
+          <p className="text-[#0A2F4C] font-black uppercase text-2xl md:text-4xl tracking-tighter mb-10 leading-tight">
+            AN ENTIRE OFFICE STAFF. <br />
+            <span className="font-playfair italic font-medium capitalize text-[#4AACDE] tracking-normal">One Easy Price.</span>
           </p>
           
           <div className="flex justify-center">
@@ -110,7 +110,7 @@ export default function MeetYourTeam() {
                 href={CALENDLY}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-4 bg-white text-[#0A2F4C] font-black px-12 py-6 rounded-full text-xl md:text-2xl transition-all shadow-xl hover:scale-110"
+                className="inline-flex items-center gap-4 bg-white text-[#0A2F4C] font-black px-8 py-4 rounded-full text-lg md:text-xl transition-all shadow-xl hover:scale-110"
               >
                 Launch Your Team
               </a>

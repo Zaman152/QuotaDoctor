@@ -32,12 +32,13 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed z-50 transition-all duration-500 left-4 right-4 md:left-1/2 md:-translate-x-1/2 md:w-[800px] max-w-full ${scrolled
-          ? "top-6 glass-card rounded-full shadow-2xl py-2 px-6"
-          : "top-6 bg-white/40 backdrop-blur-md rounded-full border border-white/40 shadow-lg py-4 px-6"
-        }`}
+      className={`fixed z-50 transition-all duration-500 ${
+        scrolled
+          ? "top-4 md:top-6 left-4 right-4 md:left-1/2 md:-translate-x-1/2 md:w-[800px] glass-card rounded-full shadow-2xl py-2 px-6"
+          : "top-0 left-0 right-0 w-full bg-transparent py-5 px-6 md:px-12 border-b border-[#0A2F4C]/5"
+      }`}
     >
-      <div className="relative flex items-center justify-between h-14">
+      <div className="relative flex items-center justify-between h-14 w-full max-w-7xl mx-auto">
         {/* Logo */}
         <Link
           href="/"

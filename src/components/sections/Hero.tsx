@@ -55,14 +55,13 @@ export default function Hero() {
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.08, type: "spring", bounce: 0.3 }}
-              className="text-[clamp(2.6rem,5.5vw,5rem)] font-black text-[#0A2F4C] leading-[1] tracking-tight mb-6"
+              className="text-5xl md:text-6xl lg:text-7xl font-black text-[#0A2F4C] leading-[1.1] tracking-tighter uppercase mb-6"
             >
-              Never miss<br />
+              NEVER MISS<br />
               <span
-                className="font-playfair italic font-medium text-[#4AACDE]"
-                style={{ fontFamily: "var(--font-playfair), Georgia, serif", fontStyle: "italic" }}
+                className="font-playfair italic font-medium capitalize text-[#4AACDE] tracking-normal"
               >
-                another customer.
+                Another Customer.
               </span>
             </motion.h1>
 

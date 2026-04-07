@@ -51,14 +51,14 @@ export default function WhoWeHelp() {
         {/* Section header: Editorial style */}
         <div className="mb-20 flex flex-col md:flex-row md:items-end justify-between gap-8 border-b-2 border-[#0A2F4C] pb-8">
           <motion.h2
-            className="text-[3rem] md:text-[5rem] lg:text-[7rem] font-black text-[#0A2F4C] leading-[0.85] tracking-tighter uppercase"
+            className="text-4xl md:text-5xl lg:text-6xl font-black text-[#0A2F4C] leading-[1.1] tracking-tighter uppercase"
             {...fadeUp}
           >
             WHO WE <br />
-            <span className="italic font-light text-[#4AACDE]">SERVE</span>
+            <span className="font-playfair italic font-medium capitalize text-[#4AACDE] tracking-normal">Serve.</span>
           </motion.h2>
           <motion.p 
-            className="max-w-md text-lg text-[#6B7280] font-medium"
+            className="max-w-md text-base md:text-lg text-[#6B7280] font-medium"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -89,10 +89,10 @@ export default function WhoWeHelp() {
                   <div className="inline-block bg-[#0A2F4C] text-white px-3 py-1 text-xs font-bold tracking-widest mb-6 rounded-full">
                     {card.num}
                   </div>
-                  <h3 className="text-4xl md:text-5xl lg:text-6xl font-black text-[#0A2F4C] leading-[0.9] tracking-tighter uppercase">
+                  <h3 className="text-2xl md:text-3xl lg:text-4xl font-black text-[#0A2F4C] leading-[1.1] tracking-tighter uppercase">
                     {card.headline}
                     <br />
-                    <span className="font-light italic text-[#4AACDE]">{card.subhead}</span>
+                    <span className="font-playfair italic font-medium capitalize text-[#4AACDE] tracking-normal">{card.subhead.toLowerCase()}</span>
                   </h3>
                 </div>
 

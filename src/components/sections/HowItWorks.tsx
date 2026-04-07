@@ -29,13 +29,14 @@ export default function HowItWorks() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-24">
           <motion.h2
-            className="text-[4rem] md:text-[6rem] font-black text-[#0A2F4C] leading-[0.85] tracking-tighter"
+            className="text-4xl md:text-5xl lg:text-6xl font-black text-[#0A2F4C] leading-[1.1] tracking-tighter uppercase"
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8, type: "spring", bounce: 0.5 }}
           >
-            HOW IT WORKS.
+            HOW IT <br />
+            <span className="font-playfair italic font-medium capitalize text-[#4AACDE] tracking-normal">Works.</span>
           </motion.h2>
         </div>
 
@@ -56,10 +57,10 @@ export default function HowItWorks() {
               </div>
               
               <div className="relative z-10 mt-12">
-                <h3 className="text-3xl font-black text-[#0A2F4C] tracking-tighter mb-4">
+                <h3 className="text-2xl font-black text-[#0A2F4C] tracking-tight mb-4">
                   {step.title}
                 </h3>
-                <p className="text-lg text-[#0A2F4C] font-medium leading-relaxed">
+                <p className="text-base text-[#0A2F4C] font-medium leading-relaxed">
                   {step.description}
                 </p>
               </div>
@@ -79,7 +80,7 @@ export default function HowItWorks() {
               href={CALENDLY}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-4 glass-card-dark text-[#0A2F4C] font-black px-12 py-6 rounded-full text-2xl transition-all hover:bg-white hover:shadow-2xl hover:scale-110"
+              className="inline-flex items-center gap-4 glass-card-dark text-[#0A2F4C] font-black px-8 py-4 rounded-full text-xl transition-all hover:bg-white hover:shadow-2xl hover:scale-110"
             >
               START NOW
             </a>

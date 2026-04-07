@@ -28,17 +28,18 @@ export default function WhyQuotaDoctor() {
         
         <div className="text-center mb-24">
           <motion.h2
-            className="text-[3.5rem] md:text-[5rem] lg:text-[7rem] font-black text-[#0A2F4C] leading-[0.8] tracking-tighter"
+            className="text-4xl md:text-5xl lg:text-6xl font-black text-[#0A2F4C] leading-[1.1] tracking-tighter uppercase"
             initial={{ opacity: 0, scale: 0.5, rotateX: 45 }}
             whileInView={{ opacity: 1, scale: 1, rotateX: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 1, type: "spring", bounce: 0.5 }}
           >
-            WHY USE US?
+            WHY <br />
+            <span className="font-playfair italic font-medium capitalize text-[#4AACDE] tracking-normal">Choose Us.</span>
           </motion.h2>
           
           <motion.p
-            className="mt-8 text-2xl text-[#6B7280] font-medium max-w-2xl mx-auto glass-card p-6 rounded-3xl"
+            className="mt-8 text-lg md:text-xl text-[#6B7280] font-medium max-w-2xl mx-auto glass-card p-6 rounded-3xl"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
@@ -71,10 +72,10 @@ export default function WhyQuotaDoctor() {
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
               />
 
-              <h3 className="text-3xl lg:text-4xl font-black text-[#0A2F4C] tracking-tight mb-4 relative z-10">
+              <h3 className="text-2xl lg:text-3xl font-black text-[#0A2F4C] tracking-tight mb-4 relative z-10">
                 {f.headline}
               </h3>
-              <p className="text-xl text-[#0A2F4C]/80 font-medium leading-relaxed relative z-10">
+              <p className="text-base text-[#0A2F4C]/80 font-medium leading-relaxed relative z-10">
                 {f.body}
               </p>
             </motion.div>

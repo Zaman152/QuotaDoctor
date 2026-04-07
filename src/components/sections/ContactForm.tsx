@@ -35,7 +35,7 @@ export default function ContactForm() {
   };
 
   const inputClass =
-    "w-full glass-card border border-white/60 focus:border-[#4AACDE] focus:bg-white/60 text-[#0A2F4C] placeholder:text-[#0A2F4C]/40 py-6 px-8 text-xl font-bold rounded-[2rem] outline-none transition-all duration-300 shadow-md focus:shadow-xl focus:-translate-y-1";
+    "w-full glass-card border border-white/60 focus:border-[#4AACDE] focus:bg-white/60 text-[#0A2F4C] placeholder:text-[#0A2F4C]/40 py-4 px-6 text-base md:text-lg font-bold rounded-[2rem] outline-none transition-all duration-300 shadow-md focus:shadow-xl focus:-translate-y-1";
 
   return (
     <section id="contact" className="py-32 relative overflow-hidden">
@@ -44,16 +44,17 @@ export default function ContactForm() {
         
         <div className="text-center mb-20">
           <motion.h2
-            className="text-[4rem] md:text-[6rem] font-black text-[#0A2F4C] tracking-tighter"
+            className="text-4xl md:text-5xl lg:text-6xl font-black text-[#0A2F4C] leading-[1.1] tracking-tighter uppercase"
             initial={{ opacity: 0, scale: 0.5 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 1, type: "spring", bounce: 0.6 }}
           >
-            LET&apos;S CHAT.
+            LET&apos;S <br />
+            <span className="font-playfair italic font-medium capitalize text-[#4AACDE] tracking-normal">Chat.</span>
           </motion.h2>
           <motion.p
-            className="text-2xl text-[#6B7280] mt-4 font-medium"
+            className="text-lg md:text-xl text-[#6B7280] mt-4 font-medium"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
@@ -74,10 +75,10 @@ export default function ContactForm() {
           >
             {submitted ? (
               <div className="glass-card p-16 rounded-[3rem] text-center">
-                <h3 className="text-[#0A2F4C] text-5xl font-black mb-4">
+                <h3 className="text-[#0A2F4C] text-3xl font-black tracking-tight mb-4">
                   All Set!
                 </h3>
-                <p className="text-[#6B7280] text-2xl font-medium">
+                <p className="text-[#6B7280] text-xl font-medium">
                   We got your message. Dave will message you shortly.
                 </p>
               </div>
@@ -182,7 +183,7 @@ export default function ContactForm() {
                       id="contact-submit"
                       type="submit"
                       disabled={loading}
-                      className="w-full glass-card-dark border-[#0A2F4C]/20 border-2 text-[#0A2F4C] hover:bg-white px-8 py-6 rounded-full text-2xl font-black transition-all duration-300 shadow-xl hover:scale-105 disabled:opacity-50"
+                      className="w-full glass-card-dark border-[#0A2F4C]/20 border-2 text-[#0A2F4C] hover:bg-white px-6 py-4 rounded-full text-lg font-black transition-all duration-300 shadow-xl hover:scale-105 disabled:opacity-50"
                     >
                       {loading ? "Sending..." : "Send Message"}
                     </button>

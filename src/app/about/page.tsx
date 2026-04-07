@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import MagneticButton from "@/components/ui/MagneticButton";
+import Image from "next/image";
 
 const CALENDLY = "https://calendly.com/quotadoctor/30min";
 
@@ -17,41 +18,58 @@ export default function AboutPage() {
   return (
     <div className="pt-32 pb-20 relative overflow-hidden min-h-screen">
       
+      {/* Hero Section Container */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full mb-32">
-        <div className="flex flex-col md:flex-row gap-16 items-center">
+        <div className="flex flex-col gap-12 text-center lg:text-left">
           
-          <motion.div
-            className="flex-1 w-full text-center md:text-left"
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1, type: "spring", bounce: 0.5 }}
-          >
-            <h1 className="text-[5rem] md:text-[7rem] lg:text-[9rem] font-black text-[#0A2F4C] leading-[0.8] tracking-tighter mb-8">
-              MY <br />
-              <span className="italic font-light text-[#4AACDE]">STORY.</span>
-            </h1>
-          </motion.div>
+          <div className="flex flex-col lg:flex-row items-end justify-between gap-8 mb-4">
+            <motion.div
+              className="flex-1 w-full"
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1, type: "spring", bounce: 0.5 }}
+            >
+              <h1 className="text-[5rem] md:text-[8rem] lg:text-[10rem] font-black text-navy leading-[0.8] tracking-tighter">
+                MY <br />
+                <span className="italic font-light text-blue font-serif-display">STORY.</span>
+              </h1>
+            </motion.div>
+            
+            <motion.div 
+               className="flex-none max-w-xl text-xl lg:text-2xl text-text-muted font-medium mb-4"
+               initial={{ opacity: 0, y: 20 }}
+               animate={{ opacity: 1, y: 0 }}
+               transition={{ duration: 1, delay: 0.2 }}
+            >
+              <p>
+                People do business with people. Before you trust QuotaDoctor with your lifeblood—your leads—I want you to know who I am, what drives me, and who I'm building this for.
+              </p>
+            </motion.div>
+          </div>
 
-          {/* Photo */}
+          {/* Large Horizontal Family Image Frame */}
           <motion.div
-            className="flex-1 w-full"
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1, delay: 0.2, type: "spring", bounce: 0.5 }}
+            className="w-full relative rounded-[2.5rem] md:rounded-[4rem] overflow-hidden glass-card shadow-2xl group block"
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.3, type: "spring", bounce: 0.5 }}
           >
-            <div className="glass-card-dark relative w-full aspect-[4/5] max-w-sm mx-auto md:ml-auto rounded-[3rem] overflow-hidden flex flex-col items-center justify-center group shadow-2xl">
-              <div className="absolute inset-0 bg-gradient-to-br from-[#4AACDE]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
-              
-              <motion.div 
-                className="w-32 h-32 rounded-full glass-card border border-white flex items-center justify-center mb-6 shadow-xl relative z-10"
-                whileHover={{ scale: 1.1, rotate: 10 }}
-                transition={{ type: "spring", bounce: 0.6 }}
-              >
-                <span className="text-[#0A2F4C] text-5xl font-black">DT</span>
-              </motion.div>
-              
-              <span className="text-[#0A2F4C] text-3xl font-black tracking-tighter relative z-10">Dave Thompson</span>
-              <span className="text-[#6B7280] text-xl font-bold mt-2 relative z-10">Owner</span>
+            {/* Note to the developer: Make sure to place dave-family.jpg in the public folder */}
+            <img 
+              src="/dave-family.jpg" 
+              alt="Dave Thompson with his wife and dog"
+              className="w-full h-auto block transform scale-100 group-hover:scale-105 transition-transform duration-[2s] ease-in-out"
+            />
+            {/* Ambient overlay for the liquid glass feel & text readability */}
+            <div className="absolute inset-0 bg-gradient-to-t from-navy/90 via-navy/30 to-transparent z-10 pointer-events-none" />
+            
+            <div className="absolute bottom-8 left-8 md:bottom-16 md:left-16 z-20">
+              <span className="block text-white text-5xl md:text-7xl font-black tracking-tighter mb-2 shadow-sm drop-shadow-2xl">
+                Dave Thompson
+              </span>
+              <span className="block text-blue text-2xl md:text-3xl font-bold font-serif-display italic drop-shadow-xl">
+                Husband, Dog Dad & Founder
+              </span>
             </div>
           </motion.div>
         </div>
@@ -66,13 +84,13 @@ export default function AboutPage() {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 1, type: "spring", bounce: 0.4 }}
         >
-          <div className="absolute top-0 right-0 w-64 h-64 bg-[#4AACDE] rounded-full blur-[100px] opacity-20 pointer-events-none" />
+          <div className="absolute top-0 right-0 w-64 h-64 bg-blue rounded-full blur-[100px] opacity-20 pointer-events-none" />
           
-          <h2 className="text-4xl md:text-5xl font-black text-[#0A2F4C] tracking-tighter mb-8 leading-tight max-w-2xl">
+          <h2 className="text-4xl md:text-5xl font-black text-navy tracking-tighter mb-8 leading-tight max-w-3xl">
             I built this because I was bleeding money.
           </h2>
           
-          <div className="space-y-6 text-xl md:text-2xl text-[#6B7280] font-medium leading-relaxed max-w-4xl">
+          <div className="space-y-6 text-xl md:text-2xl text-text-muted font-medium leading-relaxed max-w-4xl">
             <p>
               When I was running my real estate company, I couldn't find a reliable contractor. Every time I called a plumber, an electrician, or a roofer, I got sent to voicemail. They were too busy working to answer the phone to take my money.
             </p>
@@ -90,7 +108,7 @@ export default function AboutPage() {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full mb-40">
         <div className="text-center mb-16">
           <motion.h2
-            className="text-[4rem] md:text-[6rem] font-black text-[#0A2F4C] tracking-tighter"
+            className="text-[4rem] md:text-[6rem] font-black text-navy tracking-tighter"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
@@ -111,10 +129,10 @@ export default function AboutPage() {
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8, delay: idx * 0.1, type: "spring", bounce: 0.5 }}
             >
-              <span className="text-6xl text-[#4AACDE] opacity-20 font-black absolute top-6 right-8">
+              <span className="text-6xl text-blue opacity-20 font-black absolute top-6 right-8">
                 0{idx + 1}
               </span>
-              <p className="text-2xl md:text-3xl font-bold text-[#0A2F4C] leading-tight relative z-10">
+              <p className="text-2xl md:text-3xl font-bold text-navy leading-tight relative z-10">
                 {cred}
               </p>
             </motion.div>
@@ -130,7 +148,7 @@ export default function AboutPage() {
           viewport={{ once: true }}
           transition={{ duration: 1, type: "spring", bounce: 0.5 }}
         >
-          <h2 className="text-5xl md:text-7xl font-black text-[#0A2F4C] tracking-tighter mb-10">
+          <h2 className="text-5xl md:text-7xl font-black text-navy tracking-tighter mb-10">
             Let's build your machine.
           </h2>
           <div className="flex justify-center">
@@ -139,7 +157,7 @@ export default function AboutPage() {
                 href={CALENDLY}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex glass-card border-[#0A2F4C]/20 border-2 items-center gap-4 text-[#0A2F4C] bg-white px-12 py-6 text-2xl font-black rounded-full hover:bg-white hover:scale-110 transition-all shadow-xl"
+                className="inline-flex glass-card border-navy/20 border-2 items-center gap-4 text-navy bg-white px-12 py-6 text-2xl font-black rounded-full hover:bg-white hover:scale-110 transition-all shadow-xl"
               >
                 Book a Quick Chat
               </a>
