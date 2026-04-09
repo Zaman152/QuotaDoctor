@@ -7,11 +7,11 @@ import Image from "next/image";
 const CALENDLY = "https://calendly.com/quotadoctor/15";
 
 const credentials = [
-  "Sold over $4,000,000 in services purely through high-end closing.",
-  "Turned around bankrupt companies into cash-machines in under 90 days.",
-  "Run a massive 50+ property real estate portfolio completely hands-off using the exact AI you're buying today.",
-  "Ran a $15M budget for military medical operations in the US Coast Guard.",
-  "Scaled a company from $2M a year to $2M a month.",
+  "Scaled multiple companies from struggling to profitable — delivering 50–80% profit increases within 90 days.",
+  "Built and grew a real estate portfolio to over $12 million in managed assets using AI agents to run operations hands-free.",
+  "Generated $4M+ in annual new business and helped secure multi-million dollar funding rounds across healthcare SaaS and private equity backed companies.",
+  "Scaled a single acquired company from $2M a year to $2M a month in revenue.",
+  "Built AI systems that book calls, make offers, screen leads, and follow up automatically — so business keeps running while you're living your life.",
 ];
 
 export default function AboutPage() {
@@ -86,9 +86,10 @@ export default function AboutPage() {
         >
           <div className="absolute top-0 right-0 w-64 h-64 bg-blue rounded-full blur-[100px] opacity-20 pointer-events-none" />
           
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-navy tracking-tighter mb-8 leading-tight max-w-3xl uppercase">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-navy tracking-tighter mb-8 leading-tight max-w-4xl uppercase">
             I BUILT THIS BECAUSE <br />
-            <span className="font-playfair italic font-medium capitalize text-blue tracking-normal">AI Changed My Life.</span>
+            <span className="font-playfair italic font-medium capitalize text-blue tracking-normal">AI Changed My Life.</span> <br />
+            AND I WANT IT TO CHANGE YOURS.
           </h2>
           
           <div className="space-y-6 text-base md:text-lg lg:text-xl text-text-muted font-medium leading-relaxed max-w-4xl">

@@ -31,7 +31,7 @@ export default function MeetDave() {
                   Dave Thompson
                 </span>
                 <span className="block text-blue text-lg md:text-xl font-bold font-serif-display italic drop-shadow-md">
-                  Husband, Dog Dad & Founder
+                  Husband, Dad, Dog Dad & Founder
                 </span>
               </div>
             </Link>

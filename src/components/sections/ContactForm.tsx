@@ -8,7 +8,15 @@ import Link from "next/link";
 
 const CALENDLY = "https://calendly.com/quotadoctor/15";
 
-export default function ContactForm() {
+export default function ContactForm({
+  hideHeader = false,
+  hideSidebar = false,
+  pyClass = "py-32",
+}: {
+  hideHeader?: boolean;
+  hideSidebar?: boolean;
+  pyClass?: string;
+} = {}) {
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -17,6 +25,7 @@ export default function ContactForm() {
     challenge: "",
   });
   const [smsConsent, setSmsConsent] = useState(false);
+  const [termsConsent, setTermsConsent] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
 
@@ -38,11 +47,12 @@ export default function ContactForm() {
     "w-full glass-card border border-white/60 focus:border-[#4AACDE] focus:bg-white/60 text-[#0A2F4C] placeholder:text-[#0A2F4C]/40 py-4 px-6 text-base md:text-lg font-bold rounded-[2rem] outline-none transition-all duration-300 shadow-md focus:shadow-xl focus:-translate-y-1";
 
   return (
-    <section id="contact" className="py-32 relative overflow-hidden">
+    <section id="contact" className={`${pyClass} relative overflow-hidden`}>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        <div className="text-center mb-20">
+        {!hideHeader && (
+          <div className="text-center mb-20">
           <motion.h2
             className="text-4xl md:text-5xl lg:text-6xl font-black text-[#0A2F4C] leading-[1.1] tracking-tighter uppercase"
             initial={{ opacity: 0, scale: 0.5 }}
@@ -63,11 +73,12 @@ export default function ContactForm() {
             Fill out the form below and Dave will reach out within 24 hours.
           </motion.p>
         </div>
+        )}
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
+        <div className={`grid grid-cols-1 ${hideSidebar ? 'gap-0' : 'lg:grid-cols-12 gap-16 lg:gap-24'}`}>
           {/* Form */}
           <motion.div
-            className="lg:col-span-8"
+            className={hideSidebar ? "w-full" : "lg:col-span-8"}
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
@@ -135,46 +146,79 @@ export default function ContactForm() {
                   />
                 </motion.div>
 
-                {/* SMS Consent Checkbox */}
-                <div className="glass-card border border-white/60 rounded-[2rem] px-8 py-6">
-                  <label className="flex items-start gap-4 cursor-pointer group">
-                    <div className="relative mt-0.5 shrink-0">
-                      <input
-                        type="checkbox"
-                        id="sms-consent"
-                        checked={smsConsent}
-                        onChange={(e) => setSmsConsent(e.target.checked)}
-                        className="sr-only"
-                      />
-                      <div
-                        className={`w-6 h-6 rounded-md border-2 flex items-center justify-center transition-all duration-200 ${
-                          smsConsent
-                            ? "bg-[#0A2F4C] border-[#0A2F4C]"
-                            : "bg-white border-[#0A2F4C]/30 group-hover:border-[#4AACDE]"
-                        }`}
-                        onClick={() => setSmsConsent((v) => !v)}
-                      >
-                        {smsConsent && (
-                          <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                          </svg>
-                        )}
+                {/* Consents */}
+                <div className="space-y-4">
+                  {/* SMS Consent */}
+                  <div className="glass-card border border-white/60 rounded-[2rem] px-8 py-6">
+                    <label className="flex items-start gap-4 cursor-pointer group">
+                      <div className="relative mt-0.5 shrink-0">
+                        <input
+                          type="checkbox"
+                          id="sms-consent"
+                          checked={smsConsent}
+                          onChange={(e) => setSmsConsent(e.target.checked)}
+                          className="sr-only"
+                        />
+                        <div
+                          className={`w-6 h-6 rounded-md border-2 flex items-center justify-center transition-all duration-200 ${
+                            smsConsent
+                              ? "bg-[#0A2F4C] border-[#0A2F4C]"
+                              : "bg-white border-[#0A2F4C]/30 group-hover:border-[#4AACDE]"
+                          }`}
+                          onClick={() => setSmsConsent((v) => !v)}
+                        >
+                          {smsConsent && (
+                            <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                              <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                            </svg>
+                          )}
+                        </div>
                       </div>
-                    </div>
-                    <span className="text-sm text-[#6B7280] leading-relaxed" onClick={() => setSmsConsent((v) => !v)}>
-                      I agree to receive text messages (SMS) from{" "}
-                      <strong className="text-[#0A2F4C]">QuotaDoctor</strong> at the phone number provided. Message frequency varies. Message and data rates may apply. Reply{" "}
-                      <strong>STOP</strong> to cancel, <strong>HELP</strong> for help. This consent is not a condition of purchase. View our{" "}
-                      <Link href="/privacy-policy" className="text-[#4AACDE] underline hover:text-[#0A2F4C] transition-colors" onClick={(e) => e.stopPropagation()}>
-                        Privacy Policy
-                      </Link>{" "}
-                      and{" "}
-                      <Link href="/terms" className="text-[#4AACDE] underline hover:text-[#0A2F4C] transition-colors" onClick={(e) => e.stopPropagation()}>
-                        Terms of Service
-                      </Link>
-                      .
-                    </span>
-                  </label>
+                      <span className="text-sm text-[#6B7280] leading-relaxed" onClick={() => setSmsConsent((v) => !v)}>
+                        I agree to receive SMS messages from QuotaDoctor at the phone number provided. Message frequency varies. Message and data rates may apply. Reply STOP to cancel, HELP for help. Consent is not a condition of purchase.
+                      </span>
+                    </label>
+                  </div>
+
+                  {/* Terms Consent */}
+                  <div className="glass-card border border-white/60 rounded-[2rem] px-8 py-6">
+                    <label className="flex items-start gap-4 cursor-pointer group">
+                      <div className="relative mt-0.5 shrink-0">
+                        <input
+                          type="checkbox"
+                          id="terms-consent"
+                          checked={termsConsent}
+                          onChange={(e) => setTermsConsent(e.target.checked)}
+                          className="sr-only"
+                        />
+                        <div
+                          className={`w-6 h-6 rounded-md border-2 flex items-center justify-center transition-all duration-200 ${
+                            termsConsent
+                              ? "bg-[#0A2F4C] border-[#0A2F4C]"
+                              : "bg-white border-[#0A2F4C]/30 group-hover:border-[#4AACDE]"
+                          }`}
+                          onClick={() => setTermsConsent((v) => !v)}
+                        >
+                          {termsConsent && (
+                            <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                              <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                            </svg>
+                          )}
+                        </div>
+                      </div>
+                      <span className="text-sm text-[#6B7280] leading-relaxed" onClick={() => setTermsConsent((v) => !v)}>
+                        I agree to the{" "}
+                        <Link href="/privacy-policy" className="text-[#4AACDE] underline hover:text-[#0A2F4C] transition-colors" onClick={(e) => e.stopPropagation()}>
+                          Privacy Policy
+                        </Link>{" "}
+                        and{" "}
+                        <Link href="/terms" className="text-[#4AACDE] underline hover:text-[#0A2F4C] transition-colors" onClick={(e) => e.stopPropagation()}>
+                          Terms of Service
+                        </Link>
+                        .
+                      </span>
+                    </label>
+                  </div>
                 </div>
 
                 <div className="pt-4">
@@ -188,19 +232,14 @@ export default function ContactForm() {
                       {loading ? "Sending..." : "Send Message"}
                     </button>
                   </MagneticButton>
-                  <p className="text-center text-xs text-[#6B7280]/70 mt-4">
-                    By submitting, you agree to our{" "}
-                    <Link href="/privacy-policy" className="text-[#4AACDE] underline">Privacy Policy</Link>
-                    {" "}and{" "}
-                    <Link href="/terms" className="text-[#4AACDE] underline">Terms of Service</Link>.
-                  </p>
                 </div>
               </form>
             )}
           </motion.div>
 
           {/* Contact details */}
-          <motion.div
+          {!hideSidebar && (
+            <motion.div
             className="lg:col-span-4 flex flex-col gap-12"
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -266,6 +305,7 @@ export default function ContactForm() {
               </div>
             </div>
           </motion.div>
+          )}
         </div>
       </div>
     </section>

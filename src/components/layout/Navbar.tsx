@@ -9,7 +9,7 @@ const navLinks = [
   { label: "AI Workforce", href: "/ai-workforce" },
   { label: "Products & Services", href: "/products-services" },
   { label: "About", href: "/about" },
-  { label: "Contact", href: "/#contact" },
+  { label: "Contact", href: "/contact" },
 ];
 
 const CALENDLY = "https://calendly.com/quotadoctor/15";

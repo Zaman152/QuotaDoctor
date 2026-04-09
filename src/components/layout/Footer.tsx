@@ -8,7 +8,7 @@ const quickLinks = [
   { label: "AI Workforce", href: "/ai-workforce" },
   { label: "Products & Services", href: "/products-services" },
   { label: "About", href: "/about" },
-  { label: "Contact", href: "/#contact" },
+  { label: "Contact", href: "/contact" },
 ];
 
 const legalLinks = [
