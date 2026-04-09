@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 };
 
 export default function PrivacyPolicyPage() {
-  const lastUpdated = "April 2, 2026";
+  const lastUpdated = "April 10, 2026";
 
   return (
     <main className="bg-white min-h-screen">
@@ -172,6 +172,15 @@ export default function PrivacyPolicyPage() {
                   <strong className="text-[#0A2F4C]">Consent is Optional:</strong>{" "}
                   Providing your phone number and consenting to SMS is not a
                   condition of purchasing any goods or services.
+                </span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-[#4AACDE] font-black mt-0.5">•</span>
+                <span>
+                  <strong className="text-[#0A2F4C]">Supported Carriers:</strong>{" "}
+                  Major US carriers are supported including AT&amp;T, T-Mobile,
+                  Verizon, and others. Carriers are not liable for delayed or
+                  undelivered messages.
                 </span>
               </li>
             </ul>

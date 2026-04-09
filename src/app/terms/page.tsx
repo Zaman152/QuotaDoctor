@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 };
 
 export default function TermsOfServicePage() {
-  const lastUpdated = "April 2, 2026";
+  const lastUpdated = "April 10, 2026";
 
   return (
     <main className="bg-white min-h-screen">
@@ -164,9 +164,16 @@ export default function TermsOfServicePage() {
               <li className="flex items-start gap-2">
                 <span className="text-[#4AACDE] font-black mt-0.5">•</span>
                 <span>
-                  <strong className="text-[#0A2F4C]">
-                    Supported Carriers:
-                  </strong>{" "}
+                  <strong className="text-[#0A2F4C]">No Third-Party Sharing:</strong>{" "}
+                  Your SMS opt-in information and phone number will{" "}
+                  <strong>NOT</strong> be sold, rented, or shared with third
+                  parties for their marketing purposes.
+                </span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-[#4AACDE] font-black mt-0.5">•</span>
+                <span>
+                  <strong className="text-[#0A2F4C]">Supported Carriers:</strong>{" "}
                   Carriers are not liable for delayed or undelivered messages.
                   Compatible with major US carriers including AT&amp;T, T-Mobile,
                   Verizon, and others.

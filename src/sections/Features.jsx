@@ -93,7 +93,7 @@ export default function Features() {
 
                 {/* Bottom CTA */}
                 <div className="mt-24 text-center">
-                    <a href="https://calendly.com/quotadoctor/15min" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 transition-all text-white font-medium group">
+                    <a href="https://calendly.com/quotadoctor/15" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 transition-all text-white font-medium group">
                         <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
                         Schedule your diagnosis
                     </a>

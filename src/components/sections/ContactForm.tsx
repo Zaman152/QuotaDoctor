@@ -6,7 +6,7 @@ import { Mail, Phone, MapPin, Linkedin, Instagram, Facebook } from "lucide-react
 import MagneticButton from "@/components/ui/MagneticButton";
 import Link from "next/link";
 
-const CALENDLY = "https://calendly.com/quotadoctor/30min";
+const CALENDLY = "https://calendly.com/quotadoctor/15";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({

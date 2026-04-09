@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, Phone, Star, Zap, Shield } from "lucide-react";
 import Link from "next/link";
 
-const CALENDLY = "https://calendly.com/quotadoctor/30min";
+const CALENDLY = "https://calendly.com/quotadoctor/15";
 
 const trustItems = [
   { icon: Phone, label: "Every call answered" },

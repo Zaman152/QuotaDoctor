@@ -66,7 +66,7 @@ export const CallToAction = () => {
           className="mt-20 text-center"
         >
           <a
-            href="https://calendly.com/quotadoctor/15min"
+            href="https://calendly.com/quotadoctor/15"
             target="_blank"
             rel="noopener noreferrer"
             className="group relative inline-flex h-12 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-[#3282B8] focus:ring-offset-2 focus:ring-offset-slate-50"

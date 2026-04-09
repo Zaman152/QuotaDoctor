@@ -72,7 +72,7 @@ export const Hero = () => {
             className="flex flex-col md:flex-row gap-5 items-center justify-center w-full px-4"
           >
             <a
-              href="https://calendly.com/quotadoctor/15min"
+              href="https://calendly.com/quotadoctor/15"
               target="_blank"
               rel="noopener noreferrer"
               className="group relative w-full md:w-auto px-5 py-2.5 md:px-8 md:py-4 bg-[#3282B8] text-white rounded-full font-semibold text-sm md:text-lg overflow-hidden transition-all hover:scale-105 hover:shadow-[0_0_40px_rgba(50,130,184,0.4)] flex justify-center"

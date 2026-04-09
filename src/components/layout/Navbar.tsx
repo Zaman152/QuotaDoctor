@@ -12,7 +12,7 @@ const navLinks = [
   { label: "Contact", href: "/#contact" },
 ];
 
-const CALENDLY = "https://calendly.com/quotadoctor/30min";
+const CALENDLY = "https://calendly.com/quotadoctor/15";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);

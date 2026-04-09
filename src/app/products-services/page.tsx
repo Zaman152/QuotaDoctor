@@ -10,7 +10,7 @@ import {
   Camera, ArrowRight,
 } from "lucide-react";
 
-const CALENDLY = "https://calendly.com/quotadoctor/30min";
+const CALENDLY = "https://calendly.com/quotadoctor/15";
 
 const fadeUp = (delay = 0) => ({
   hidden: { opacity: 0, y: 50 },

@@ -86,7 +86,7 @@ export const Header = () => {
 
           {/* CTA Button */}
           <a
-            href="https://calendly.com/quotadoctor/15min"
+            href="https://calendly.com/quotadoctor/15"
             target="_blank"
             rel="noopener noreferrer"
             className="ml-2 px-5 py-2.5 bg-[#3282B8] hover:bg-[#276690] text-white text-sm font-semibold rounded-full transition-all hidden md:flex items-center gap-2 group"
@@ -153,7 +153,7 @@ export const Header = () => {
 
               <div className="mb-8 w-full">
                 <a
-                  href="https://calendly.com/quotadoctor/15min"
+                  href="https://calendly.com/quotadoctor/15"
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => setIsMobileMenuOpen(false)}

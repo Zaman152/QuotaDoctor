@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import MagneticButton from "@/components/ui/MagneticButton";
 
-const CALENDLY = "https://calendly.com/quotadoctor/30min";
+const CALENDLY = "https://calendly.com/quotadoctor/15";
 
 const steps = [
   {

@@ -71,6 +71,35 @@ export default function Contact() {
                         <InputGroup label="MISSION_PARAMETERS" name="message" textArea placeholder="Describe operational challenges..." active={focusedField === 'message'} onFocus={() => setFocusedField('message')} onBlur={() => setFocusedField(null)} />
                     </div>
 
+                    {/* Consent Checkboxes */}
+                    <div className="space-y-4 pt-2">
+                        <label className="flex items-start gap-3 cursor-pointer group">
+                            <input
+                                type="checkbox"
+                                name="sms_consent"
+                                defaultChecked={false}
+                                className="mt-1 w-4 h-4 flex-shrink-0 accent-[#3282B8] cursor-pointer"
+                            />
+                            <span className="text-xs text-white/50 leading-relaxed group-hover:text-white/70 transition-colors">
+                                I agree to receive SMS messages from QuotaDoctor at the phone number provided. Message frequency varies. Message and data rates may apply. Reply STOP to cancel, HELP for help. Consent is not a condition of purchase.
+                            </span>
+                        </label>
+                        <label className="flex items-start gap-3 cursor-pointer group">
+                            <input
+                                type="checkbox"
+                                name="terms_consent"
+                                defaultChecked={false}
+                                className="mt-1 w-4 h-4 flex-shrink-0 accent-[#3282B8] cursor-pointer"
+                            />
+                            <span className="text-xs text-white/50 leading-relaxed group-hover:text-white/70 transition-colors">
+                                I agree to the{' '}
+                                <a href="/privacy-policy" className="text-[#3282B8] underline hover:text-[#5aaee8] transition-colors">Privacy Policy</a>
+                                {' '}and{' '}
+                                <a href="/terms" className="text-[#3282B8] underline hover:text-[#5aaee8] transition-colors">Terms of Service</a>.
+                            </span>
+                        </label>
+                    </div>
+
                     <div className="pt-4">
                         <button type="submit" className="w-full md:w-auto group relative flex items-center justify-center gap-3 bg-[#3282B8] hover:bg-[#205a85] text-white px-8 py-4 rounded-xl font-bold transition-all shadow-[0_0_20px_rgba(50,130,184,0.3)] hover:shadow-[0_0_30px_rgba(50,130,184,0.5)]">
                             <Send className="w-4 h-4" />

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Linkedin, Instagram, Facebook, Mail, Phone, MapPin, ArrowUpRight } from "lucide-react";
 
-const CALENDLY = "https://calendly.com/quotadoctor/30min";
+const CALENDLY = "https://calendly.com/quotadoctor/15";
 
 const quickLinks = [
   { label: "Home", href: "/" },

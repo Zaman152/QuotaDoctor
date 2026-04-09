@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import MagneticButton from "@/components/ui/MagneticButton";
 import Image from "next/image";
 
-const CALENDLY = "https://calendly.com/quotadoctor/30min";
+const CALENDLY = "https://calendly.com/quotadoctor/15";
 
 const credentials = [
   "Sold over $4,000,000 in services purely through high-end closing.",
@@ -68,7 +68,7 @@ export default function AboutPage() {
                 DAVE THOMPSON
               </span>
               <span className="block text-blue text-lg md:text-xl font-playfair font-medium capitalize italic drop-shadow-xl tracking-normal">
-                Husband, Dog Dad & Founder
+                Husband, Dad, Dog Dad & Founder
               </span>
             </div>
           </motion.div>
@@ -88,18 +88,45 @@ export default function AboutPage() {
           
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-navy tracking-tighter mb-8 leading-tight max-w-3xl uppercase">
             I BUILT THIS BECAUSE <br />
-            <span className="font-playfair italic font-medium capitalize text-blue tracking-normal">I Was Bleeding Money.</span>
+            <span className="font-playfair italic font-medium capitalize text-blue tracking-normal">AI Changed My Life.</span>
           </h2>
           
           <div className="space-y-6 text-base md:text-lg lg:text-xl text-text-muted font-medium leading-relaxed max-w-4xl">
             <p>
-              When I was running my real estate company, I couldn't find a reliable contractor. Every time I called a plumber, an electrician, or a roofer, I got sent to voicemail. They were too busy working to answer the phone to take my money.
+              I&apos;ve spent 20+ years in sales, business development, and revenue operations. I&apos;ve worked with some of the largest healthcare technology companies in the country — managing national sales teams, approving hospital marketing campaigns, reducing churn for venture-backed platforms, and helping secure multi-million dollar funding rounds.
             </p>
             <p>
-              So I built an AI to answer MY phones simultaneously, around the clock. Suddenly, my businesses ran themselves. Leads got answered in two seconds. Jobs got booked while I was asleep. 
+              I know how to grow a business. I&apos;ve done it across healthcare, SaaS, real estate, and private equity. I&apos;ve helped buy and sell companies, raise capital, and turn struggling operations into profitable ones — usually within 90 days.
             </p>
             <p>
-              I realized every home service business needed this exact machine. We aren't marketers. We plug the massive holes in your sales bucket using high-end technology.
+              But the thing that changed everything for me personally wasn&apos;t a boardroom win.
+            </p>
+            <p>
+              It was a Tuesday night. I was at dinner with my family. My phone wasn&apos;t ringing.
+            </p>
+            <p>
+              Not because business was slow. Because my AI was handling it.
+            </p>
+            <p>
+              While I sat at that table, my system was answering calls, screening leads, booking appointments, and following up with sellers on the exact dates and times we&apos;d discussed — automatically. It even made offers for me.
+            </p>
+            <p>
+              Home sellers who called at 9pm got answered immediately. Tire kickers got filtered out. Serious leads got nurtured until they were ready. My close rates went up. My family stopped competing with my phone for my attention.
+            </p>
+            <p>
+              I didn&apos;t just fall in love with AI that night. I realized every business owner deserved to feel what I felt at that table.
+            </p>
+            <p>
+              That&apos;s why I built QuotaDoctor.
+            </p>
+            <p>
+              We&apos;re not marketers. We&apos;re profit consultants. We find where your business is bleeding money and time — and we fix it with systems that work around the clock so you don&apos;t have to.
+            </p>
+            <p>
+              Whether you&apos;re a home service business owner stuck answering your own phones, a founder drowning in follow-up, or a small business owner who wants to do in a month what used to take a year — this is built for you.
+            </p>
+            <p>
+              Most clients come to us for one thing. They leave with all three — time back, lower costs, and a business that actually scales.
             </p>
           </div>
         </motion.div>
