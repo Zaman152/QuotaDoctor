@@ -52,8 +52,8 @@ export default function Hero() {
             </motion.div>
 
             <motion.h1
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={{ y: 24 }}
+              animate={{ y: 0 }}
               transition={{ duration: 0.7, delay: 0.08, type: "spring", bounce: 0.3 }}
               className="text-5xl md:text-6xl lg:text-7xl font-black text-[#0A2F4C] leading-[1.1] tracking-tighter uppercase mb-6"
             >

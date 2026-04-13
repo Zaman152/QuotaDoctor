@@ -55,10 +55,13 @@ export default function AboutPage() {
             transition={{ duration: 1, delay: 0.3, type: "spring", bounce: 0.5 }}
           >
             {/* Note to the developer: Make sure to place dave-family.jpg in the public folder */}
-            <img 
+            <Image 
               src="/dave-family.jpg" 
               alt="Dave Thompson with his wife and dog"
+              width={1024}
+              height={682}
               className="w-full h-auto block transform scale-100 group-hover:scale-105 transition-transform duration-[2s] ease-in-out"
+              priority
             />
             {/* Ambient overlay for the liquid glass feel & text readability */}
             <div className="absolute inset-0 bg-gradient-to-t from-navy/90 via-navy/30 to-transparent z-10 pointer-events-none" />

@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import MagneticButton from "@/components/ui/MagneticButton";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function MeetDave() {
   return (
@@ -19,10 +20,13 @@ export default function MeetDave() {
             transition={{ duration: 1, type: "spring", bounce: 0.4 }}
           >
             <Link href="/about" className="block w-full relative rounded-[2.5rem] md:rounded-[3rem] overflow-hidden glass-card shadow-2xl group cursor-pointer">
-              <img 
+              <Image 
                 src="/dave-family.jpg" 
                 alt="Dave Thompson with his wife and dog"
+                width={1024}
+                height={682}
                 className="w-full h-auto block transform scale-100 group-hover:scale-105 transition-transform duration-[2s] ease-in-out"
+                loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-navy/90 via-navy/20 to-transparent z-10 opacity-90 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
               
