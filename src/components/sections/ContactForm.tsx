@@ -175,7 +175,15 @@ export default function ContactForm({
                         </div>
                       </div>
                       <span className="text-sm text-[#6B7280] leading-relaxed" onClick={() => setSmsConsent((v) => !v)}>
-                        I agree to receive SMS messages from QuotaDoctor at the phone number provided. Message frequency varies. Message and data rates may apply. Reply STOP to cancel, HELP for help. Consent is not a condition of purchase.
+                        I agree to receive SMS messages from QuotaDoctor at the phone number provided. Message frequency varies. Message and data rates may apply. Reply STOP to cancel, HELP for help. Consent is not a condition of purchase. By checking this box you acknowledge our{" "}
+                        <Link href="/privacy-policy" className="text-[#4AACDE] underline hover:text-[#0A2F4C] transition-colors" onClick={(e) => e.stopPropagation()}>
+                          Privacy Policy
+                        </Link>{" "}
+                        and{" "}
+                        <Link href="/terms" className="text-[#4AACDE] underline hover:text-[#0A2F4C] transition-colors" onClick={(e) => e.stopPropagation()}>
+                          Terms of Service
+                        </Link>
+                        .
                       </span>
                     </label>
                   </div>
