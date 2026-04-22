@@ -133,10 +133,10 @@ export default function PrivacyPolicyPage() {
                   </a>{" "}
                   or calling{" "}
                   <a
-                    href="tel:7204651809"
+                    href="tel:7206062741"
                     className="text-[#4AACDE] underline"
                   >
-                    720-465-1809
+                    720-606-2741
                   </a>
                   .
                 </span>
@@ -396,10 +396,10 @@ export default function PrivacyPolicyPage() {
             <p>
               Phone:{" "}
               <a
-                href="tel:7204651809"
+                href="tel:7206062741"
                 className="text-[#4AACDE] underline"
               >
-                720-465-1809
+                720-606-2741
               </a>
             </p>
           </div>

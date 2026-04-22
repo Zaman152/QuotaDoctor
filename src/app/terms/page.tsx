@@ -123,8 +123,8 @@ export default function TermsOfServicePage() {
                     Dave@quotadoctor.ai
                   </a>{" "}
                   or calling{" "}
-                  <a href="tel:7204651809" className="text-[#4AACDE] underline">
-                    720-465-1809
+                  <a href="tel:7206062741" className="text-[#4AACDE] underline">
+                    720-606-2741
                   </a>
                   . We will honor opt-out requests promptly.
                 </span>
@@ -345,10 +345,10 @@ export default function TermsOfServicePage() {
             <p>
               Phone:{" "}
               <a
-                href="tel:7204651809"
+                href="tel:7206062741"
                 className="text-[#4AACDE] underline"
               >
-                720-465-1809
+                720-606-2741
               </a>
             </p>
           </div>

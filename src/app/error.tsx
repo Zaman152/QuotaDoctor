@@ -113,7 +113,7 @@ export default function Error({
           </Link>
 
           <a
-            href="tel:7204651809"
+            href="tel:7206062741"
             className="inline-flex items-center justify-center gap-2 bg-[#4AACDE] text-white font-semibold px-7 py-3.5 rounded-full text-sm transition-all hover:bg-[#4AACDE]/85 hover:scale-105 shadow-lg shadow-[#4AACDE]/20 group w-full sm:w-auto"
           >
             <Phone className="w-4 h-4" />

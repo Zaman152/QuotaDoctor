@@ -76,7 +76,7 @@ export default function RootLayout({
               description:
                 "QuotaDoctor gives small businesses a 24/7 AI workforce that answers every call, captures every lead, and manages marketing automatically.",
               url: "https://www.quotadoctor.ai",
-              telephone: "720-465-1809",
+              telephone: "720-606-2741",
               email: "Dave@quotadoctor.ai",
               address: {
                 "@type": "PostalAddress",

@@ -103,13 +103,13 @@ export default function Footer() {
                 Dave@quotadoctor.ai
               </a>
               <a
-                href="tel:7204651809"
+                href="tel:7206062741"
                 className="flex items-center gap-3 text-white/60 hover:text-white text-sm font-medium transition-colors duration-300 group w-fit"
               >
                 <div className="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-[#4AACDE]/20 group-hover:border-[#4AACDE]/40 transition-all shadow-sm">
                   <Phone size={14} className="text-[#4AACDE]" />
                 </div>
-                720-465-1809
+                720-606-2741
               </a>
               <span className="flex items-center gap-3 text-white/60 text-sm font-medium">
                 <div className="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center shadow-sm">

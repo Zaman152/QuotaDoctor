@@ -260,13 +260,13 @@ export default function ContactForm({
                 <h4 className="text-xl font-black text-[#0A2F4C] mb-6">Reach Out Directly</h4>
                 <div className="space-y-6">
                   <a
-                    href="tel:7204651809"
+                    href="tel:7206062741"
                     className="flex items-center gap-4 text-[#6B7280] hover:text-[#0A2F4C] transition-colors"
                   >
                     <div className="w-12 h-12 bg-white rounded-full flex justify-center items-center shadow-md">
                       <Phone size={24} className="text-[#4AACDE]" />
                     </div>
-                    <span className="text-xl font-bold">720.465.1809</span>
+                    <span className="text-xl font-bold">720.606.2741</span>
                   </a>
                   <a
                     href="mailto:Dave@quotadoctor.ai"
